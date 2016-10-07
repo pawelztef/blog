@@ -15,9 +15,7 @@
       <td><%= mod.fullname %></td>
       <td><%= mod.username %></td>
       <td><%= time_ago_in_words(mod.created_at) %></td>
-      <td>
-      
-      </td>
+      <td><%= link_to 'Edit', edit_admin_moderator_path(mod) %></td>
     </tr>
   <% end %>
   </tbody>
