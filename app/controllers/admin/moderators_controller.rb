@@ -6,5 +6,6 @@ class Admin::ModeratorsController < ApplicationController
     @moderator = Moderator.find(params[:id])
   end
   def update
+    @moderator = Moderator.find(params[:id])
   end
 end
