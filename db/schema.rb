@@ -14,16 +14,16 @@
 ActiveRecord::Schema.define(version: 20161006225326) do
 
   create_table "comments", force: :cascade do |t|
-    t.text     "message",     limit: 65535
+    t.text     "message",    limit: 65535
     t.boolean  "status"
-    t.integer  "post_id",     limit: 4
-    t.integer  "visitior_id", limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "post_id",    limit: 4
+    t.integer  "visitor_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
-  add_index "comments", ["visitior_id"], name: "index_comments_on_visitior_id", using: :btree
+  add_index "comments", ["visitor_id"], name: "index_comments_on_visitor_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.text     "content",    limit: 65535
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20161006225326) do
   end
 
   add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "visitors"
   add_foreign_key "messages", "visitors"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"

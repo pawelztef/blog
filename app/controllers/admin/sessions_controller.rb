@@ -4,8 +4,10 @@ class Admin::SessionsController < Admin::ApplicationController
   end
 
   def create
+    @moderator = Moderator.find_by(username: params[:username])
+    puts @moderator.authenticate(params[:password])
   end
 
   def destroy
   end
-end
+end 
