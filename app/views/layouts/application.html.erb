@@ -14,7 +14,7 @@
 <% if flash[:alert] %>
   <div class="alert"> <%= flash[:alert] %> </div>
 <% end %>
-
+<%= link_to 'logout', logout_path %>
 <%= yield %>
 
 </body>
