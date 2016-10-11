@@ -5,4 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-moderator = Moderator.create(fullname: "Pawel Stef", username: "pawelztef@com", password: "password")
+moderator = Moderator.create(fullname: "Pawel Stef", username: "p@p", password: "p")
+
+30.times do 
+  post = Post.create(
+    title: Faker::Lorem.sentence(20),
+    content: Faker::Lorem.paragraph,
+    publish: true,
+    moderator: moderator)
+  tag = Tag.create(name: Faker::Lorem.word)
+  post_tag = PostTag.create(post: post, tag: tag)
+end
