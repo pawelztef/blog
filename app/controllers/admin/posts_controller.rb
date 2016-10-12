@@ -41,6 +41,9 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def destroy
+    @post = Post.find params[:id]
+    @post.destroy
+    redirect_to admin_posts_url, notice: ''
   end
   private
   def post_params
