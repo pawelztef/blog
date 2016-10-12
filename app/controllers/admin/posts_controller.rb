@@ -2,9 +2,9 @@ class Admin::PostsController < Admin::ApplicationController
 
   def index
     if params[:search].present?
-    @posts = Post.matching_title_or_content(params[:search]).page params[:page]
+      @posts = Post.matching_title_or_content(params[:search]).page params[:page]
     else
-    @posts = Post.all.order(id: :desc).page params[:page]
+      @posts = Post.all.order(id: :desc).page params[:page]
     end
   end
 
@@ -24,9 +24,16 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def edit
+    @post = Post.find params[:id]
   end
 
   def update
+    if Post.find(params[:id]).update_attributes(post_params)
+      redirect_to admin_posts_url, notice: 'Post was sucessfully updated'
+    else
+      flash[:alert] = 'There was a proble while updating a post'
+      render 'new'
+    end
   end
 
   def show
