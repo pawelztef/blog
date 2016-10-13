@@ -5,3 +5,10 @@
   <%= link_to "Un-approved", admin_comments_path(status: false) %> 
 </p>
 
+
+<% @comments.each do |com| %>
+  <p><b> <%= com.visitor.fullname %> </b> posted message on <b> <%= com.post.title %> </b> </p> 
+  <p> <%= com.message %> </p>
+  <p> <%= link_to "Delete", admin_comment_path(com), method: :delete, data: {confirm: "Are you Sure"} %> </p>
+  <hr />
+<% end %> 

@@ -2,7 +2,7 @@ class Admin::ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  
+
   layout 'admin'
   before_action :authorize
 
@@ -14,6 +14,10 @@ class Admin::ApplicationController < ActionController::Base
     unless current_moderator
       redirect_to '/login', alert: "Please login to view admin page"
     end 
+  end
+
+  def to_bool str
+    ActiveRecord::Type::Boolean.new.type_cast_from_user(str)
   end
 
 end
