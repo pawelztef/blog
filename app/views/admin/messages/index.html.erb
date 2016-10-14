@@ -1,5 +1,7 @@
 <h1>Messages</h1>
 
+<p> <%= render 'search', route: admin_messages_path %> </p>
+
 <% @messages.each do |message| %>
   <% message.status == false ? weight = 'font-weight:bold' : weight = 'font-weight:normal' %>
   <p style= <%= "#{weight}" %> >

@@ -1,6 +1,12 @@
-class Admin::MessagesController < ApplicationController
+class Admin::MessagesController < Admin::ApplicationController
+  layout 'admin'
+
   def index
-    @messages = Message.all.order(id: :desc).page params[:page]
+    if params[:search].present?
+      @messages = Message.matching_fullname_or_content(params[:search]).page params[:page]
+    else
+      @messages = Message.all.order(id: :desc).page params[:page]
+    end
   end
 
   def show
