@@ -1,6 +1,5 @@
 class Admin::MessagesController < Admin::ApplicationController
-  layout 'admin'
-
+  
   def index
     if params[:search].present?
       @messages = Message.matching_fullname_or_content(params[:search]).page params[:page]
@@ -10,6 +9,7 @@ class Admin::MessagesController < Admin::ApplicationController
   end
 
   def show
+    @message = Message.find(params[:id])
   end
 
   def update
