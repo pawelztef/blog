@@ -1,5 +1,6 @@
 class Admin::MessagesController < ApplicationController
   def index
+    @messages = Message.all.order(id: :desc).page params[:page]
   end
 
   def show
@@ -9,5 +10,7 @@ class Admin::MessagesController < ApplicationController
   end
 
   def destroy
+    @message = Message.find(params[:id]).destroy
+    redirect_to :back, notice: "Message was successfully deleted"
   end
 end
