@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014142948) do
+ActiveRecord::Schema.define(version: 20161016212740) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "message",    limit: 65535
-    t.boolean  "status"
+    t.boolean  "status",                   default: false
     t.integer  "post_id",    limit: 4
     t.integer  "visitor_id", limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
