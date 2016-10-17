@@ -4,7 +4,7 @@ class Visitor < ActiveRecord::Base
   has_many :messages, dependent: :destroy
 
   validates :fullname, presence: true
-  validates :email, format: {with: /@/, message: 'email is not valid'}
+  validates :email, format: {with: /@/, message: 'is not valid'}
 
   accepts_nested_attributes_for :comments
 end
