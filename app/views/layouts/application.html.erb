@@ -6,6 +6,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'front', media: 'all', 'data-turbolinks-track' => true %>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
   </head>
   <body>
     <% if flash[:notice] %>
@@ -16,20 +17,23 @@
     <% end %>
 
 
-    <%= render 'layouts/nav' %> 
+    <%= render 'layouts/partials/nav' %> 
 
-    <%= render 'layouts/header' %> 
+    <%= render 'layouts/partials/header' %> 
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-sm-12 col-md-8">
+
           <%= yield %>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
+          <%= render 'layouts/partials/asside' %> 
         </div>
 
       </div>
     </div>
 
+    <%= render 'layouts/partials/footer' %> 
 
   </body>
 </html>

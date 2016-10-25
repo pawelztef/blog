@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016212740) do
+ActiveRecord::Schema.define(version: 20161025204121) do
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title",        limit: 255
+    t.string   "author_fname", limit: 255
+    t.string   "author_lname", limit: 255
+    t.string   "publisher",    limit: 255
+    t.string   "publish_year", limit: 255
+    t.string   "isbn",         limit: 255
+    t.integer  "review_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "books", ["review_id"], name: "index_books_on_review_id", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.text     "message",    limit: 65535
@@ -73,6 +87,13 @@ ActiveRecord::Schema.define(version: 20161016212740) do
 
   add_index "posts", ["moderator_id"], name: "index_posts_on_moderator_id", using: :btree
 
+  create_table "reviews", force: :cascade do |t|
+    t.text     "content",    limit: 65535
+    t.boolean  "draft"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "settings", force: :cascade do |t|
     t.string   "site_name",          limit: 255
     t.integer  "post_per_page",      limit: 4
@@ -96,6 +117,7 @@ ActiveRecord::Schema.define(version: 20161016212740) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "books", "reviews"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "visitors"
   add_foreign_key "messages", "visitors"
