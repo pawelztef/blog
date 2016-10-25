@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Pagination
 gem 'kaminari', '~> 0.17.0'
 
+# Awesome Fonts Sas
+gem 'font-awesome-sass', '~> 4.6.2'
+
 # Use Unicorn as the app server # gem 'unicorn'
 
 # Use Capistrano for deployment

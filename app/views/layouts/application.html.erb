@@ -5,23 +5,31 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'front', media: 'all', 'data-turbolinks-track' => true %>
   </head>
   <body>
-
     <% if flash[:notice] %>
       <div class="notice"> <%= flash[:notice] %> </div>
     <% end %>
     <% if flash[:alert] %>
       <div class="alert"> <%= flash[:alert] %> </div>
     <% end %>
-    <p> 
-      <%= link_to Setting.site_name, posts_path %>
-      <%= link_to "Posts", posts_path %> 
-      <%= link_to "About", "#" %> 
-      <%= link_to "Contact", new_message_path %> 
-      <%= link_to "Login", login_path %> 
-    </p>
-    <%= yield %>
+
+
+    <%= render 'layouts/nav' %> 
+
+    <%= render 'layouts/header' %> 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <%= yield %>
+        </div>
+        <div class="col-md-3">
+        </div>
+
+      </div>
+    </div>
+
 
   </body>
 </html>
