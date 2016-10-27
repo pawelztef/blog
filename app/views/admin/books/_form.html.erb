@@ -1,0 +1,31 @@
+<div class='jumbotron'>
+  <%= form_for [:admin, @book] do |f| %> 
+    <p>
+    <%= f.label "Title" %>  
+    <%= f.text_field :title %>  
+    </p>
+    <p>
+    <%= f.label "Author's First Name" %>  
+    <%= f.text_field :author_fname %>  
+    </p>
+    <p>
+    <%= f.label "Author's Last Name" %>  
+    <%= f.text_field :author_lname %>  
+    </p>
+    <p>
+    <%= f.label "Publisher" %>  
+    <%= f.text_field :publisher %>  
+    </p>
+    <p>
+    <%= f.label "Publish year" %>  
+    <%= f.text_field :publish_year %>  
+    </p>
+    <p>
+    <%= f.label "ISBN" %>
+    <%= f.text_field :isbn %>  
+    </p>
+    <p>
+    <%= f.submit "Submit" %>  
+    </p>
+  <% end %>  
+</div>

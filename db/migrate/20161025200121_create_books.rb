@@ -8,7 +8,6 @@ class CreateBooks < ActiveRecord::Migration
       t.string :publisher
       t.string :publish_year
       t.string :isbn
-      t.references :review, index: true, foreign_key: true
 
       t.timestamps null: false
     end

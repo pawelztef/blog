@@ -39,3 +39,16 @@ moderator = Moderator.create(fullname: "Pawel Stef", username: "p@p", password: 
     notifiable_type: notifiable.class.name)
 
 end
+
+
+5.times do
+
+  book = Book.create( 
+    title: Faker::Book.title,
+    author_fname: Faker::Name.first_name,
+    author_lname: Faker::Name.last_name,
+    publisher: Faker::Book.publisher,
+    publish_year: Faker::Number.between(1940, 2016),
+    isbn:  Faker::Code.isbn )
+
+end

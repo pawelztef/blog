@@ -16,9 +16,9 @@ class Admin::PostsController < Admin::ApplicationController
     @post = Post.create(post_params)
     @post.moderator_id = current_moderator.id
     if @post.save
-      redirect_to admin_posts_url, notice: 'Post was successfully created'
+      redirect_to admin_posts_url, notice: 'Post was successfully created.'
     else
-      flash[:alert] = 'There was a problem creating a post'
+      flash[:alert] = 'There was a problem while creating a post.'
       render 'new'
     end
   end
@@ -31,7 +31,7 @@ class Admin::PostsController < Admin::ApplicationController
     if Post.find(params[:id]).update_attributes(post_params)
       redirect_to admin_posts_url, notice: 'Post was sucessfully updated'
     else
-      flash[:alert] = 'There was a proble while updating a post'
+      flash[:alert] = 'There was a problem while updating a post'
       render 'new'
     end
   end
