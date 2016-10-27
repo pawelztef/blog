@@ -1,29 +1,34 @@
 <div class='jumbotron'>
   <%= form_for [:admin, @book] do |f| %> 
     <p>
-    <%= f.label "Title" %>  
+    <%= f.label "Title" %><br />
     <%= f.text_field :title %>  
     </p>
     <p>
-    <%= f.label "Author's First Name" %>  
+    <%= f.label "Author's First Name" %><br />  
     <%= f.text_field :author_fname %>  
     </p>
     <p>
-    <%= f.label "Author's Last Name" %>  
+    <%= f.label "Author's Last Name" %><br />  
     <%= f.text_field :author_lname %>  
     </p>
     <p>
-    <%= f.label "Publisher" %>  
+    <%= f.label "Publisher" %><br />    
     <%= f.text_field :publisher %>  
     </p>
     <p>
-    <%= f.label "Publish year" %>  
-    <%= f.text_field :publish_year %>  
+    <%= f.label "Publish year" %><br />  
+    <%= f.text_field :publish_year %>
     </p>
     <p>
-    <%= f.label "ISBN" %>
+    <%= f.label "ISBN" %><br />  
     <%= f.text_field :isbn %>  
     </p>
+
+    <%= f.fields_for :review do |review| %>
+      <p> <%= review.label :content, "Content" %>  </p>
+      <p> <%= review.text_area :content %>  </p><br />
+    <% end %> 
     <p>
     <%= f.submit "Submit" %>  
     </p>

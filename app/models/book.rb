@@ -1,5 +1,6 @@
 class Book < ActiveRecord::Base
-  has_many :reviews
+  has_one :review, dependent: :destroy
+  accepts_nested_attributes_for :review
 
 
   def auth_name

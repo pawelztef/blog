@@ -43,12 +43,17 @@ end
 
 5.times do
 
+  review = Review.create(
+    content: Faker::Lorem.paragraph,
+    draft: false)
+
   book = Book.create( 
     title: Faker::Book.title,
     author_fname: Faker::Name.first_name,
     author_lname: Faker::Name.last_name,
     publisher: Faker::Book.publisher,
     publish_year: Faker::Number.between(1940, 2016),
-    isbn:  Faker::Code.isbn )
+    isbn:  Faker::Code.isbn,
+    review: review)
 
 end

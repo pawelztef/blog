@@ -1,6 +1,6 @@
 <h1>Books</h1>
 <p>
-<h3>Currently Displayed: <%= build_currently_displayed_link @displayed, '.MyModal' %> </h3> 
+<h3>Currently Displayed: <%= build_currently_displayed_link @displayed %> </h3> 
 </p>
 <%= link_to 'Create Review', new_admin_book_path  %> 
 <div class="container">
@@ -10,19 +10,31 @@
       <p> <%= book.auth_name %> </p>
       <p> <%= book.published %> </p>
       <p> <%= book.isbn %> </p>
+      <p> <%= book.review.content %> </p>
       <p> <%= link_to "Edit", edit_admin_book_path(book) %> | 
       <%= link_to "Delete", admin_book_path(book), method: :delete, data: {confirm: "Are you sure?"} %></p>
 
     </div>
   <% end %> 
 </div>
-<div class="modal fade myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      <p> <%= @displayed.title %> </p>
-      <p> <%= @displayed.auth_name %> </p>
-      <p> <%= @displayed.published %> </p>
-      <p> <%= @displayed.isbn %> </p>
-    </div>
-  </div>
-</div>
+<%# <div class="modal fade" id="MyModal" title="My Modal"> %>
+<%#   <div class="modal-dialog modal-sm" role="document"> %>
+<%#     <div class="modal-content"> %>
+<%#       <div class="modal-header"> %>
+<%# 	<button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button> %>
+<%# 	<h3 id="myModalLabel">Modal header</h3> %>
+<%#       </div> %>
+<%#       <div class="modal-body"> %>
+<%# 	<p> <%= @displayed.title %1> </p> %>
+<%# 	<p> <%= @displayed.auth_name %1> </p> %>
+<%# 	<p> <%= @displayed.published %1> </p> %>
+<%# 	<p> <%= @displayed.isbn %1> </p> %>
+<%#       </div> %>
+<%#       <div class="modal-footer"> %>
+<%# 	<button aria-hidden="true" class="btn" data-dismiss="modal">Close</button> %>
+<%#       </div> %>
+<%#     </div> %>
+<%#   </div> %>
+<%# </div> %>
+
+

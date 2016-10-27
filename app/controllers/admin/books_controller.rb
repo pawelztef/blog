@@ -8,6 +8,7 @@ class Admin::BooksController < Admin::ApplicationController
 
   def new
     @book = Book.new()
+    @book.build_review
   end
 
   def create
@@ -41,7 +42,7 @@ class Admin::BooksController < Admin::ApplicationController
 
 private
   def books_params
-    params.require(:book).permit(:title, :author_fname, :author_lname, :publisher, :publish_year, :isbn)
+    params.require(:book).permit(:title, :author_fname, :author_lname, :publisher, :publish_year, :isbn, review_attributes: [:content, :draft])
   end
 
 end
