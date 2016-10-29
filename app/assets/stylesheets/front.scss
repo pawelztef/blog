@@ -30,11 +30,16 @@ footer {
  
 }
 
-
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.25);
+}
 #masthead {
   min-height:360px;
   background-color: $prim5;
   color:#aaaacc;
+  background: url('header.jpg') no-repeat;
 }
 
 #masthead h1 {

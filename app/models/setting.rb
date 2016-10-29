@@ -5,6 +5,9 @@ class Setting < ActiveRecord::Base
   def self.post_per_page
     Setting.first.try(:post_per_page)
   end
+  def self.site_phrase
+    Setting.first.try(:site_phrase)
+  end
   def self.tag_visible?
     Setting.first.try(:tag_visibility)
   end

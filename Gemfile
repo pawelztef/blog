@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Pagination
 gem 'kaminari', '~> 0.17.0'
 
+# Uploading files
+gem 'paperclip', '~> 4.3'
+
 # Awesome Fonts Sas
 gem 'font-awesome-sass', '~> 4.6.2'
 

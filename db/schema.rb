@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026234106) do
+ActiveRecord::Schema.define(version: 20161028094444) do
 
   create_table "books", force: :cascade do |t|
-    t.string   "title",        limit: 255
-    t.string   "author_fname", limit: 255
-    t.string   "author_lname", limit: 255
-    t.string   "publisher",    limit: 255
-    t.string   "publish_year", limit: 255
-    t.string   "isbn",         limit: 255
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.boolean  "display",                  default: false
+    t.string   "title",              limit: 255
+    t.string   "author_fname",       limit: 255
+    t.string   "author_lname",       limit: 255
+    t.string   "publisher",          limit: 255
+    t.string   "publish_year",       limit: 255
+    t.string   "isbn",               limit: 255
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.boolean  "display",                        default: false
+    t.string   "cover_file_name",    limit: 255
+    t.string   "cover_content_type", limit: 255
+    t.integer  "cover_file_size",    limit: 4
+    t.datetime "cover_updated_at"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -103,6 +107,7 @@ ActiveRecord::Schema.define(version: 20161026234106) do
     t.boolean  "tag_visibility"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.string   "site_phrase",        limit: 255
   end
 
   create_table "tags", force: :cascade do |t|

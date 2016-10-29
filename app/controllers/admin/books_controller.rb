@@ -26,7 +26,8 @@ class Admin::BooksController < Admin::ApplicationController
   end
 
   def update
-    if Book.find(params[:id]).update_attributes(books_params)
+    @book = Book.find(params[:id])
+    if @book.update_attributes(books_params) && @book.show
       redirect_to admin_books_path, notice: 'Review was successfuly updated'
     else
       flash[:alert] = 'There was a problem while updating a review'
@@ -42,7 +43,7 @@ class Admin::BooksController < Admin::ApplicationController
 
 private
   def books_params
-    params.require(:book).permit(:title, :author_fname, :author_lname, :publisher, :publish_year, :isbn, review_attributes: [:content, :draft])
+    params.require(:book).permit(:title, :author_fname, :author_lname, :display, :publisher, :publish_year, :isbn, :cover, review_attributes: [:content, :draft])
   end
 
 end

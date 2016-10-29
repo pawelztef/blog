@@ -32,6 +32,6 @@ class Admin::SettingsController < Admin::ApplicationController
   end
   private
   def settings_params
-    params.require(:setting).permit(:id, :site_name, :post_per_page, :under_maintenance, :prevent_commenting, :tag_visibility)
+    params.require(:setting).permit(:id, :site_phrase, :site_name, :post_per_page, :under_maintenance, :prevent_commenting, :tag_visibility)
   end
 end

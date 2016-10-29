@@ -1,5 +1,5 @@
 <div class='jumbotron'>
-  <%= form_for [:admin, @book] do |f| %> 
+  <%= form_for [:admin, @book], html: { multipart: true}  do |f| %> 
     <p>
     <%= f.label "Title" %><br />
     <%= f.text_field :title %>  
@@ -23,6 +23,14 @@
     <p>
     <%= f.label "ISBN" %><br />  
     <%= f.text_field :isbn %>  
+    </p>
+    <p>
+    <%= f.label "Display" %>
+    <%= f.check_box :display %>  
+    </p>
+    <p>
+    <%= f.label "Upload file" %><br />  
+    <%= f.file_field :cover %>  
     </p>
 
     <%= f.fields_for :review do |review| %>
