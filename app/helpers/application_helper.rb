@@ -16,12 +16,18 @@ module ApplicationHelper
     '%02d' % n
   end
 
-  def swap_nav_links current_controller
-    if current_controller == "reviews"
+  def swap_nav_links parameters
+
+    if parameters[:controller] == "reviews"
       link_to "Posts", posts_path 
+    elsif parameters[:controller] == "posts"
+      if parameters[:action] == "show"
+        link_to "Posts", posts_path 
+      else
+        link_to "Books", reviews_path 
+      end
     else
-      link_to "Books", reviews_path 
+        link_to "Posts", posts_path 
     end
   end
-
 end
