@@ -49,9 +49,11 @@
                     <% end %> 
                     <hr />
 
-                    <% if check_commenting_availability %>
-                      <%= render 'comments_form' %> 
-                    <% end %> 
+                    <div class="comments-form">
+                      <% if check_commenting_availability %>
+                        <%= render 'comments_form' %> 
+                      <% end %> 
+                    </div>
 
                     <div class="text-right">
                       <%= link_to "All Posts", posts_path %> 

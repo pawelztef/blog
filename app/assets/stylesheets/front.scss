@@ -290,6 +290,9 @@ a,a:hover {
     .col-center {
       float: none;
       margin: 0 auto;
+      h1 {
+        margin: 50px 0;
+      }
     }
 
     .meta-author-wrap, .panel {
@@ -300,7 +303,7 @@ a,a:hover {
     }
     .avatar-img {
       margin-left: 15px;
-      border: 6px solid white;
+      border: 4px solid white;
       border-radius: 50%;
       overflow: hidden;
       box-shadow: 1px 1px 4px rgba(0,0,0,0.55);
@@ -406,6 +409,19 @@ a,a:hover {
 
     .bs-callout a.alert-link {
       font-weight: bold;
+    }
+    .comments-form {
+      margin-top: 90px;
+      margin-bottom: 90px;
+    }
+    .text-right {
+      margin-bottom: 20px;
+      a {
+        color: $prim3;
+        &:hover {
+          color: $prim1;
+        }
+      }
     }
   }
 }
