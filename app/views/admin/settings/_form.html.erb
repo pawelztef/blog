@@ -17,12 +17,12 @@
   <%= f.check_box :under_maintenance %>
 </p>
 <p>
-  <%= f.label :prevent_commenting %><br />
-  <%= f.select :prevent_commenting, [['disable', false], ['active', true]] %>
+  <%= f.label :prevent_commenting, "Commenting" %><br />
+  <%= f.select :prevent_commenting, [['disabled', false], ['active', true]] %>
 </p>
 <p>
   <%= f.label :tag_visibility %><br />
-  <%= f.select :tag_visibility, [['active', true], ['disable', false]] %>
+  <%= f.select :tag_visibility, [['active', true], ['disabled', false]] %>
 </p>
 <p> <%= f.submit %> </p>
 <% end %> 

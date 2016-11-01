@@ -17,7 +17,6 @@ module ApplicationHelper
   end
 
   def swap_nav_links parameters
-
     if parameters[:controller] == "reviews"
       link_to "Posts", posts_path 
     elsif parameters[:controller] == "posts"
@@ -30,4 +29,9 @@ module ApplicationHelper
         link_to "Posts", posts_path 
     end
   end
+
+  def check_commenting_availability
+    return Setting.prevent_commenting?
+  end
+
 end

@@ -11,4 +11,11 @@ class Setting < ActiveRecord::Base
   def self.tag_visible?
     Setting.first.try(:tag_visibility)
   end
+  def self.prevent_commenting?
+    if Setting.first.try(:prevent_commenting)
+      return true
+    else
+      return false
+    end
+  end
 end

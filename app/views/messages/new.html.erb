@@ -1,33 +1,51 @@
-<h1>Messages#new</h1>
-<%= form_for @visitor_message , url: messages_url do |f| %>
+<div id="front-index">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-center">
+        <h1>Send Message</h1>
+        <div class="form-horizontal">
+          <%= form_for @visitor_message , url: messages_url do |f| %>
 
-  <% if @visitor_message.errors.any? %> 
-    <div id="error_explanation">
-      <h2> <%= pluralize(@visitor_message.errors.count, 'error') %> prohibited this message from sending:</h2>
-      <ul>
-        <% @visitor_message.errors.full_messages.each do |message| %>
-          <li> <%= message %> </li>
-        <% end %> 
-      </ul>
+            <% if @visitor_message.errors.any? %> 
+              <div id="error_explanation">
+                <h2> <%= pluralize(@visitor_message.errors.count, 'error') %> prohibited this message from sending:</h2>
+                <ul>
+                  <% @visitor_message.errors.full_messages.each do |message| %>
+                    <li> <%= message %> </li>
+                  <% end %> 
+                </ul>
+              </div>
+            <% end %> 
+
+            <div class="form-group">
+              <div class="col-sm-10">
+                <%= f.label :fullname, class: "control-label" %> 
+                <%= f.text_field :fullname, class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10">
+                <%= f.label :email, class: "control-label" %>
+                <%= f.text_field :email, class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <%= f.fields_for :messages do |c| %>
+                <div class="col-sm-10">
+                  <%= c.label :content , class: "control-label" %> 
+                  <%= c.text_area :content, class: "form-control", rows: "5" %> 
+                </div>
+              <% end %> 
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10">
+                <%= f.submit 'Send message', class: "btn btn-default" %>
+              </div>
+            </div>
+
+          <% end %> 
+        </div>
+      </div>
     </div>
-  <% end %> 
-
-  <p> 
-  <%= f.label :fullname %>
-  <%= f.text_field :fullname %>
-  </p>
-  <p> 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  </p>
-
-  <%= f.fields_for :messages do |c| %>
-    <p>
-    <%= c.label :content %> 
-    <%= c.text_area :content %> 
-    </p>
-  <% end %> 
-
-  <p> <%= f.submit 'Send message' %> </p>
-
-<% end %> 
+  </div>
+</div>
