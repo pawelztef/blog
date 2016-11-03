@@ -13,5 +13,5 @@ change about for another page i.e. AI or delete
 
 implement Books Reviews Page or implement modal popup
 contact page or modal popup
-style errors in comments and message
-style comments in post/show
+style global errors to faint out after while
+add response to comments functionality
