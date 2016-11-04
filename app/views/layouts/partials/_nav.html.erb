@@ -1,4 +1,3 @@
-
 <div id="navigation">
   <header class="navbar navbar-bright navbar-fixed-top" role="banner">
     <div class="container">
@@ -20,7 +19,7 @@
             <%#   <%= link_to "About", "#" %1> %> 
           <%# </li> %>
           <li>
-            <%= link_to "Contact", new_message_path %> 
+            <%= link_to "Contact", new_message_path, remote: true %> 
           </li>
         </ul>
         <ul class="nav navbar-right navbar-nav">
@@ -36,3 +35,4 @@
     </div>
   </header>
 </div>
+<div id="modal-window" class="modal hide fade" role="dialog"></div>

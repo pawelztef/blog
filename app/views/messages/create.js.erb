@@ -1,0 +1,11 @@
+$("#error_explanation").html("");
+$("ul#errors").html("");
+<% if @visitor_message.errors.any? %> 
+  $("#error_explanation").append("<h5> <%= pluralize(@visitor_message.errors.count, 'error') %> prohibited this message from sending:</h5>");
+  <% @visitor_message.errors.full_messages.each do |message| %>
+    $("ul#errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %> 
+<% else %>
+  <%= render "posts/index" %> 
+  $("#myModal").modal("hide");
+<% end %> 

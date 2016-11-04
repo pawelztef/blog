@@ -1,0 +1,40 @@
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+      </div>
+      <%= form_for @visitor_message , url: messages_url, remote: true do |f| %>
+        <div class="modal-body">
+
+          <div id="error_explanation">
+
+          </div>
+          <ul id="errors"></ul>
+          
+
+          <p> 
+          <%= f.label :fullname %>
+          <%= f.text_field :fullname %>
+          </p>
+          <p> 
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          </p>
+
+          <%= f.fields_for :messages do |c| %>
+            <p>
+            <%= c.label :content %> 
+            <%= c.text_area :content %> 
+            </p>
+          <% end %> 
+        </div>
+
+        <div class="modal-footer">
+          <p> <%= f.submit 'Send message' %> </p>
+        </div>
+
+      <% end %> 
+    </div>
+  </div>
+</div>
