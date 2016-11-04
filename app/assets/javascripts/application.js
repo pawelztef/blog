@@ -15,3 +15,6 @@
 //= require turbolinks
 //= require bootstrap.min
 //= require_tree .
+
+$('.notice').fadeOut(3000);
+$('.allert').fadeOut(3000);

@@ -1,2 +1,9 @@
 $('body').append('<%= j render("form") %>');
 $("#myModal").modal('show');
+$(".close").on("click", function() {
+  $("#myModal").modal('hide');
+  $("#errors").html("");
+  $("#error_explanation").html("");
+  $(".form-control").val("");
+});
+

@@ -19,6 +19,17 @@ body {
   padding-top:50px;
   color:#646464;
   background-color:#efefef;
+  .notice {
+    background-color: white;
+    padding: 6px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.25);
+    text-transform: uppercase;
+    font-size: .7em;
+    font-weight: 600;
+    position:relative;
+    z-index:1000;
+    
+  }
 }
 
 h1,h2,h3,.highlight,.navbar a,#masthead h4 {
@@ -53,13 +64,15 @@ footer {
   color:#aaaacc;
   background: url('header.jpg') no-repeat;
   background-attachment: fixed;
+  position: relative;
+  top: -40px;
 }
 
 #masthead h1 {
   font-size: 55px;
   line-height: 1;
   color:#fefeff;
-  margin-top:50px;
+  margin-top:70px;
 }
 
 #masthead .well {
@@ -313,7 +326,7 @@ a,a:hover {
           }
         }
       }
-      
+
     }
 
     .meta-author-wrap, .panel {
@@ -376,7 +389,7 @@ a,a:hover {
           }
 
         }
-        
+
         &:nth-child(3) {
           font-size:.8em;
         }
@@ -458,6 +471,55 @@ a,a:hover {
   }
 }
 
+#myModal {
+  .modal-content {
+    border: 1px solid $prim3;
+  }
+  .close {
+    margin-right: -55px;
+    color: $prim3;
+  }
+  .form-group {
+    margin-bottom: 20px;
+    .col-sm-10 {
+      float: none;
+      margin: 0 auto;
+    }
+    .control-label {
+      color: $prim3;
+    }
+    .form-control {
+      border-color: rgba(224, 0, 0, .3);
+    }
+  }
+  .btn.btn-default {
+    margin-top: 20px;
+    margin-bottom: 15;
+    border-color: $prim3;
+    color: $prim3;
+  }
+  #errors {
+    margin-left: 20px;
+    color: rgba(224, 0, 0, 0.6);
+    text-transform: uppercase;
+    list-style: none;
+  }
+  #error_explanation {
+    color: rgba(224, 0, 0, 0.6);
+    text-transform: uppercase;
+    list-style: none;
+  }
+  .col-sm-10:nth-of-type(1) {
+    text-transform: uppercase;
+    color: $prim3;
+    font-weight: 600;
+    p{
+      padding-top: 20px;
+    }
+  }
+
+
+}
 
 
 

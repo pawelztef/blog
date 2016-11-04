@@ -9,18 +9,28 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
   </head>
   <body>
-    <% if flash[:notice] %>
-      <div class="notice"> <%= flash[:notice] %> </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="alert"> <%= flash[:alert] %> </div>
-    <% end %>
+    <div class="container">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <% if flash[:notice] %>
+                <div class="notice"> <%= flash[:notice] %> </div>
+              <% end %>
+              <% if flash[:alert] %>
+                <div class="alert"> <%= flash[:alert] %> </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    
+    </div>
+
     <%= render 'layouts/partials/nav' %> 
     <%= render 'layouts/partials/header' %> 
 
-          <%= yield %>
+    <%= yield %>
 
     <%= render 'layouts/partials/footer' %> 
   </body>
