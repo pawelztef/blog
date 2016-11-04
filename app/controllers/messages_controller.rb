@@ -6,13 +6,19 @@ class MessagesController < ApplicationController
   def create
     if visitor.save
       flash[:notice] = "Successfully sent your message"
-      redirect_to new_message_path 
+      respond_to do |format|
+        format.html {redirect_to new_message_path} 
+        format.js { redirect_to controller: 'posts', action: 'index'}
+      end
     else
       @visitor_message = visitor
-      render :new
+      respond_to do |format|
+        format.html 
+        format.js 
+      end
     end
   end
-  
+
   private
   def strong_params
     params.require(:visitor).permit(:fullname, :email, messages_attributes: [:content])
