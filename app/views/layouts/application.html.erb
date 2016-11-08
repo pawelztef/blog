@@ -9,20 +9,26 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
   </head>
   <body>
-
-      <% if flash[:notice] %>
-        <div class="alert"> <%= flash[:notice] %> </div>
-      <% end %>
-      <% if flash[:alert] %>
-        <div class="alert"> <%= flash[:alert] %> </div>
-      <% end %>
-
-
-    <%= render 'layouts/partials/nav' %> 
-    <%= render 'layouts/partials/header' %> 
+    <div class="container login">
+      <div class="row">
+        <div class="col-center col-md-3">
+            <% if flash[:notice] %>
+              <div class="alert"> <%= flash[:notice] %> </div>
+            <% end %>
+            <% if flash[:alert] %>
+              <div class="alert"> <%= flash[:alert] %> </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
 
     <%= yield %>
 
-    <%= render 'layouts/partials/footer' %> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('.alert').fadeIn().delay(1000).fadeOut();
+        })
+    </script>
   </body>
+
 </html>

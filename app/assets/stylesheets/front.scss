@@ -118,6 +118,17 @@ a,a:hover {
 
 
 // CUSTOM ///////////////////////////////
+.login {
+  .col-center {
+    float: none;
+    margin: 0 auto;
+  }
+
+  .alert {
+    padding: 0;
+  }
+
+}
 
 #alert {
   display:none;
@@ -231,10 +242,10 @@ a,a:hover {
     color: $prim3;
     margin-top: 0;
   }
-  
- #truncatedReview {
+
+  #truncatedReview {
     margin-top: -50px;
- }
+  }
   p {
     margin-top: 30px;
     a {

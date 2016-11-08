@@ -32,16 +32,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def resolve_layout
-    case action_name
-    when 'index'
-      'application_front_index'
-    when 'show'
-      'application_front_show'
-    else
-      'application'
-    end
-  end
 
   def tags_filter
     if params[:tag]
