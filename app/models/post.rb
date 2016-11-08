@@ -15,4 +15,7 @@ class Post < ActiveRecord::Base
   def self.filter_by_tags param_tag
     includes(:tags).where(publish: true, tags: {name: param_tag}).order(id: :desc)
   end
+  def self.matching_title search
+    where("title LIKE ?", "%#{search}%")
+  end
 end

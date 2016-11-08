@@ -1,0 +1,45 @@
+<div class="modal fade" id="myBookModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-10 col-center">
+            <div class="containter">
+              <div class="row">
+                <div class="col-sm-12">
+                  <button type="button" class="closeReviews close">x</button>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-sm-5">
+                  <%= image_tag @book.cover.url(:medium), class: 'img-responsive'  %> 
+                </div>
+                <div class="col-sm-7">
+                  <h2>
+                    <%= @book.title %> 
+                  </h2>
+                  <h3>
+                    <%= @book.auth_name %> 
+                  </h3>
+                  <h4>
+                    <%= @book.published %> 
+                  </h4>
+                  <br />
+                  <p> <%= @book.review.content %> </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <button type="button" class="closeReviews btn btn-default">close</button>
+                  <%= link_to "All Reviews", reviews_path, class: "all btn btn-default" %> 
+                </div>
+              </div>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

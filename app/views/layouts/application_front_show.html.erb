@@ -16,11 +16,40 @@
       <div class="alert"> <%= flash[:alert] %> </div>
     <% end %>
 
-
     <%# <%= render 'layouts/partials/header_show' %1> %> 
 
-      <%= yield %>
-
+    <div id="post-show">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <div class="row">
+              <div class="col-xs-12 meta-author-wrap">
+                <%= image_tag 'gravatar-small.jpg', class: 'avatar-img img-responsive' %> 
+                <div class="meta-author">
+                  <h4> <strong> Pawel Stefaniak </strong></h4>
+                  <p> freelance<br /> web developer </p>
+                  <p> developer @ <a href="#">rise</a></p>
+                  <p><a href="#">send message</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-9"> 
+            <div class="panel">
+              <div class="panel-body">
+                <div class="row">    
+                  <div class="col-center col-md-10 col-sm-9">
+                    <%= yield %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <%# <%= render 'layouts/partials/footer' %1> %> 
+    
   </body>
 </html>

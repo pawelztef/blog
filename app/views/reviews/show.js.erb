@@ -1,0 +1,9 @@
+$('body').append('<%= j render("show") %>');
+$("#myBookModal").modal('show');
+$(".closeReviews").on("click", function() {
+  $("#myBookModal").modal('hide');
+});
+$(".all").on("click", function() {
+  $("#myBookModal").modal('hide');
+});
+

@@ -5,10 +5,11 @@ class PostsController < ApplicationController
 
   def index
     @book = Book.find_by_display true
-    if params[:tag]
-      @posts = Post.filter_by_tags(params[:tag]).page(params[:page]).per(Setting.post_per_page)
+    if params[:search].present?
+      @posts = Post.matching_title(params[:search]).page params[:page]
+      tags_filter unless !@posts.empty?
     else
-      @posts = Post.published.page(params[:page]).per(Setting.post_per_page)
+      tags_filter
     end
   end
 
@@ -16,8 +17,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @visitor_comment = visitor_comment 
   end
-  
-private
+
+  private
 
   def clear_sessions
     [:visitor_errors].each { |k| session.delete(k) }
@@ -39,6 +40,14 @@ private
       'application_front_show'
     else
       'application'
+    end
+  end
+
+  def tags_filter
+    if params[:tag]
+      @posts = Post.filter_by_tags(params[:tag]).page(params[:page]).per(Setting.post_per_page)
+    else
+      @posts = Post.published.page(params[:page]).per(Setting.post_per_page)
     end
   end
 end
