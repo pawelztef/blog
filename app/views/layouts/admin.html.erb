@@ -17,11 +17,15 @@
 
     <%= link_to 'Logout <i class="ico fa fa-sign-out" aria-hidden="true"></i>'.html_safe, logout_path %>
 
-
-    <%= render 'layouts/partials/admin_asside' %> 
-
-    <%= yield %>
-
-
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <%= render 'layouts/partials/admin_asside' %> 
+        </div>
+        <div class="col-md-10">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
