@@ -17,7 +17,6 @@
         <div class="alert"> <%= flash[:alert] %> </div>
       <% end %>
 
-      <%= link_to 'Logout <i class="ico fa fa-sign-out" aria-hidden="true"></i>'.html_safe, logout_path %>
 
       <div class="container-fluid display-table">
         <div class="row display-table-row">
@@ -26,7 +25,45 @@
             <%= render 'layouts/partials/admin_asside' %> 
           </div>
           <div class="box col-sm-10 display-table-cell">
-            <%= yield %>
+            <div class="row">
+              <header>
+                <div class="col-md-5">
+                  <input type="text" placeholder="Search for something...">
+                </div>
+                <div class="col-md-7">
+                  <ul>
+                    <li>Welcome to your administration area</li>
+                    <li> 
+                      <a href="#">
+                        <span class="fa fa-bell"></span>
+                        <span class="label label-warning">3</span>
+                      </a>
+                    </li>
+                    <li> 
+                      <a href="#">
+                        <span class="fa fa-envelope"></span>
+                        <span class="label label-message">3</span>
+                      </a>
+                    </li>
+                    <li>
+                      <%= link_to 'Logout <i class="ico fa fa-sign-out" aria-hidden="true"></i>'.html_safe, logout_path %>
+                    </li>
+                  </ul>
+                </div>
+              </header>
+            </div>
+
+            <div class="row">
+              <%= yield %>
+            </div>
+
+            <div class="row">
+              <footer>
+                <div class="pull-left"> <b>Copyright</b> &copy; 2016 </div>
+                <div class="pull-right"> Rise </div>
+              </footer>
+            </div>
+
           </div>
         </div>
       </div>
