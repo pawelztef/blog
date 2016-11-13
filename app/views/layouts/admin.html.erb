@@ -8,23 +8,26 @@
     <%= tinymce_assets %>
   </head>
   <body>
+    <div id="admin">
 
-    <% if flash[:notice] %>
-      <div class="notice"> <%= flash[:notice] %> </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="alert"> <%= flash[:alert] %> </div>
-    <% end %>
+      <% if flash[:notice] %>
+        <div class="notice"> <%= flash[:notice] %> </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert"> <%= flash[:alert] %> </div>
+      <% end %>
 
-    <%= link_to 'Logout <i class="ico fa fa-sign-out" aria-hidden="true"></i>'.html_safe, logout_path %>
+      <%= link_to 'Logout <i class="ico fa fa-sign-out" aria-hidden="true"></i>'.html_safe, logout_path %>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-2">
-          <%= render 'layouts/partials/admin_asside' %> 
-        </div>
-        <div class="col-md-10">
-          <%= yield %>
+      <div class="container-fluid display-table">
+        <div class="row display-table-row">
+          <div id="side-menu" class="col-sm-2 display-table-cell">
+            <h1>Navigation</h1>
+            <%= render 'layouts/partials/admin_asside' %> 
+          </div>
+          <div class="box col-sm-10 display-table-cell">
+            <%= yield %>
+          </div>
         </div>
       </div>
     </div>

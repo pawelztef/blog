@@ -1,3 +1,61 @@
 // Place all the styles related to the admin/dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$prim1: #7F0000;
+$prim2: #7F2626;
+$prim3: #CC0000;
+$prim4: #FF0000;
+$prim5: #FF4C4C;
+
+$mainBg: #f3f3f4;
+$sideBg: #2f4050;
+$fontC: #676a6c;
+html, body {
+  height: 100%;
+}
+#admin {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: $mainBg;
+  color:  $fontC;
+  height: 100%;
+
+
+  .box {
+    border: 1px dotted red;
+  }
+
+  #side-menu{
+    background-color: $sideBg;
+    padding: 0;
+    a {
+      color: $prim4;
+    }
+    h1 {
+      color: $prim4;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 25px;
+    }
+  }
+
+  .display-table {
+    display: table;
+    padding: 0;
+    height: 100%;
+  }
+  .display-table-row {
+    display: table-row;
+    height: 100%;
+  }
+  .display-table-cell {
+    display: table-cell;
+    float: none;
+    height: 100%;
+  }
+  .valign-top {
+    vertical-align: top;
+  }
+
+}
