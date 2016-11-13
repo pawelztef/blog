@@ -14,5 +14,3 @@ plugins:
   - textcolor
   - lists
   - advlist
-relative_urls:
-  - false
