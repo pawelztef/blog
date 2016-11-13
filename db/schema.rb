@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028094444) do
+ActiveRecord::Schema.define(version: 20161112210233) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -67,6 +67,18 @@ ActiveRecord::Schema.define(version: 20161028094444) do
   end
 
   add_index "notifications", ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable_type_and_notifiable_id", using: :btree
+
+  create_table "post_images", force: :cascade do |t|
+    t.string   "alt",               limit: 255, default: ""
+    t.string   "hint",              limit: 255, default: ""
+    t.string   "file_file_name",    limit: 255
+    t.string   "file_content_type", limit: 255
+    t.integer  "file_file_size",    limit: 4
+    t.datetime "file_updated_at"
+    t.integer  "post_id",           limit: 4
+  end
+
+  add_index "post_images", ["post_id"], name: "index_post_images_on_post_id", using: :btree
 
   create_table "post_tags", force: :cascade do |t|
     t.integer  "post_id",    limit: 4
@@ -126,6 +138,7 @@ ActiveRecord::Schema.define(version: 20161028094444) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "visitors"
   add_foreign_key "messages", "visitors"
+  add_foreign_key "post_images", "posts"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "moderators"

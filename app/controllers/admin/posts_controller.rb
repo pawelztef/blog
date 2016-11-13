@@ -1,4 +1,5 @@
 class Admin::PostsController < Admin::ApplicationController
+  respond_to :json
 
   def index
     if params[:search].present?
@@ -21,6 +22,25 @@ class Admin::PostsController < Admin::ApplicationController
       flash[:alert] = 'There was a problem while creating a post.'
       render 'new'
     end
+  end
+
+  def add_image
+    geometry = Paperclip::Geometry.from_file params[:file]
+
+    byebug
+
+    image    = Image.create
+    # create params.permit(:file, :alt, :hint)
+
+    byebug
+
+    render json: {
+      image: {
+        url:    image.file.url,
+        height: geometry.height.to_i,
+        width:  geometry.width.to_i
+      }
+    }, layout: false, content_type: "text/html"
   end
 
   def edit
@@ -47,6 +67,6 @@ class Admin::PostsController < Admin::ApplicationController
   end
   private
   def post_params
-    params.require(:post).permit(:id, :title, :content, :publish, tag_ids: [])
+    params.require(:post).permit(:id, :postimage, :title, :content, :publish, tag_ids: [])
   end
 end
