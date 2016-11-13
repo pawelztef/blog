@@ -13,6 +13,7 @@
  *= require bootstrap.min
  *= require_tree .
  *= require_self
+ *= require prism
  */
 @import "font-awesome-sprockets";
 @import "font-awesome";

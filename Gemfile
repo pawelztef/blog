@@ -38,6 +38,9 @@ gem 'tinymce-rails'
 # Tinymce text editor
 gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
 
+# prism for syntax highlight
+gem 'prism-rails'
+
 gem 'responders', '~> 2.0'
 
 # Awesome Fonts Sas
