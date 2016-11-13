@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  post '/tinymce_assets' => 'admin/post_images#create'
 
   root to: 'posts#index'
-  
+
   get '/login' => 'admin/sessions#new'
   get '/logout' => 'admin/sessions#destroy'
 
@@ -23,6 +24,6 @@ Rails.application.routes.draw do
   resources :messages, only: [:new, :create]
   resources :comments, only: [:create]
   resources :reviews, only: [:index, :show]
-  
+
   match 'dismiss_all_notifications', to: 'admin/notifications#delete_all', via: :delete
 end

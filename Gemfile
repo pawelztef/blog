@@ -32,6 +32,15 @@ gem 'kaminari', '~> 0.17.0'
 # Uploading files
 gem 'paperclip', '~> 4.3'
 
+# Tinymce text editor
+gem 'tinymce-rails'
+
+# Tinymce text editor
+gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
+
+
+gem 'responders', '~> 2.0'
+
 # Awesome Fonts Sas
 gem 'font-awesome-sass', '~> 4.6.2'
 
