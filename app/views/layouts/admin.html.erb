@@ -24,7 +24,7 @@
             <h1>Navigation</h1>
             <%= render 'layouts/partials/admin_asside' %> 
           </div>
-          <div class="box col-sm-10 display-table-cell">
+          <div class="col-sm-10 display-table-cell">
             <div class="row">
               <header id="nav-header" class="clearfix">
                 <div class="col-md-5">
@@ -33,13 +33,14 @@
                 <div class="col-md-7">
                   <ul class="pull-right">
                     <li id="welcome">Welcome to your administration area</li>
-                    <li> 
+                    <li class="fixed-width"> 
                       <a href="#">
                         <span class="fa fa-bell"></span>
                         <span class="label label-warning">3</span>
                       </a>
                     </li>
-                    <li> 
+                    <li class="fixed-width"> 
+                      <a href="#">
                       <a href="#">
                         <span class="fa fa-envelope"></span>
                         <span class="label label-success">3</span>
@@ -58,7 +59,7 @@
             </div>
 
             <div class="row">
-              <footer>
+              <footer id="admin-footer">
                 <div class="pull-left"> <b>Copyright</b> &copy; 2016 </div>
                 <div class="pull-right"> Rise </div>
               </footer>

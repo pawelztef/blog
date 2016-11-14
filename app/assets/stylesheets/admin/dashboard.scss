@@ -65,7 +65,6 @@ html, body {
   header#nav-header {
     background-color: #fff;
     border-bottom: 1px solid  $borderColorGray;
-
     #header-search-field{
       padding-top: 17px;
       vertical-align: center;
@@ -73,13 +72,20 @@ html, body {
       width: 300px;
       outline: none;
     }
-
     ul {
       margin: 0;
       padding: 0;
       list-style: none;
       color: $fontColor; 
-
+      .label {
+        position: absolute;
+        margin-top: -10px;
+        margin-left: -5px;
+      }
+      
+      .fixed-width {
+        width: 35px;
+      }
       li {
         float: left;
         margin-left: 15px;
@@ -94,10 +100,14 @@ html, body {
           text-decoration: none;
         }
       }
-
     }
-
   }
 
+  footer#admin-footer {
+    background-color: #fff;
+    padding: 35px;
+    font-size: 16px;
+    color: $fontColor;
+  }
 
 }
