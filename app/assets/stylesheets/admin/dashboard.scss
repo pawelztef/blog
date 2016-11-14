@@ -11,33 +11,23 @@ $prim5: #FF4C4C;
 
 $mainBg: #f3f3f4;
 $sideBg: #2f4050;
-$fontC: #676a6c;
+$fontColor: #676a6c;
+$borderColorGray: #e7eaec;
+
 html, body {
   height: 100%;
 }
+
 #admin {
+  margin-top: -50px;
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: $mainBg;
-  color:  $fontC;
+  color:  $fontColor;
   height: 100%;
 
 
   .box {
     border: 1px dotted red;
-  }
-
-  #side-menu{
-    background-color: $sideBg;
-    padding: 0;
-    a {
-      color: $prim4;
-    }
-    h1 {
-      color: $prim4;
-      text-align: center;
-      margin: 10px 0;
-      font-size: 25px;
-    }
   }
 
   .display-table {
@@ -57,5 +47,57 @@ html, body {
   .valign-top {
     vertical-align: top;
   }
+
+  #side-menu{
+    background-color: $sideBg;
+    padding: 0;
+    a {
+      color: $prim4;
+    }
+    h1 {
+      color: $prim4;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 25px;
+    }
+  }
+
+  header#nav-header {
+    background-color: #fff;
+    border-bottom: 1px solid  $borderColorGray;
+
+    #header-search-field{
+      padding-top: 17px;
+      vertical-align: center;
+      border: none;
+      width: 300px;
+      outline: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: $fontColor; 
+
+      li {
+        float: left;
+        margin-left: 15px;
+        padding: 17px 0px;
+        .fa {
+          color: $fontColor; 
+        }
+        &#welcome {
+          margin-right: 20px;
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+
+    }
+
+  }
+
 
 }
