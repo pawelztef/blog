@@ -17,10 +17,10 @@ $borderColorGray: #e7eaec;
 
 html, body {
   height: 100%;
+  padding: 0px !important;
 }
 
 #admin {
-  margin-top: -50px;
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: $mainBg;
   color:  $fontColor;
@@ -53,7 +53,7 @@ html, body {
     background-color: $sideBg;
     padding: 0;
     h1 {
-      color: $prim4;
+      color: $prim1;
       text-align: center;
       margin: 10px 0;
       font-size: 25px;
@@ -74,12 +74,15 @@ html, body {
             bottom: 0px;
           }
         }
+        .collapseable {
+          border-left: 4px solid $prim3;
+        }
         li{
           a {
             padding: 10px;
             padding-left: 50px;
             font-size: 12px;
-            
+            text-decoration: none;
           }
           span {
             margin-right: 20px;
@@ -155,10 +158,13 @@ html, body {
   }
 
   footer#admin-footer {
+    position: absolute;
+    width: 100%;
     background-color: #fff;
     padding: 35px;
     font-size: 16px;
     color: $fontColor;
+    bottom: 0;
   }
 
 }
