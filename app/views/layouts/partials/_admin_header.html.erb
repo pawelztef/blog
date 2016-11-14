@@ -1,25 +1,18 @@
 <header id="nav-header" class="clearfix">
   <div class="col-md-5">
-    <input type="text" id="header-search-field" placeholder="Search for something...">
+    <input type="text" id="header-search-field" class="hidden-sm hidden-xs" placeholder="Search for something...">
   </div>
   <div class="col-md-7">
     <ul class="pull-right">
-      <li id="welcome">Welcome to your administration area</li>
+      <li id="welcome" class="hidden-xs">Welcome to your administration area</li>
       <li class="fixed-width"> 
-	<a href="#">
-	  <span class="fa fa-bell"></span>
-	  <span class="label label-warning">3</span>
-	</a>
+        <%= link_to "<span class='fa fa-bell'></span><span class='label label-warning'>#{get_number_of_notifications}</span>".html_safe, admin_notifications_path %>
       </li>
       <li class="fixed-width"> 
-	<a href="#">
-	  <a href="#">
-	    <span class="fa fa-envelope"></span>
-	    <span class="label label-success">3</span>
-	  </a>
+        <%= link_to "<span class='fa fa-envelope'></span><span class='label label-success'>#{get_number_of_messages}</span>".html_safe, admin_messages_path %>
       </li>
       <li>
-	<%= link_to 'Logout <i class="ico fa fa-sign-out" aria-hidden="true"></i>'.html_safe, logout_path %>
+        <%= link_to 'Logout <i class="ico fa fa-sign-out" aria-hidden="true"></i>'.html_safe, logout_path %>
       </li>
     </ul>
   </div>

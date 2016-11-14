@@ -15,3 +15,9 @@ implement Books Reviews Page or implement modal popup
 contact page or modal popup
 style global errors to faint out after while
 add response to comments functionality
+
+
+
+
+
+

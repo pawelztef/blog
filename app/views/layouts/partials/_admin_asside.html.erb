@@ -1,10 +1,14 @@
+<div class="row">
+  <h1 class="hidden-sm hidden-xs"> <%= Setting.site_name %> </h1>
+  <p class="hidden-sm hidden-xs">administration</p>
+</div>
 <ul>
   <li class='link active'>
-    <%= link_to '<i class="fa fa-th" aria-hidden="true"></i> Dashboard'.html_safe, admin_dashboard_index_path %>
+    <%= link_to '<i class="fa fa-th" aria-hidden="true"></i> <p class="hidden-sm hidden-xs">Dashboard</p>'.html_safe, admin_dashboard_index_path %>
   </li>
-  
+
   <li class='link'>
-    <a href="#post" class="" data-toggle="collapse"><i class="fa fa-list"></i> Posts <span class="posts-label label label-success pull-right"><%= 20 %></span></a>
+    <a href="#post" class="" data-toggle="collapse"><i class="fa fa-list"></i><p class="hidden-sm hidden-xs">Posts</p><span class="posts-label label hidden-sm hidden-xs  label-success pull-right"><%= get_number_of_published_posts %></span></a>
     <ul id="post" class="collapse collapseable">
       <li> <%= link_to 'View All'.html_safe, admin_posts_path %> </li>
       <li> <%= link_to 'Create New'.html_safe, new_admin_post_path %> </li>
@@ -12,25 +16,25 @@
   </li>
 
   <li class='link'>
-    <a href="#comment" class="" aria-hidden="true" data-toggle="collapse"><i class="fa fa-pencil"></i> Comments </a>
+    <a href="#comment" class="" aria-hidden="true" data-toggle="collapse"><i class="fa fa-pencil"></i><p class="hidden-sm hidden-xs">Comments</p></a>
     <ul id="comment" class="collapse collapseable">
-      <li> <%= link_to "Approved", admin_comments_path(status: true) %> <span class="label label-success pull-right"> <%= 20 %> </span> </li>
-      <li> <%= link_to "Un-approved", admin_comments_path(status: false) %> <span class="label label-warning pull-right"> <%= 20 %> </span> </li>
+      <li> <%= link_to "Approved", admin_comments_path(status: true) %> <span class="label hidden-sm hidden-xs  label-success pull-right"> <%= get_number_of_comments true %> </span> </li>
+      <li> <%= link_to "Un-approved", admin_comments_path(status: false) %> <span class="label hidden-sm hidden-xs  label-warning pull-right"> <%= get_number_of_comments %> </span> </li>
     </ul>
   </li>
 
-  <li class='link'> <%= link_to '<i class="fa fa-user" aria-hidden="true"></i> Visitors'.html_safe, admin_visitors_path %> </li>
+  <li class='link'> <%= link_to '<i class="fa fa-user" aria-hidden="true"></i><p class="hidden-sm hidden-xs">Visitors</p>'.html_safe, admin_visitors_path %> </li>
 
-  <li> <%= link_to '<i class="fa fa-tags" aria-hidden="true"></i> Tags'.html_safe, new_admin_tag_path %> </li>
+  <li> <%= link_to '<i class="fa fa-tags" aria-hidden="true"></i> <p class="hidden-sm hidden-xs">Tags</p>'.html_safe, new_admin_tag_path %> </li>
 
-  <li class='link'> <%= link_to '<i class="fa fa-cogs" aria-hidden="true"></i> Settings'.html_safe, new_admin_setting_path %> </li>
-  
-  <li class='link'> <%= link_to '<i class="fa fa-book" aria-hidden="true"></i> Books Reviews'.html_safe, admin_books_path %> </li>
+  <li class='link'> <%= link_to '<i class="fa fa-cogs" aria-hidden="true"></i><p class="hidden-sm hidden-xs">Settings</p>'.html_safe, new_admin_setting_path %> </li>
+
+  <li class='link'> <%= link_to '<i class="fa fa-book" aria-hidden="true"></i><p class="hidden-sm hidden-xs">Books Reviews</p>'.html_safe, admin_books_path %> </li>
 </ul>
 
-<p>
-<%= link_to 'Moderators', admin_moderators_path%>
-<%= link_to 'Visitors', admin_visitors_path %>
-<%= link_to 'Messages', admin_messages_path %>
-<%= link_to 'Notifications', admin_notifications_path %>
-</p>
+<%# <p> %>
+<%# <%= link_to 'Moderators', admin_moderators_path %1> %>
+<%# <%= link_to 'Visitors', admin_visitors_path %1> %>
+<%# <%= link_to 'Messages', admin_messages_path %1> %>
+<%# <%= link_to 'Notifications', admin_notifications_path %1> %>
+<%# </p> %>

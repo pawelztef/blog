@@ -34,4 +34,20 @@ module ApplicationHelper
     return Setting.prevent_commenting?
   end
 
+  def get_number_of_notifications
+    Notification.count
+  end
+  
+  def get_number_of_messages
+    Message.unread.count
+  end
+
+  def get_number_of_published_posts
+    Post.published.count
+  end
+
+  def get_number_of_comments approved=false
+    approved ? Comment.count : Comment.approved.count
+  end
+
 end

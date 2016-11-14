@@ -3,6 +3,8 @@ class Message < ActiveRecord::Base
 
   validates :content, presence: true
   
+  scope :unread, lambda {where(status: false)}
+
   def self.matching_fullname_or_content params
     joins(:visitor).where("fullname LIKE ? OR content LIKE ?", "%#{params}%", "%#{params}%")
   end
