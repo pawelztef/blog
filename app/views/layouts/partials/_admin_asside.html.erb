@@ -1,14 +1,36 @@
+<ul>
+  <li class='link active'>
+    <%= link_to '<i class="fa fa-th" aria-hidden="true"></i> Dashboard'.html_safe, admin_dashboard_index_path %>
+  </li>
+  
+  <li class='link'>
+    <a href="#post" class="" data-toggle="collapse"><i class="fa fa-list"></i> Posts <span class="posts-label label label-success pull-right"><%= 20 %></span></a>
+    <ul id="post" class="collapse collapseable">
+      <li> <%= link_to 'View All'.html_safe, admin_posts_path %> </li>
+      <li> <%= link_to 'Create New'.html_safe, new_admin_post_path %> </li>
+    </ul>
+  </li>
+
+  <li class='link'>
+    <a href="#comment" class="" aria-hidden="true" data-toggle="collapse"><i class="fa fa-pencil"></i> Comments </a>
+    <ul id="comment" class="collapse collapseable">
+      <li> <%= link_to "Approved", admin_comments_path(status: true) %> <span class="label label-success pull-right"> <%= 20 %> </span> </li>
+      <li> <%= link_to "Un-approved", admin_comments_path(status: false) %> <span class="label label-warning pull-right"> <%= 20 %> </span> </li>
+    </ul>
+  </li>
+
+  <li class='link'> <%= link_to '<i class="fa fa-user" aria-hidden="true"></i> Visitors'.html_safe, admin_visitors_path %> </li>
+
+  <li> <%= link_to '<i class="fa fa-tags" aria-hidden="true"></i> Tags'.html_safe, new_admin_tag_path %> </li>
+
+  <li class='link'> <%= link_to '<i class="fa fa-cogs" aria-hidden="true"></i> Settings'.html_safe, new_admin_setting_path %> </li>
+  
+  <li class='link'> <%= link_to '<i class="fa fa-book" aria-hidden="true"></i> Books Reviews'.html_safe, admin_books_path %> </li>
+</ul>
 
 <p>
-<%= link_to 'Posts', admin_posts_path %>
 <%= link_to 'Moderators', admin_moderators_path%>
-<%= link_to 'Comments', admin_comments_path%>
-<%= link_to 'Tags', new_admin_tag_path %>
 <%= link_to 'Visitors', admin_visitors_path %>
 <%= link_to 'Messages', admin_messages_path %>
 <%= link_to 'Notifications', admin_notifications_path %>
-<%= link_to 'Dashboard', admin_dashboard_index_path %>
-<%= link_to 'Setting', new_admin_setting_path %>
-<%= link_to 'Books Reviews', admin_books_path %>
-
 </p>

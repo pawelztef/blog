@@ -11,6 +11,7 @@ $prim5: #FF4C4C;
 
 $mainBg: #f3f3f4;
 $sideBg: #2f4050;
+$sideBgHover: #293846;
 $fontColor: #676a6c;
 $borderColorGray: #e7eaec;
 
@@ -51,15 +52,65 @@ html, body {
   #side-menu{
     background-color: $sideBg;
     padding: 0;
-    a {
-      color: $prim4;
-    }
     h1 {
       color: $prim4;
       text-align: center;
       margin: 10px 0;
       font-size: 25px;
     }
+
+    ul {
+      list-style: none;
+      margin:0;
+      padding:0;
+      li {
+        .fa {
+          margin-right: 5px;
+        }
+        span {
+          position: relative;
+          bottom: 27px;
+          &.posts-label{
+            bottom: 0px;
+          }
+        }
+        li{
+          a {
+            padding: 10px;
+            padding-left: 50px;
+            font-size: 12px;
+            
+          }
+          span {
+            margin-right: 20px;
+          }
+        }
+      }
+      a {
+        color: $prim4;
+        padding: 12px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 13px;
+        display: block;
+        &:hover {
+          color: $prim5;
+          background-color:$sideBgHover;
+          display: block;
+        }
+      }
+      .active {
+        color: $prim5;
+        background-color:$sideBgHover;
+      }
+
+
+    }
+
+
+
+
+
   }
 
   header#nav-header {
@@ -82,7 +133,7 @@ html, body {
         margin-top: -10px;
         margin-left: -5px;
       }
-      
+
       .fixed-width {
         width: 35px;
       }
