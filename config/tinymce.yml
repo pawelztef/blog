@@ -1,6 +1,5 @@
 toolbar:
-  - styleselect | bold italic | undo redo | uploadimage | link | table | code | codesample | preview | visualblocks | charmap
-  - forecolor backcolor | bullist numlist |
+  - styleselect | bold italic | undo redo | uploadimage | link | table | code | codesample | preview | visualblocks | charmap |forecolor backcolor | bullist numlist 
 plugins:
   - uploadimage
   - link
