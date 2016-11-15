@@ -160,6 +160,22 @@ html, body {
         }
       }
     }
+
+    .navbar-default {
+      background-color: #fff;
+      padding: 0;
+      .fa-bars {
+        font-size: 15px;
+      }
+    }
+    .navbar-default .navbar-toggle {
+      border-color: $prim3;
+      background-color: $prim3;
+      border-radius: 3px;
+      padding: 7px 8px;
+    }
+
+    
   }
 
   footer#admin-footer {

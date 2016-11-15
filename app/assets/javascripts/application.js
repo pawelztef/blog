@@ -13,8 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require tinymce-jquery
-//= require turbolinks
 //= require bootstrap.min
 //= require_tree .
 
-
+$(function() {
+    console.log("load");
+  $('#burger').on('click', function() {
+    $('#side-menu').toggleClass('hidden-xs');
+    console.log("fuck");
+  });
+});
