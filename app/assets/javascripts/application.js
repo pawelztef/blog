@@ -11,12 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require tinymce-jquery
 //= require bootstrap.min
+//= require turbolinks
 //= require_tree .
 
-$(function() {
+$(document).on('turbolinks:load', function() {
     console.log("load");
   $('#burger').on('click', function() {
     $('#side-menu').toggleClass('hidden-xs');
