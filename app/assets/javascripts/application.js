@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require tinymce-jquery
+//= require chosen-jquery
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
@@ -24,4 +25,5 @@ $(document).on('turbolinks:load', function() {
     $('#side-menu').toggleClass('hidden-xs');
     console.log("fuck");
   });
+  $('.chosen-select').chosen();
 });
