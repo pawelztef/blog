@@ -31,9 +31,17 @@ $borderColorGray: #e7eaec;
     }
   }
 
-
-
-
-
+  .form-control {
+    border-radius: 1px;
+  }
+  .form-group {
+    margin: 20px 0;
+  }
+  input.checkbox {
+    position: relative;
+    display: inline;
+    top: 3px;
+    margin-left: 10px;
+  }
 
 }
