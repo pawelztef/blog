@@ -1,34 +1,15 @@
-// Place all the styles related to the admin/posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'admin_partials';
 
-$prim1: #7F0000;
-$prim2: #7F2626;
-$prim3: #CC0000;
-$prim4: #FF0000;
-$prim5: #FF4C4C;
-
-$mainBg: #f3f3f4;
-$sideBg: #2f4050;
-$sideBgHover: #293846;
-$fontColor: #676a6c;
-$borderColorGray: #e7eaec;
 
 #admin-post-content {
-  padding: 20px;
-  margin: 20px 20px 20px 20px;
-  background-color: #fff;
-  border-top: 3px $borderColorGray solid;
+  @extend .admin-content-container;
 
   header {
-    border-bottom: 1px $mainBg solid;
-    padding: 10px 0;
-    .page-title {
-      color: $prim3;
-      padding: 0 0 0 20px;
-      margin: 0;
-      font-size: 20px;
-    }
+    @extend .admin-content-header;
+  }
+
+  .chosen-container, .chosen-container-multi {
+    width: 100% !important;
   }
 
   .form-control {
@@ -44,4 +25,11 @@ $borderColorGray: #e7eaec;
     margin-left: 10px;
   }
 
+}
+#admin-all-posts-content {
+  @extend .admin-content-container;
+
+  header {
+    @extend .admin-content-header;
+  }
 }
