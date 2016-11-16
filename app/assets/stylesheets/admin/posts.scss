@@ -85,13 +85,28 @@
     padding-top: 10px;
   }
 
-  small {
-    color: #bbb;
-  }
 
   .pagination {
     @extend .pagination-settings;
   }
-  
+
+  .article-title {
+    small {
+      color: #bbb;
+    }
+    @media(max-width: 991px) {
+      padding-left: 30px;
+    }
+  }
+
+  .article-actions {
+    @media(min-width: 767px) {
+      float: right;
+      text-align: center;
+    }
+    @media(max-width: 767px) {
+      padding-left: 30px;
+    }
+  }
 
 }
