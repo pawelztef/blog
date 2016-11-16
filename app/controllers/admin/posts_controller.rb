@@ -24,25 +24,6 @@ class Admin::PostsController < Admin::ApplicationController
     end
   end
 
-  def add_image
-    geometry = Paperclip::Geometry.from_file params[:file]
-
-    byebug
-
-    image    = Image.create
-    # create params.permit(:file, :alt, :hint)
-
-    byebug
-
-    render json: {
-      image: {
-        url:    image.file.url,
-        height: geometry.height.to_i,
-        width:  geometry.width.to_i
-      }
-    }, layout: false, content_type: "text/html"
-  end
-
   def edit
     @post = Post.find params[:id]
   end

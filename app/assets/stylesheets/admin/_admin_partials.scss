@@ -30,3 +30,30 @@ $borderColorGray: #e7eaec;
     font-size: 20px;
   }
 }
+
+.search-field-styles {
+  height: 31px;
+  border: 1px $borderColorGray solid;
+}
+.search-btn {
+  height: 31px;
+  border: 1px $borderColorGray solid;
+}
+
+.pagination-settings {
+  font-size: 1.1em;
+  letter-spacing: -0.07em;
+  font-family: courier,'new courier';
+  span.page.current {
+    color: $prim5;
+  }
+  .first, .last, .next, .prev, .page {
+    a {
+      color: $prim3;
+      &:hover {
+        color: #7F0000;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+}

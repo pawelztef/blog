@@ -26,7 +26,7 @@ module ApplicationHelper
         link_to "Books", reviews_path 
       end
     else
-        link_to "Posts", posts_path 
+      link_to "Posts", posts_path 
     end
   end
 
@@ -37,7 +37,7 @@ module ApplicationHelper
   def get_number_of_notifications
     Notification.count
   end
-  
+
   def get_number_of_messages
     Message.unread.count
   end
