@@ -8,6 +8,14 @@ module ApplicationHelper
     end
   end
 
+  def comments_approving_links_converter parameters, comment
+    if parameters[:status] == 'true' 
+      link_to "<span class='fa fa-thumbs-o-down'></span> Un-approve".html_safe, admin_comment_path(comment, status: false), method: :put, class: 'btn btn-xs btn-default'
+    else 
+      link_to "<span class='fa fa-thumbs-o-up'></span> Approve".html_safe, admin_comment_path(comment, status: true), method: :put, class: 'btn btn-xs btn-defualt'
+    end 
+  end
+
   def time_ago time
     "#{time_ago_in_words(time)} ago"
   end

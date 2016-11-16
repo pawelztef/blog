@@ -1,19 +1,56 @@
-<h1>Comments</h1>
-
-<p> <%= render 'search', route: admin_comments_path %> </p>
-
-<p> <%= link_to "Approved", admin_comments_path(status: true) %> 
-<%= link_to "Un-approved", admin_comments_path(status: false) %> </p>
+<%# <p> <%= link_to "Approved", admin_comments_path(status: true) %1> %> 
+<%# <%= link_to "Un-approved", admin_comments_path(status: false) %1> </p> %>
 
 
-<% @comments.each do |com| %>
-  <p><b> <%= com.visitor.fullname %> </b> posted message on <b> <%= com.post.title %> </b> </p> 
-  <p> <%= com.message %> </p>
-  <p> <%= link_to "Delete", admin_comment_path(com), method: :delete, data: {confirm: "Are you Sure"} %> 
-      <%= if params[:status] == 'true'
-        link_to "Un-approve", admin_comment_path(com, status: false), method: :put 
-      else 
-        link_to "Approve", admin_comment_path(com, status: true), method: :put 
-      end %> </p> <hr />
-<% end %> 
-<p> <%= paginate @comments %> </p>
+
+<div id="admin-all-comments-content">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Comments</h2>
+  </header>
+
+  <div class="content-inner">
+    <div class="form-wraper">
+
+      <div class="row search-row">
+        <div class="col-md-12">
+          <%= render 'search', route: admin_comments_path%>
+        </div>
+      </div>
+
+      <% @comments.each do |com| %>
+        <div class="row article-row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-9">
+                <b> <%= com.visitor.fullname %> </b> posted message on: <b> <%= truncate(com.post.title, length: 60, separator: '') %> </b><br />
+                <small> <%= com.created_at.strftime("%a %H:%M - %d/%m/%Y") %> </small>
+              </div>
+              <div class="col-md-3">
+                <div class="clearfix">
+                  <div class="pull-right"> <%= time_ago com.post.created_at %> </div>
+                </div>
+              </div>
+            </div>
+            <div class="well well-sm">
+              <%= com.message %> 
+            </div>
+            <div class="clearfix">
+              <div class="pull-right">
+                <%= comments_approving_links_converter params, com %>
+                <%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_comment_path(com), method: :delete, data: {confirm: "Are you Sure"}, class: "btn btn-xs btn-default" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+      <% end %> 
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <%= paginate @comments %> 
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

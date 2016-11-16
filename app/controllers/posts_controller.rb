@@ -1,3 +1,9 @@
+            if params[:status] == 'true' 
+              link_to "Un-approve", admin_comment_path(com, status: false), method: :put 
+            else 
+              link_to "Approve", admin_comment_path(com, status: true), method: :put
+            end 
+            %> 
 class PostsController < ApplicationController
   after_filter :clear_sessions, only: [:show]
 
