@@ -75,16 +75,21 @@
     }
   }
 
-  .article-row p {
-    font-size: 16px;
-    margin-bottom: 0px;
-    font-weight: 400;
+  .article-row {
+    p {
+      font-size: 16px;
+      margin-bottom: 0px;
+      font-weight: 400;
+    }
   }
 
   .status-padding {
     padding-top: 10px;
   }
 
+  hr {
+    padding: 0 12px;
+  }
 
   .pagination {
     @extend .pagination-settings;
@@ -103,10 +108,11 @@
     padding-top: 12px;
     @media(min-width: 767px) {
       float: right;
-      text-align: center;
+      text-align: right;
     }
     @media(max-width: 767px) {
       padding-left: 30px;
+      text-align: left;
     }
   }
 

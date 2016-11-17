@@ -1,9 +1,30 @@
-<h1>Visitors</h1>
+<div id="admin-all-visitors-content">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Visitors</h2>
+    <%= link_to "New Post", new_admin_post_path, class: 'btn btn-xs btn-default pull-right' %> 
+  </header>
+  <div class="content-inner">
 
-<% @visitors.each do |visitor| %>
-  <p> <%= visitor.fullname %> </p>
-  <p> <%= visitor.email %> </p>
-  <p> <%= time_ago(visitor.created_at) %> </p>
-  <p> <%= link_to 'Delete', admin_visitor_path(visitor), method: :delete, data: {confirm: "Are you sure?"} %> </p>
-  <hr />
-<% end %> 
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Fullname</th>
+          <th>Email</th>
+          <th class="hidden-xs">Created at</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @visitors.each do |visitor| %>
+          <tr>
+            <td class="visitor-name"><%= visitor.fullname %></td>
+            <td><%= visitor.email %></td>
+            <td class="hidden-xs"><%= time_ago(visitor.created_at) %></td>
+            <td> <%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_visitor_path(visitor), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs btn-default' %></td>
+          </tr>
+        <% end %> 
+      </tbody>
+    </table>
+
+  </div>
+</div>
