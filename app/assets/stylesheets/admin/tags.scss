@@ -1,3 +1,41 @@
-// Place all the styles related to the admin/tags controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'admin_partials';
+#admin-tags-container {
+  padding: 0 20px;
+  .admin-content-container {
+    @extend .admin-content-container;
+    h3 {
+      margin: 0px;
+      padding-left: 20px;
+      padding-top: 3px;
+      color: $prim3;
+    }
+    header {
+      @extend .admin-content-header;
+      margin-bottom: 20px;
+    }
+  }
+  .dashboard-left-cell {
+    padding-left: 0px;
+    padding-right: 0px;
+    .admin-content-container {
+      margin-bottom: 20px;
+    }
+  }
+  .dashboard-right-cell {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .btn-default {
+    color: $fontColor;
+    border: 1px #eee solid;
+    &:hover {
+      background: $mainBg;
+    }
+  }
+  .Active {
+    background-color:$prim3;
+    padding-left:16px;
+    padding-right:16px; 
+  }
+}
