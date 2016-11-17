@@ -3,6 +3,24 @@
 #admin-all-comments-content {
   @extend .admin-content-container;
 
+  .comments-row {
+    margin-bottom: 30px;
+  }
+  .comment-age {
+    font-size: 12px;
+  }
+  .comments-well {
+    margin-top: 10px;
+  }
+
+  .btn-default {
+    color: $fontColor;
+    border: 1px #eee solid;
+    &:hover {
+      background: $mainBg;
+    }
+  }
+
   header {
     @extend .admin-content-header;
   }
