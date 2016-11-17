@@ -1,28 +1,62 @@
 
 <%= form_for [:admin, @setting] do |f| %>
-<p>
-  <%= f.label :site_name %><br />
-  <%= f.text_field :site_name %> 
-</p>
-<p>
-  <%= f.label :site_phrase %><br />
-  <%= f.text_field :site_phrase %> 
-</p>
-<p>
-  <%= f.label :post_per_page %><br />
-  <%= f.number_field :post_per_page %>
-</p>
-<p>
-  <%= f.label :under_maintenance %><br />
-  <%= f.check_box :under_maintenance %>
-</p>
-<p>
-  <%= f.label :prevent_commenting, "Commenting" %><br />
-  <%= f.select :prevent_commenting, [['disabled', false], ['active', true]] %>
-</p>
-<p>
-  <%= f.label :tag_visibility %><br />
-  <%= f.select :tag_visibility, [['active', true], ['disabled', false]] %>
-</p>
-<p> <%= f.submit %> </p>
+  <div class="settings-row">
+    <h3>
+      <%= f.label :site_name %><br />
+    </h3>
+    <p>Permanently shown on navigation</p>
+    <div class="form-goup">
+      <%= f.text_field :site_name, class: "form-control" %> 
+    </div>
+  </div>
+  <div class="settings-row">
+    <h3>
+      <%= f.label :site_phrase %><br />
+    </h3>
+    <p>Site motto</p>
+    <div class="form-goup">
+      <%= f.text_field :site_phrase, class: "form-control" %> 
+    </div>
+  </div>
+  <div class="settings-row">
+    <h3>
+      <%= f.label :post_per_page %><br />
+    </h3>
+    <p>Control total number of posts on index page</p>
+    <div class="form-goup">
+      <%= f.number_field :post_per_page, class: "form-control" %>
+    </div>
+  </div>
+  <div class="settings-row">
+    <h3>
+      <%= f.label :under_maintenance %><br />
+    </h3>
+    <p>Redirect to maintenance page</p>
+    <div class="form-goup">
+      <%= f.check_box :under_maintenance %>
+    </div>
+  </div>
+  <div class="settings-row">
+    <h3>
+      <%= f.label :prevent_commenting, "Commenting" %><br />
+    </h3>
+    <p>Prevents visitors from commenting</p>
+    <div class="form-goup">
+      <%= f.select :prevent_commenting, [['disabled', false], ['active', true]], class: "form-control" %>
+    </div>
+  </div>
+  <div class="settings-row">
+    <h3>
+      <%= f.label :tag_visibility %><br />
+    </h3>
+    <p>Control tag visibility on post</p>
+    <div class="form-goup">
+      <%= f.select :tag_visibility, [['active', true], ['disabled', false]], class: "form-control" %>
+    </div>
+  </div>
+  <div class="settings-row">
+    <div class="form-goup">
+      <%= f.submit class: "btn btn-block btn-default" %> 
+    </div>
+  </div>
 <% end %> 

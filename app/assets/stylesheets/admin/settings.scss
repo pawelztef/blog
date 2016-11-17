@@ -1,3 +1,22 @@
-// Place all the styles related to the admin/settings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'admin_partials';
+
+#admin-settings-content {
+  @extend .admin-content-container;
+
+  header {
+    @extend .admin-content-header;
+    margin-bottom: 20px;
+  }
+  .btn-default {
+    color: $fontColor;
+    border: 1px #eee solid;
+    &:hover {
+      background: $mainBg;
+    }
+  }
+  .visitor-name {
+    color: $prim3;
+    font-weight: bold;
+  }
+
+}
