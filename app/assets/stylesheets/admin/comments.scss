@@ -21,6 +21,11 @@
     }
   }
 
+  b.commenter {
+    font-size: 15px;
+    color: $prim3;
+  }
+
   header {
     @extend .admin-content-header;
   }

@@ -1,28 +1,20 @@
-<%# <p> <%= link_to "Approved", admin_comments_path(status: true) %1> %> 
-<%# <%= link_to "Un-approved", admin_comments_path(status: false) %1> </p> %>
-
-
-
 <div id="admin-all-comments-content">
   <header class='clearfix'>
     <h2 class="page-title pull-left">Comments</h2>
   </header>
-
   <div class="content-inner">
     <div class="form-wraper">
-
       <div class="row search-row">
         <div class="col-md-12">
           <%= render 'search', route: admin_comments_path%>
         </div>
       </div>
-
       <% @comments.each do |com| %>
         <div class="row comments-row">
           <div class="col-md-12">
             <div class="row">
               <div class="col-xs-9 col-sm-10 col-md-9">
-                <b> <%= com.visitor.fullname %> </b> posted message on: <b> <%= truncate(com.post.title, length: 60, separator: '') %> </b><br />
+                <b class="commenter"> <%= com.visitor.fullname %> </b> posted message on: <b> <%= truncate(com.post.title, length: 60, separator: '') %> </b><br />
                 <small> <%= com.created_at.strftime("%a %H:%M - %d/%m/%Y") %> </small>
               </div>
               <div class="col-xs-3 col-sm-2 col-md-3">
@@ -44,13 +36,11 @@
         </div>
         <hr />
       <% end %> 
-
       <div class="row">
         <div class="col-md-12 text-center">
           <%= paginate @comments %> 
         </div>
       </div>
-
     </div>
   </div>
 </div>
