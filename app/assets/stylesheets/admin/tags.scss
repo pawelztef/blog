@@ -2,7 +2,6 @@
 #admin-tags-container {
   padding: 0 20px;
   .admin-content-container {
-    @extend .admin-content-container;
     h3 {
       margin: 0px;
       padding-left: 20px;
@@ -18,12 +17,25 @@
     padding-left: 0px;
     padding-right: 0px;
     .admin-content-container {
-      margin-bottom: 20px;
+      @extend .admin-content-container;
+      margin-right: 10px;
+      @media(max-width: 991px) {
+        margin-right: 20px;
+      }
+
     }
   }
   .dashboard-right-cell {
     padding-left: 0px;
     padding-right: 0px;
+    .admin-content-container {
+      @extend .admin-content-container;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      @media(max-width: 991px) {
+        margin-left: 20px;
+      }
+    }
   }
 
   .btn-default {

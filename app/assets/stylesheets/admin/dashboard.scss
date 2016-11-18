@@ -9,7 +9,7 @@ html, body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: $mainBg;
   color:  $fontColor;
-  height: 100%;
+  // height: 100%;
 
 
   .box {
@@ -49,6 +49,7 @@ html, body {
       width: 100%;
       text-align: center;
       margin-top: -10px;
+      margin-bottom: 15px;
     }
 
     ul {
@@ -160,7 +161,7 @@ html, body {
       padding: 7px 8px;
     }
 
-    
+
   }
 
   footer#admin-footer {
@@ -174,3 +175,84 @@ html, body {
   }
 
 }
+
+#admin-dashboard-content {
+  .dashboard-left-cell {
+    padding-right: 5px;
+    @media(max-width: 991px) {
+      padding-right: 15px;
+    }
+    .admin-content-container {
+      margin-bottom: 10px;
+      @extend .admin-content-container;
+      margin-right: 5px;
+      @media(max-width: 991px) {
+        margin-right: 20px;
+      }
+    }
+  }
+  .dashboard-right-cell {
+    padding-left: 5px;
+    @media(max-width: 991px) {
+      padding-left: 15px
+    }
+    .admin-content-container {
+      @extend .admin-content-container;
+      margin-bottom: 10px;
+      margin-left: 5px;
+      @media(max-width: 991px) {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  header {
+    @extend .admin-content-header;
+    margin-bottom: 20px;
+    h5 {
+      margin: 0px;
+      padding-left: 20px;
+      padding-top: 3px;
+      color: $prim3;
+    }
+  }
+
+  .text-link {
+    color: $prim3;
+    &:hover {
+      color: $prim2;
+    }
+  }
+
+  .btn-default {
+    color: $fontColor;
+    border: 1px #ccc solid;
+    &:hover {
+      background: $mainBg;
+    }
+  }
+
+  .comment-head-dash {
+    margin-bottom: 6px;
+    .commenter-name-dash {
+      font-weight: bold;
+      color: $prim2;
+      font-size: 13px;
+    }
+    .days-dash {
+      font-size: 13px;
+    }
+  }
+  small {
+    color: #999
+  }
+  .comment-dash {
+    margin-bottom: 5px;
+  }
+  table {
+    .col-md-1 {
+      width: 10px;
+    }
+  }
+}
+
