@@ -1,48 +1,60 @@
-<h1>Books</h1>
-<p>
-<h3>Currently Displayed: <%= build_currently_displayed_link @displayed %> </h3> 
-</p>
-<%= link_to 'Create Review', new_admin_book_path  %> 
-<div class="container">
-  <% @books.each do |book| %>
-    <div class="jumbotron">
-      <div class="row">
-        <div class="container">
-          <div class="col-md-3 col-md-offset-1">
-            <p> <%= image_tag book.cover.url(:medium) %> </p>
+<div id="admin-all-books-content">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Reviews</h2>
+    <%= link_to 'Create Review', new_admin_book_path, class: 'btn btn-xs btn-default pull-right'  %> 
+  </header>
+  <div class="content-inner">
+    <div class="col-md-12">
+      <div  class="current-book">
+        <p> Currently displayed</p>
+        <%# <h3><%= build_currently_displayed_link @displayed %1></h3> %> 
+        <h3><%= @displayed.title %></h3> 
+      </div >
+    </div>
+    <div class="form-wraper">
+      <% @books.each do |book| %>
+        <div class="row review-row">
+          <div class="col-xs-4 col-sm-3">
+            <%= image_tag book.cover.url(:medium), class: 'img-responsive cover' %>
           </div>
-          <div class="col-md-8">
-            <p> <%= book.title %> </p>
-            <p> <%= book.auth_name %> </p>
-            <p> <%= book.published %> </p>
-            <p> <%= book.isbn %> </p>
-            <p> <%= book.review.content %> </p>
-            <p> <%= link_to "Edit", edit_admin_book_path(book) %> | 
-            <%= link_to "Delete", admin_book_path(book), method: :delete, data: {confirm: "Are you sure?"} %></p>
+          <div class="col-xs-8 col-sm-9 book-details">
+            <p class="book-title"> <%= book.title %> </p>
+            <p class="book-auth"> <%= book.auth_name %> </p>
+            <p class="book-details"> <%= book.published %> </p>
+            <p class="book-details"> ISBN: <%= book.isbn %> </p>
+            <p class="book-content"> <%= truncate(book.review.content, length: 200, separator: '') %> </p>
+            <div class="clearfix">
+              <div class="reviews-actions">
+                <p> <%= link_to "<span class='fa fa-folder-open-o'></span> Open".html_safe, admin_book_path(book), class: 'btn btn-xs btn-default' %> 
+              <%= link_to "<span class='fa fa-pencil-square-o'></span> Edit".html_safe, edit_admin_book_path(book), class: 'btn btn-xs btn-default' %>
+              <%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_book_path(book), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %> </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        <hr />
+      <% end %> 
     </div>
-  <% end %> 
+  </div>
 </div>
 <%# <div class="modal fade" id="MyModal" title="My Modal"> %>
-<%#   <div class="modal-dialog modal-sm" role="document"> %>
-<%#     <div class="modal-content"> %>
-<%#       <div class="modal-header"> %>
-<%# 	<button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button> %>
-<%# 	<h3 id="myModalLabel">Modal header</h3> %>
-<%#       </div> %>
-<%#       <div class="modal-body"> %>
-<%# 	<p> <%= @displayed.title %1> </p> %>
-<%# 	<p> <%= @displayed.auth_name %1> </p> %>
-<%# 	<p> <%= @displayed.published %1> </p> %>
-<%# 	<p> <%= @displayed.isbn %1> </p> %>
-<%#       </div> %>
-<%#       <div class="modal-footer"> %>
-<%# 	<button aria-hidden="true" class="btn" data-dismiss="modal">Close</button> %>
-<%#       </div> %>
-<%#     </div> %>
-<%#   </div> %>
-<%# </div> %>
+  <%#   <div class="modal-dialog modal-sm" role="document"> %>
+    <%#     <div class="modal-content"> %>
+      <%#       <div class="modal-header"> %>
+        <%# 	<button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button> %>
+        <%# 	<h3 id="myModalLabel">Modal header</h3> %>
+        <%#       </div> %>
+      <%#       <div class="modal-body"> %>
+        <%# 	<p> <%= @displayed.title %1> </p> %>
+        <%# 	<p> <%= @displayed.auth_name %1> </p> %>
+        <%# 	<p> <%= @displayed.published %1> </p> %>
+        <%# 	<p> <%= @displayed.isbn %1> </p> %>
+        <%#       </div> %>
+      <%#       <div class="modal-footer"> %>
+        <%# 	<button aria-hidden="true" class="btn" data-dismiss="modal">Close</button> %>
+        <%#       </div> %>
+      <%#     </div> %>
+    <%#   </div> %>
+  <%# </div> %>
 
 

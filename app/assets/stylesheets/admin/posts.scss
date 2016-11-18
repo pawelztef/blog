@@ -3,6 +3,7 @@
 
 #admin-post-content {
   @extend .admin-content-container;
+  height: 100%;
 
   header {
     @extend .admin-content-header;
