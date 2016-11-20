@@ -25,39 +25,6 @@
           </div>
         <% end %> 
       </div>
-      <%# <div class="admin-content-container"> %>
-        <%#   <header class="clearfix"> %>
-          <%#     <h2 class="pull-left page-title">Articles</h2> %>
-          <%#     <%= link_to 'Areate new post', new_admin_post_path, class: "btn btn-xs btn-default pull-right"  %1> <br /> %>
-          <%#   </header> %>
-        <%#   <table class="table table-striped table-responsive table-hover"> %>
-          <%#     <thead> %>
-            <%#       <tr> %>
-              <%#         <th>Title</th> %>
-              <%#         <th>Replies</th> %>
-              <%#         <th >Date</th> %>
-              <%#         <th>Actions</th> %>
-              <%#       </tr> %>
-            <%#     </thead> %>
-          <%#     <tbody> %>
-            <%#       <% @posts.each do |post| %1> %>
-            <%#         <tr> %>
-              <%#           <td> <%= truncate(post.title, length: 15, separator: '') %1> </td> %>
-              <%#           <td> <%= post.comments.count %1> </td> %>
-              <%#           <td > <%= time_ago post.created_at %1> </td> %>
-              <%#           <td > %>
-                <%#             <%= link_to "<span class='fa fa-folder-open-o'></span>".html_safe, admin_post_path(post), class: 'btn btn-xs btn-default' %1> %> 
-                <%#             <%= link_to "<span class='fa fa-pencil-square-o'></span>".html_safe, edit_admin_post_path(post), class: 'btn btn-xs btn-default' %1> %>
-                <%#             <%= link_to "<span class='fa fa-trash-o'></span>".html_safe, admin_post_path(post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %1> %> 
-                <%#           </td> %>
-              <%#         </tr> %>
-            <%#       <% end %1> %> 
-          <%#     </tbody> %>
-        <%#   </table> %>
-      <%#   <div class="clearfix link-container"> %>
-        <%#     <%= link_to 'View all posts', admin_posts_path, class: "pull-right text-link"  %1> %> 
-        <%#   </div> %>
-      <%# </div> %>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5 dashboard-right-cell">
       <div class="admin-content-container">
@@ -101,28 +68,6 @@
             <div class="col-xs-1"><%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_visitor_path(visitor), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs btn-default' %></div>
           </div>
         <% end %> 
-        <%# <table class="table table-responsive table-striped table-hover"> %>
-          <%#   <thead> %>
-            <%#     <tr> %>
-              <%#       <th class="hidden-xs">#</th> %>
-              <%#       <th>Full Name</th> %>
-              <%#       <th>Email</th> %>
-              <%#       <th class="hidden-xs">Created</th> %>
-              <%#       <th>Actions</th> %>
-              <%#     </tr> %>
-            <%#   </thead> %>
-          <%#   <tbody> %>
-            <%#     <% @visitors.each_with_index do |visitor, index|  %1> %>
-            <%#       <tr> %>
-              <%#         <td class="hidden-xs"> <%= index + 1 %1> </td> %>
-              <%#         <td> <%= visitor.fullname %1> </td> %>
-              <%#         <td> <%= visitor.email %1> </td> %>
-              <%#         <td class="hidden-xs"> <%= time_ago visitor.created_at %1></td> %>
-              <%#         <td> <%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_visitor_path(visitor), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs btn-default' %1></td> %>
-              <%#       </tr> %>
-            <%#     <% end %1> %> 
-          <%#   </tbody> %>
-        <%# </table> %>
       </div>
     </div>
   </div>
