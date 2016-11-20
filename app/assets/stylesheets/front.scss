@@ -15,6 +15,7 @@ body {
   padding-top:50px;
   color:#646464;
   background-color:#efefef;
+  overflow-x: hidden;
   .notice {
     // background-color: white;
     // padding: 6px;
@@ -27,9 +28,16 @@ body {
   }
 }
 
+.row-index {
+  margin-top: 50px;
+}
+
 h1,h2,h3,.highlight,.navbar a,#masthead h4 {
   font-family:'Oswald',arial narrow,sans-serif;
   // font-family: 'Droid Sans Mono', monospace;
+}
+h3 {
+  // font-size: 1.3em;
 }
 
 footer {
@@ -54,7 +62,7 @@ footer {
   box-shadow: 2px 2px 3px rgba(0,0,0,0.25);
 }
 #masthead {
-  min-height:360px;
+  min-height:280px;
   background-color: $prim5;
   color:#aaaacc;
   background: url('header.jpg') no-repeat;
@@ -140,6 +148,7 @@ a,a:hover {
 }
 
 #front-index { 
+  margin-top: 60px;
 
   .col-center {
     float: none;

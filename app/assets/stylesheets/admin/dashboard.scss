@@ -1,5 +1,6 @@
 @import 'admin_partials';
 
+
 html, body {
   height: 100%;
   padding: 0px !important;
@@ -11,6 +12,9 @@ html, body {
   color:  $fontColor;
   height: 100%;
 
+  .fa-i-cursor {
+    padding: 0 3px;
+  }
 
   .box {
     border: 1px dotted red;
@@ -177,6 +181,10 @@ html, body {
 }
 
 #admin-dashboard-content {
+  .admin-content-container {
+    @extend .admin-content-container;
+    padding: 25px;
+  }
   .dashboard-left-cell {
     padding-right: 5px;
     @media(max-width: 991px) {
@@ -184,7 +192,6 @@ html, body {
     }
     .admin-content-container {
       margin-bottom: 10px;
-      @extend .admin-content-container;
       margin-right: 5px;
       @media(max-width: 991px) {
         margin-right: 20px;
@@ -197,7 +204,6 @@ html, body {
       padding-left: 15px
     }
     .admin-content-container {
-      @extend .admin-content-container;
       margin-bottom: 10px;
       margin-left: 5px;
       @media(max-width: 991px) {
@@ -234,6 +240,7 @@ html, body {
 
   .comment-head-dash {
     margin-bottom: 6px;
+    margin-top: 26px;
     .commenter-name-dash {
       font-weight: bold;
       color: $prim2;
@@ -248,11 +255,6 @@ html, body {
   }
   .comment-dash {
     margin-bottom: 5px;
-  }
-  table {
-    .col-md-1 {
-      width: 10px;
-    }
   }
 }
 
