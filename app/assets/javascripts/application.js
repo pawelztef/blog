@@ -20,10 +20,28 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-    console.log("load");
   $('#burger').on('click', function() {
     $('#side-menu').toggleClass('hidden-xs');
-    console.log("fuck");
   });
   $('.chosen-select').chosen();
+
+
+  $(window).on('resize load', function() {
+    if($(window).width()>992) {
+    // console.log($(window).width());
+      if ($('.left').height() >= $('.right').height()) {
+        $('.righT').height($('.left').height());
+        $('.lefT').height($('.left').height());
+      } else {
+        $('.lefT').height($('.right').height());
+        $('.righT').height($('.right').height());
+      }
+    } else {
+        $('.lefT').height($('.left').height());
+        $('.righT').height($('.right').height());
+      console.log($('.lefT'));
+    }
+  });
+
 });
+

@@ -10,7 +10,14 @@ $sideBgHover: #293846;
 $fontColor: #676a6c;
 $borderColorGray: #e7eaec;
 
+$small-phone: "only screen and (max-width: 320px)";
+$small-tablets: "only screen and (min-width: 321px) and (max-width: 767px)";
+$medium-desktops: "only screen and (min-width: 768px) and (max-width: 991px)";
+$large-desktops: "only screen and (min-width: 992px)";
 
+.container {
+  width: 100%
+}
 
 .admin-content-container {
   height: 100%;

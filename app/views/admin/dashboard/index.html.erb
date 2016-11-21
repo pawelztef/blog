@@ -1,35 +1,42 @@
 <div id="admin-dashboard-content">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-7 dashboard-left-cell">
-      <div class="admin-content-container">
+  <div class="col-xs-12 col-sm-12 col-md-7 dashboard-left-cell">
+    <div class="admin-content-container lefT">
+      <div class="left">
         <header class="clearfix">
           <h2 class="pull-left page-title">Articles</h2>
-          <%= link_to 'Areate new post', new_admin_post_path, class: "btn btn-xs btn-default pull-right"  %> <br />
+          <%= link_to 'View all', admin_posts_path, class: 'link btn btn-xs btn-default pull-right' %> 
+          <%= link_to 'Create new post', new_admin_post_path, class: "link btn btn-xs btn-default pull-right"  %> 
         </header>
-        <div class="row">
-          <div class="col-xs-6"> <p>Title</p></div>
-          <div class="col-xs-1"> <p>Replies</p></div>
-          <div class="col-xs-2"> <p>Date</p></div>
-          <div class="col-xs-3"> <p>Actions</p></div>
+        <div class="row articles-row">
+          <div class="col-sm-1 hidden-xs"> <p>#</p></div>
+          <div class="col-xs-8 col-sm-4 col-md-4 col-lg-5"> <p>Title</p></div>
+          <div class="col-sm-2 col-md-2 col-lg-2 replies hidden-xs"> <p>Replies</p></div>
+          <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs"> <p>Date</p></div>
+          <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2 actions text-center"> <p>Actions</p></div>
         </div>
-        <% @posts.each do |post| %>
-          <div class="row">
-            <div class="col-xs-6"><%= truncate(post.title, length: 15, separator: '') %></div>
-            <div class="col-xs-1"><%= post.comments.count %></div>
-            <div class="col-xs-2"><%= time_ago post.created_at %></div>
-            <div class="col-xs-3">
-              <%= link_to "<span class='fa fa-folder-open-o'></span>".html_safe, admin_post_path(post), class: 'btn btn-xs btn-default' %>
+        <% @posts.each_with_index do |post, index| %>
+          <div class="row articles-row">
+            <div class="col-sm-1 hidden-xs"> <%= index + 1 %> </div>
+            <div class="col-xs-8 col-sm-4 col-md-4 col-lg-5"><%= truncate(post.title, length: 30, separator: '') %></div>
+            <div class="col-sm-2 col-md-2 col-lg-2 replies hidden-xs"><%= post.comments.count %></div>
+            <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs"><%= time_ago_in_words post.created_at %></div>
+            <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2 actions">
+              <%# <%= link_to "<span class='fa fa-folder-open-o'></span>".html_safe, admin_post_path(post), class: 'btn btn-xs btn-default' %1> %>
               <%= link_to "<span class='fa fa-pencil-square-o'></span>".html_safe, edit_admin_post_path(post), class: 'btn btn-xs btn-default' %>
               <%= link_to "<span class='fa fa-trash-o'></span>".html_safe, admin_post_path(post), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %>
             </div>
           </div>
+          <hr />
         <% end %> 
       </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-5 dashboard-right-cell">
-      <div class="admin-content-container">
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-5 dashboard-right-cell">
+    <div class="admin-content-container righT">
+      <div class="right">
         <header class="clearfix">
           <h2 class="pull-left page-title">Comments</h2>
+          <%= link_to 'View all', admin_comments_path, class: 'link btn btn-xs btn-default pull-right' %> 
         </header>
         <% @comments.each do |comment| %>
           <div class="comment-head-dash clearfix">
@@ -40,34 +47,34 @@
           <small> <%= comment.created_at.strftime("%a %H:%M - %d/%m/%Y") %> </small>
           <hr />
         <% end %> 
-        <div class="cleafix">
-          <%= link_to 'View all comments', admin_comments_path, class: "pull-right text-link" %> 
-        </div>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="admin-content-container clearfix">
-        <header class="clearfix">
-          <h2 class="pull-left page-title">Visitors</h2>
-        </header>
-        <div class="row">
-          <div class="col-xs-1"> <p>#</p></div>
-          <div class="col-xs-4"> <p>Full name</p></div>
-          <div class="col-xs-4"> <p>Email</p></div>
-          <div class="col-xs-2"> <p>Created</p></div>
-          <div class="col-xs-1"> <p>Actions</p></div>
-        </div>
-        <% @visitors.each_with_index do |visitor, index|  %>
-          <div class="row">
-            <div class="col-xs-1"><%= index + 1 %></div>
-            <div class="col-xs-4"><%= visitor.fullname %></div>
-            <div class="col-xs-4"><%= visitor.email %></div>
-            <div class="col-xs-2"><%= time_ago visitor.created_at %></div>
-            <div class="col-xs-1"><%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_visitor_path(visitor), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs btn-default' %></div>
+  <div class="container">
+    <div class="row"> 
+      <div class="col-xs-12">
+        <div class="admin-content-container visitors">
+          <header class="clearfix">
+            <h2 class="pull-left page-title">Visitors</h2>
+          </header>
+          <div class="row visitors-row">
+            <div class="col-sm-1 hidden-xs"> <p>#</p></div>
+            <div class="col-lg-4 col-sm-4 col-md-3 hidden-xs"> <p>Full name</p></div>
+            <div class="col-xs-10 col-sm-5 col-md-5 col-lg-4"> <p>Email</p></div>
+            <div class="col-md-2 hidden-xs hidden-sm"> <p>Created</p></div>
+            <div class="col-xs-2 col-sm-2 col-md-1 text-right"> <p>Actions</p></div>
           </div>
-        <% end %> 
+          <% @visitors.each_with_index do |visitor, index|  %>
+            <div class="row visitors-row">
+              <div class="col-sm-1 hidden-xs"><%= index + 1 %></div>
+              <div class="col-lg-4 col-sm-4 col-md-3 hidden-xs"><%= visitor.fullname %></div>
+              <div class="col-xs-10 col-sm-5 col-md-5 col-lg-4"><%= visitor.email %></div>
+              <div class="col-sm-2 col-md-2 hidden-sm hidden-xs"><%= time_ago visitor.created_at %></div>
+              <div class="col-xs-2 col-sm-2 col-md-1 text-right"><%= link_to "<span class='fa fa-trash-o'></span>".html_safe, admin_visitor_path(visitor), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs btn-default' %></div>
+            </div>
+            <hr />
+          <% end %> 
+        </div>
       </div>
     </div>
   </div>

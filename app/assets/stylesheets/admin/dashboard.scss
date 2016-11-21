@@ -11,6 +11,7 @@ html, body {
   background-color: $mainBg;
   color:  $fontColor;
   height: 100%;
+  overflow-x: auto;
 
   .fa-i-cursor {
     padding: 0 3px;
@@ -181,15 +182,47 @@ html, body {
 }
 
 #admin-dashboard-content {
-  .admin-content-container {
-    @extend .admin-content-container;
-    padding: 25px;
+  .actions {
+    text-align: right;
   }
+
+  .articles-row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .visitors {
+    margin: 15px 20px 120px 20px;
+    .actions {
+      text-align: right;
+    }
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .link {
+    margin-left: 5px;
+  }
+
+  .admin-content-container {
+    hr {
+      margin-top: 3px;
+      margin-bottom: 5px;
+    }
+    @extend .admin-content-container;
+  }
+
   .dashboard-left-cell {
     padding-right: 5px;
+
     @media(max-width: 991px) {
       padding-right: 15px;
     }
+
     .admin-content-container {
       margin-bottom: 10px;
       margin-right: 5px;
@@ -198,11 +231,17 @@ html, body {
       }
     }
   }
+
   .dashboard-right-cell {
     padding-left: 5px;
-    @media(max-width: 991px) {
-      padding-left: 15px
+    .text-link {
+      right: 60px;
     }
+
+    @media(max-width: 991px) {
+      padding-left: 15px;
+    }
+
     .admin-content-container {
       margin-bottom: 10px;
       margin-left: 5px;
@@ -223,12 +262,6 @@ html, body {
     }
   }
 
-  .text-link {
-    color: $prim3;
-    &:hover {
-      color: $prim2;
-    }
-  }
 
   .btn-default {
     color: $fontColor;
