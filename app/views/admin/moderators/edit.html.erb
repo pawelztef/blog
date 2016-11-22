@@ -1,22 +1,29 @@
-<h1>Edit Moderator</h1>
+<div id="admin-all-visitors-content">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Edit Moderator</h2>
+  </header>
+  <div class="content-inner">
+    <div class="form-wrapper">
+      <%= render 'validation_errors', object: @moderator %> 
 
-<%= render 'validation_errors', object: @moderator %> 
-
-<%= form_for [:admin, @moderator] do |f| %>
-  <p>
-  <%= f.label :fullname %>
-  <%= f.text_field :fullname %>
-  </p>
-  <p>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  </p>
-  <p>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-  </p>
-  <p>
-  <%= f.submit %>
-  </p>
-<% end %>
+      <%= form_for [:admin, @moderator] do |f| %>
+        <div class="form-group">
+          <%= f.label :fullname %>
+          <%= f.text_field :fullname, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :username %>
+          <%= f.text_field :username, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.text_field :password, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.submit class: 'btn btn-default' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 

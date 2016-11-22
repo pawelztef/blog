@@ -1,7 +1,19 @@
-<h1>Admin::Tags#edit</h1>
+<div id="admin-all-visitors-content">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Edit Tag</h2>
+  </header>
+  <div class="content-inner">
+    <div class="form-wrapper">
+      <%= form_for [:admin, @tag] do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.submit class: 'btn btn-default' %> 
+        </div>
+      <% end %> 
+    </div>
+  </div>
+</div>
 
-<%= form_for [:admin, @tag] do |f| %>
-  <p> <%= f.label :name %> </p>
-  <p> <%= f.text_field :name %> </p>
-  <p> <%= f.submit %> </p>
-<% end %> 
