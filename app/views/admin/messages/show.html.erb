@@ -1,4 +1,22 @@
-<h1>Messages</h1>
-<p><b>From:</b> <%= @message.visitor.fullname %> </p>
-<p><b>When:</b> <%= time_ago @message.created_at %> </p>
-<p><b>Message:</b> <%= @message.content %> </p>
+<div id="admin-message-show-content">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Message</h2>
+  </header>
+  <div class="content-inner">
+    <div class="row article-row">
+      <div class="col-md-12 message-wrapper">
+        <div class='message-details clearfix'>
+          <b><%= @message.visitor.fullname %> </b>
+          <p><%= time_ago @message.created_at %></p>
+        </div>
+        <div class='message-content'>
+          <%= @message.content %>
+        </div>
+      </div>
+        <div class="col-md-12 message-actions">
+          <%= link_to "<span class='fa fa-arrow-circle-o-up'></span> Back".html_safe, admin_messages_path, class: 'btn btn-xs btn-default' %> 
+          <%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_message_path(@message), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %> 
+        </div>
+    </div>
+  </div>
+</div>

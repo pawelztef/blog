@@ -148,7 +148,7 @@ a,a:hover {
 }
 
 #front-index { 
-  margin-top: 60px;
+  margin: 60px 50px 0px 50px;
 
   .col-center {
     float: none;
@@ -262,6 +262,7 @@ a,a:hover {
 }
 
 #masthead {
+  padding-left: 50px;
   h2  {
     color: white;
   }
@@ -269,6 +270,9 @@ a,a:hover {
 
 
 #navigation {
+  .navbar-nav {
+    padding-left: 25px;
+  }
 
   #wrap {
     display: inline-block;
