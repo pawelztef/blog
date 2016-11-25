@@ -1,3 +1,25 @@
-// Place all the styles related to the admin/notifications controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'admin_partials';
+
+#admin-all-notifications-content  {
+  @extend .admin-content-container;
+  height: 100%;
+
+  .btn-default {
+    @extend .btn-default; 
+  }
+
+  header {
+    @extend .admin-content-header;
+  }
+  .content-inner {
+    padding: 20px;
+    .notification-content-row {
+      margin-top: 5px;
+      b {
+        padding-right: 5px;
+        color: $prim2;
+      }
+    }
+  }
+
+}

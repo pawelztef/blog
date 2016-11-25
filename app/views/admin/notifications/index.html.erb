@@ -1,5 +1,5 @@
 
-<div id="admin-all-messages-content">
+<div id="admin-all-notifications-content">
   <header class='clearfix'>
     <h2 class="page-title pull-left">Notifications</h2>
     <%=
@@ -7,24 +7,33 @@
         link_to "Dismis all", dismiss_all_notifications_path, method: :delete, data: {confirm: 'Are you sure'}, class: "btn btn-xs btn-default pull-right"
       end
     %> 
-  </header>
-  <div class="content-inner">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <% @visitor_notifications.each do |notif| %> 
-          <p> 
-          <%= "#{notif.notifiable.fullname} added as a new vistor #{time_ago notif.created_at}" %>
-          <%= link_to 'Dismiss', admin_notification_path(notif), method: :delete, data: {confirm: 'Are  you sure?'} %> 
-          </p>
+</header>
+<div class="content-inner">
+  <div class="row">
+    <div class="col-md-12">
+      <% @visitor_notifications.each do |notif| %> 
+        <div class="row notification-content-row">
+          <div class="col-md-9 col-sm-8 col-xs-7">
+            <%= "<b class='visitor'>#{notif.notifiable.fullname}</b> added as a new vistor #{time_ago notif.created_at}".html_safe %>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-5 text-right">
+            <%= link_to "<span class='fa fa-times'></span> Dismiss".html_safe, admin_notification_path(notif), method: :delete, data: {confirm: 'Are  you sure?'}, class: 'btn btn-xs btn-default' %> 
+          </div>
+        </div>
         <hr />
-        <% end %> 
-        <% @comment_notifications.each do |notif| %> 
-          <p> 
-          <%= "#{notif.notifiable.visitor.fullname} visitor added a comment #{time_ago notif.created_at}" %>
-          <%= link_to 'Dismiss', admin_notification_path(notif), method: :delete, data: {confirm: 'Are  you sure?'} %> 
-          </p>
-        <% end %> 
-      </div>
+      <% end %> 
+      <% @comment_notifications.each do |notif| %> 
+        <div class="row notification-content-row">
+          <div class="col-md-9 col-sm-8 col-xs-7">
+            <%# <%= "#{notif.notifiable.visitor.fullname} visitor added a comment #{time_ago notif.created_at}" %1> %>
+            <%= "<b class='visitor'>#{notif.notifiable.visitor.fullname}</b> added as a comment #{time_ago notif.created_at}".html_safe %>
+          </div>
+          <div class="col-md-3  col-sm-4 col-xs-5 text-right">
+            <%= link_to "<span class='fa fa-times'></span> Dismiss".html_safe, admin_notification_path(notif), method: :delete, data: {confirm: 'Are  you sure?'}, class: 'btn btn-xs btn-default' %>
+          </div>
+        </div>
+      <% end %> 
     </div>
   </div>
+</div>
 </div>
