@@ -64,3 +64,20 @@ $large-desktops: "only screen and (min-width: 992px)";
     }
   }
 }
+
+
+.btn-prim3 {
+  color: $prim2;
+  border: 1px $prim2 solid;
+  &:hover {
+    background: $mainBg;
+  }
+}
+.btn-default {
+  color: $fontColor;
+  border: 1px #eee solid;
+  &:hover {
+    background: $mainBg;
+  }
+}
+

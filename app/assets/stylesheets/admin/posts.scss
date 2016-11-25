@@ -69,11 +69,7 @@
   }
 
   .btn-default {
-    color: $fontColor;
-    border: 1px #eee solid;
-    &:hover {
-      background: $mainBg;
-    }
+    @extend .btn-default; 
   }
 
   .article-row {

@@ -18,7 +18,7 @@
             <td class="visitor-name"><%= moderator.fullname %></td>
             <td><%= moderator.username%></td>
             <td class="hidden-xs"><%= time_ago(moderator.created_at) %></td>
-            <td> <%= link_to "<span class='fa fa-pencil-o'></span> Edit".html_safe, edit_admin_moderator_path(moderator), class: 'btn btn-xs btn-default' %></td>
+            <td> <%= link_to "<span class='fa fa-pencil-square-o'></span> Edit".html_safe, edit_admin_moderator_path(moderator), class: 'btn btn-xs btn-default' %></td>
           </tr>
         <% end %> 
       </tbody>

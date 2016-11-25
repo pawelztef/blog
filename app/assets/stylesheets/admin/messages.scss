@@ -1,3 +1,21 @@
-// Place all the styles related to the admin/messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'admin_partials';
+
+#admin-all-messages-content  {
+  @extend .admin-content-container;
+  height: 100%;
+
+  header {
+    @extend .admin-content-header;
+  }
+  .search-field {
+    @extend .search-field-styles;
+  }
+  .search-row {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .pagination {
+    @extend .pagination-settings;
+  }
+
+}

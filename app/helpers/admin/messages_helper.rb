@@ -4,9 +4,9 @@ module Admin::MessagesHelper
   end
   def build_read_status_link message
     if message.status == true
-      link_to 'Un-read', admin_message_path(message, status: false), method: :put
+      link_to "<sapn class='fa fa-envelope-open-o'></span> Un-read".html_safe, admin_message_path(message, status: false), method: :put, class: 'btn btn-xs btn-default'
     else
-      link_to 'Read', admin_message_path(message, status: true), method: :put
+      link_to "<span class='fa fa-envelope-o'> Read".html_safe, admin_message_path(message, status: true), method: :put, class: 'btn btn-xs btn-default'
     end
   end
 end

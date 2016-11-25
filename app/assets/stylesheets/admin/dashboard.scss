@@ -264,11 +264,7 @@ html, body {
 
 
   .btn-default {
-    color: $fontColor;
-    border: 1px #ccc solid;
-    &:hover {
-      background: $mainBg;
-    }
+    @extend .btn-prim3;
   }
 
   .comment-head-dash {

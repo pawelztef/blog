@@ -48,7 +48,7 @@ gem 'chosen-rails'
 gem 'responders', '~> 2.0'
 
 # Awesome Fonts Sas
-gem 'font-awesome-sass', '~> 4.6.2'
+gem 'font-awesome-sass', '~> 4.7.0'
 
 # Use Unicorn as the app server # gem 'unicorn'
 

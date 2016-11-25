@@ -1,5 +1,13 @@
-<h1>Admin::Posts#show</h1>
-<p><b>title:</b> <%= @post.title %> </p>
-<p><b>content:</b> <%= @post.content.html_safe %> </p>
-<p><b>content:</b> <%= status_converter(@post.publish) %> </p>
-<p><b>created:</b> <%= time_ago(@post.created_at) %> </p>
+<div id="admin-post-content">
+  <header>
+    <h2 class="page-title">Post show</h2>
+  </header>
+  <div class="content-inner">
+    <div class="form-wraper">
+      <p><b>title:</b> <%= @post.title %> </p>
+      <p><b>content:</b> <%= @post.content.html_safe %> </p>
+      <p><b>content:</b> <%= status_converter(@post.publish) %> </p>
+      <p><b>created:</b> <%= time_ago(@post.created_at) %> </p>
+    </div>
+  </div>
+</div>

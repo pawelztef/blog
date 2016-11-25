@@ -1,22 +1,49 @@
-<h1>Messages</h1>
-
-<p> <%= render 'search', route: admin_messages_path %> </p>
-
-<% @messages.each do |message| %>
-  <p style= <%= message_weight(message) %> >
-    <%= message.visitor.fullname %><br />
-    <%= truncate(message.content,length: 60, separator: '') %> <br />
-    <%= status_converter(message.status, truthy: 'Read', falsey: 'Un-Read') %> <br />
-    <%= time_ago(message.created_at) %> <br /> 
-  </p>
-  <p>
-    <%= link_to 'Delete', admin_message_path(message), method: :delete, data: {confirm: "Are you sure?"} %> <br />
-    <%= link_to 'Show', admin_message_path(message) %> <br />
-  </p>
-  <p>
-    <%= build_read_status_link message %>
-  </p>
-  <hr />
-  
-<% end %> 
-<%= paginate @messages %> 
+<div id="admin-all-messages-content">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Messages</h2>
+  </header>
+  <div class="content-inner">
+    <div class="row search-row">
+      <div class="col-md-12">
+        <%= render 'search', route: admin_messages_path %> 
+      </div>
+    </div>
+    <% @messages.each do |message| %>
+      <div class="row article-row">
+        <div class="col-xs-10 col-sm-6 col-md-7 article-title">
+          <div style= <%= message_weight(message) %> >
+            <p> <%= message.visitor.fullname %> </p>
+            <p> <%= truncate(message.content,length: 60, separator: '') %> </p>
+          </div>
+          <small>Created <%= time_ago message.created_at %> </small>
+          <small> <%= status_converter(message.status, truthy: 'Read', falsey: 'Un-Read') %> </small>
+        </div>
+        <div class="col-xs-10 col-sm-5 col-md-4 col-xs-offset-2 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 article-actions status-padding">
+          <%= link_to "<span class='fa fa-folder-open-o'></span> show".html_safe, admin_message_path(message), class: 'btn btn-xs btn-default' %> 
+          <%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_message_path(message), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %> 
+          <%= build_read_status_link message %>
+        </div>
+      </div>
+      <hr />
+      <%# <p style= <%= message_weight(message) %1> > %>
+      <%# <%= message.visitor.fullname %1><br /> %>
+      <%# <%= truncate(message.content,length: 60, separator: '') %1> <br /> %>
+      <%# <%= status_converter(message.status, truthy: 'Read', falsey: 'Un-Read') %1> <br /> %>
+      <%# <%= time_ago(message.created_at) %1> <br /> %> 
+      <%# </p> %>
+      <%# <p> %>
+      <%# <%= link_to 'Delete', admin_message_path(message), method: :delete, data: {confirm: "Are you sure?"} %1> <br /> %>
+      <%# <%= link_to 'Show', admin_message_path(message) %1> <br /> %>
+      <%# </p> %>
+      <%# <p> %>
+      <%# <%= build_read_status_link message %1> %>
+      <%# </p> %>
+      <%# <hr /> %>
+    <% end %> 
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <%= paginate @messages %> 
+      </div>
+    </div>
+  </div>
+</div>
