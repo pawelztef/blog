@@ -65,7 +65,7 @@ footer {
   min-height:280px;
   background-color: $prim5;
   color:#aaaacc;
-  background: url('header.jpg') no-repeat;
+  background: asset_url('header.jpg') no-repeat;
   background-attachment: fixed;
   position: relative;
   top: -40px;
