@@ -7,15 +7,15 @@
   </div>
   <div class="col-md-7">
     <ul class="pull-right">
-      <li id="welcome" class="hidden-xs">Welcome to your administration area</li>
       <li class="fixed-width"> 
         <%= link_to "<span class='fa fa-bell'></span><span class='label label-warning'>#{get_number_of_notifications}</span>".html_safe, admin_notifications_path %>
       </li>
       <li class="fixed-width"> 
         <%= link_to "<span class='fa fa-envelope'></span><span class='label label-success'>#{get_number_of_messages}</span>".html_safe, admin_messages_path %>
       </li>
+      <li class="hidden-xs">Welcome <strong><%= @moderator.fullname %></strong> to your administration area</li>
       <li>
-        <%= link_to 'Logout <i class="ico fa fa-sign-out" aria-hidden="true"></i>'.html_safe, logout_path %>
+        <%= link_to '<span class="fa fa-sign-out" aria-hidden="true"></span>'.html_safe, logout_path %>
       </li>
     </ul>
   </div>
