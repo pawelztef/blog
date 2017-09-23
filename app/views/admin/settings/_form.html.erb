@@ -1,63 +1,69 @@
 
 <%= form_for [:admin, @setting] do |f| %>
-  <div class="settings-row">
-    <h3>
-      <%= f.label :site_name %><br />
-    </h3>
-    <p>Permanently shown on navigation</p>
-    <div class="form-goup">
-      <%= f.text_field :site_name, class: "form-control" %> 
+  <div class="col-md-6">
+    <div class="settings-row">
+      <h3>
+        <%= f.label :site_name %><br />
+      </h3>
+      <p>Permanently shown on navigation</p>
+      <div class="form-goup">
+        <%= f.text_field :site_name, class: "form-control input-sm" %> 
+      </div>
+    </div>
+    <div class="settings-row">
+      <h3>
+        <%= f.label :site_phrase %><br />
+      </h3>
+      <p>Site motto</p>
+      <div class="form-goup">
+        <%= f.text_field :site_phrase, class: "form-control input-sm" %> 
+      </div>
+    </div>
+    <div class="settings-row">
+      <h3>
+        <%= f.label :post_per_page %><br />
+      </h3>
+      <p>Control total number of posts on index page</p>
+      <div class="form-goup">
+        <%= f.number_field :post_per_page, class: "form-control input-sm small-input" %>
+      </div>
     </div>
   </div>
-  <div class="settings-row">
-    <h3>
-      <%= f.label :site_phrase %><br />
-    </h3>
-    <p>Site motto</p>
-    <div class="form-goup">
-      <%= f.text_field :site_phrase, class: "form-control" %> 
+  <div class="col-md-6">
+    <div class="settings-row-right">
+      <h3>
+        <%= f.label :under_maintenance %><br />
+      </h3>
+      <p>Redirect to maintenance page</p>
+      <div class="form-goup under-maintenance">
+        <%= f.check_box :under_maintenance %>
+        <p>Blog is under maintenance</p>
+      </div>
+    </div>
+    <div class="settings-row-right">
+      <h3>
+        <%= f.label :prevent_commenting, "Commenting" %><br />
+      </h3>
+      <p>Prevents visitors from commenting</p>
+      <div class="form-goup">
+        <%= f.select :prevent_commenting, [['disabled', false], ['active', true]], class: "form-control small-input" %>
+      </div>
+    </div>
+    <div class="settings-row-right">
+      <h3>
+        <%= f.label :tag_visibility %><br />
+      </h3>
+      <p>Control tag visibility on post</p>
+      <div class="form-goup">
+        <%= f.select :tag_visibility, [['active', true], ['disabled', false]], class: "form-control small-input" %>
+      </div>
     </div>
   </div>
-  <div class="settings-row">
-    <h3>
-      <%= f.label :post_per_page %><br />
-    </h3>
-    <p>Control total number of posts on index page</p>
-    <div class="form-goup">
-      <%= f.number_field :post_per_page, class: "form-control small-input" %>
+  <div class="col-md-12">
+      <div class="settings-row">
+        <div class="form-goup">
+          <%= f.submit 'Update Settings', class: "btn btn-block btn-default" %> 
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="settings-row">
-    <h3>
-      <%= f.label :under_maintenance %><br />
-    </h3>
-    <p>Redirect to maintenance page</p>
-    <div class="form-goup under-maintenance">
-      <%= f.check_box :under_maintenance %>
-      <p>Blog is under maintenance</p>
-    </div>
-  </div>
-  <div class="settings-row">
-    <h3>
-      <%= f.label :prevent_commenting, "Commenting" %><br />
-    </h3>
-    <p>Prevents visitors from commenting</p>
-    <div class="form-goup">
-      <%= f.select :prevent_commenting, [['disabled', false], ['active', true]], class: "form-control small-input" %>
-    </div>
-  </div>
-  <div class="settings-row">
-    <h3>
-      <%= f.label :tag_visibility %><br />
-    </h3>
-    <p>Control tag visibility on post</p>
-    <div class="form-goup">
-      <%= f.select :tag_visibility, [['active', true], ['disabled', false]], class: "form-control small-input" %>
-    </div>
-  </div>
-  <div class="settings-row">
-    <div class="form-goup">
-      <%= f.submit class: "btn btn-block btn-default" %> 
-    </div>
-  </div>
 <% end %> 

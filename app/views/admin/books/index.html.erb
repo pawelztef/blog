@@ -6,9 +6,10 @@
   <div class="content-inner">
     <div class="col-md-12">
       <div  class="current-book">
-        <p> Currently displayed</p>
-        <%# <h3><%= build_currently_displayed_link @displayed %1></h3> %> 
-        <h3><%= @displayed.title %></h3> 
+        <% if @displayed %>
+          <p> Currently displayed</p>
+          <h3><%= @displayed.title %></h3> 
+        <% end %> 
       </div >
     </div>
     <div class="form-wraper">
@@ -22,7 +23,7 @@
             <p class="book-auth"> <%= book.auth_name %> </p>
             <p class="book-details"> <%= book.published %> </p>
             <p class="book-details"> ISBN: <%= book.isbn %> </p>
-            <p class="book-content"> <%= truncate(book.review.content, length: 200, separator: '') %> </p>
+            <p class="book-content"> <%= truncate(book.review.content.html_safe, length: 200, separator: '') %> </p>
             <div class="clearfix">
               <div class="reviews-actions">
                 <p> <%= link_to "<span class='fa fa-folder-open-o'></span> Open".html_safe, admin_book_path(book), class: 'btn btn-xs btn-default' %> 
@@ -37,24 +38,3 @@
     </div>
   </div>
 </div>
-<%# <div class="modal fade" id="MyModal" title="My Modal"> %>
-  <%#   <div class="modal-dialog modal-sm" role="document"> %>
-    <%#     <div class="modal-content"> %>
-      <%#       <div class="modal-header"> %>
-        <%# 	<button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button> %>
-        <%# 	<h3 id="myModalLabel">Modal header</h3> %>
-        <%#       </div> %>
-      <%#       <div class="modal-body"> %>
-        <%# 	<p> <%= @displayed.title %1> </p> %>
-        <%# 	<p> <%= @displayed.auth_name %1> </p> %>
-        <%# 	<p> <%= @displayed.published %1> </p> %>
-        <%# 	<p> <%= @displayed.isbn %1> </p> %>
-        <%#       </div> %>
-      <%#       <div class="modal-footer"> %>
-        <%# 	<button aria-hidden="true" class="btn" data-dismiss="modal">Close</button> %>
-        <%#       </div> %>
-      <%#     </div> %>
-    <%#   </div> %>
-  <%# </div> %>
-
-
