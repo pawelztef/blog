@@ -13,6 +13,11 @@ html, body {
   height: 100%;
   overflow-x: auto;
 
+  #flash {
+    border-radius: 0px;
+    text-align: center;
+  }
+
   .fa-i-cursor {
     padding: 0 3px;
   }
@@ -279,11 +284,14 @@ html, body {
       font-size: 13px;
     }
   }
+
   small {
     color: #999
   }
+
   .comment-dash {
     margin-bottom: 5px;
   }
+
 }
 

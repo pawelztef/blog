@@ -25,10 +25,13 @@ $(document).on('turbolinks:load', function() {
   });
   $('.chosen-select').chosen();
 
+  $("#flash").delay(500).show('normal', function(){
+    $(this).delay(2500).slideUp();
+  });
 
   $(window).on('resize load', function() {
     if($(window).width()>992) {
-    // console.log($(window).width());
+      // console.log($(window).width());
       if ($('.left').height() >= $('.right').height()) {
         $('.righT').height($('.left').height());
         $('.lefT').height($('.left').height());
@@ -37,8 +40,8 @@ $(document).on('turbolinks:load', function() {
         $('.righT').height($('.right').height());
       }
     } else {
-        $('.lefT').height($('.left').height());
-        $('.righT').height($('.right').height());
+      $('.lefT').height($('.left').height());
+      $('.righT').height($('.right').height());
       console.log($('.lefT'));
     }
   });

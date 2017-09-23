@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-12">
+    <% if notice %>
+      <div id="flash" class="alert alert-info alert-dismissible" role="alert">
+        <p class="notice"> <%= notice %> </p>
+      </div>
+    <% elsif alert %>
+      <div id="flash" class="alert alert-warning alert-dismissible" role="alert">
+        <p class="alert"> <%= alert %> </p>
+      </div>
+    <% end %> 
+  </div>
+</div>
+

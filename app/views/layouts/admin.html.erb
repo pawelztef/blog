@@ -10,13 +10,6 @@
   <body>
     <div id="admin">
 
-      <% if flash[:notice] %>
-        <div class="notice"> <%= flash[:notice] %> </div>
-      <% end %>
-      <% if flash[:alert] %>
-        <div class="alert"> <%= flash[:alert] %> </div>
-      <% end %>
-
 
       <div class="container-fluid display-table">
         <div class="row display-table-row">
@@ -32,6 +25,7 @@
             </div>
 
             <div class="row">
+              <%= render 'layouts/partials/flash_msgs' %> 
               <%= yield %>
             </div>
 
