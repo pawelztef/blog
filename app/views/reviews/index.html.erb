@@ -5,13 +5,15 @@
 
     <div class="row">    
       <div class="col-sm-3">
-        <div class="text-center"> <%= image_tag book.cover.url(:small), class: "img-fluid" %> </div>
+        <div class="text-center">
+          <%# TODO book cover image %>
+          </div>
       </div>
       <div class="col-sm-9">
         <h2> <%= book.title %>  </h2>
         <h3> <%= book.auth_name %>  </h3>
-        <p id="truncatedReview" > <%= truncate(book.review.content, length: 70, separator: '') %> </p>
-        <p> <%= link_to ">> Read Review <<", review_path(book), remote: true, class: 'text-right' %> </p>
+        <p id="truncatedReview" > <%= truncate(book.review.content.html_safe, length: 70, separator: '') %> </p>
+        <p> <%= link_to ">> Read Review <<", review_path(book), class: 'text-right' %> </p>
       </div>
     </div>
     <hr>

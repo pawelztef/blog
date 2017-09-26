@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    # FIXME template missing
     respond_to do |format|
       format.html
       format.js
