@@ -16,7 +16,7 @@
       <% @books.each do |book| %>
         <div class="row review-row">
           <div class="col-xs-4 col-sm-3">
-            <%= image_tag book.cover.url(:medium), class: 'img-responsive cover' %>
+            <%# TODO image cover %>
           </div>
           <div class="col-xs-8 col-sm-9 book-details">
             <p class="book-title"> <%= book.title %> </p>
@@ -26,9 +26,11 @@
             <p class="book-content"> <%= truncate(book.review.content.html_safe, length: 200, separator: '') %> </p>
             <div class="clearfix">
               <div class="reviews-actions">
-                <p> <%= link_to "<span class='fa fa-folder-open-o'></span> Open".html_safe, admin_book_path(book), class: 'btn btn-xs btn-default' %> 
-              <%= link_to "<span class='fa fa-pencil-square-o'></span> Edit".html_safe, edit_admin_book_path(book), class: 'btn btn-xs btn-default' %>
-              <%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_book_path(book), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %> </p>
+                <p> 
+                <%= link_to "<span class='fa fa-folder-open-o'></span> Open".html_safe, admin_book_path(book), class: 'btn btn-xs btn-default' %> 
+                <%= link_to "<span class='fa fa-pencil-square-o'></span> Edit".html_safe, edit_admin_book_path(book), class: 'btn btn-xs btn-default' %>
+                <%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_book_path(book), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %>
+                </p>
               </div>
             </div>
           </div>

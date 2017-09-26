@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require tinymce-jquery
 //= require chosen-jquery
 //= require bootstrap.min
 //= require turbolinks

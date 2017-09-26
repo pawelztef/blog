@@ -33,14 +33,6 @@ gem 'bcrypt', '~> 3.1.7'
 # Pagination
 gem 'kaminari', '~> 0.17.0'
 
-# Uploading files
-gem 'paperclip', '~> 4.3'
-
-# Tinymce text editor
-gem 'tinymce-rails'
-
-# Tinymce text editor
-gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
 
 # gem for friendly multiple select forms
 gem 'chosen-rails'
