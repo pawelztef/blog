@@ -16,6 +16,7 @@
 //= require chosen-jquery
 //= require bootstrap.min
 //= require turbolinks
+//= require ckeditor/init
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
