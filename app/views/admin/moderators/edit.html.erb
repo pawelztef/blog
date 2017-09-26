@@ -7,20 +7,29 @@
       <%= render 'validation_errors', object: @moderator %> 
 
       <%= form_for [:admin, @moderator] do |f| %>
-        <div class="form-group">
-          <%= f.label :fullname %>
-          <%= f.text_field :fullname, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :username %>
-          <%= f.text_field :username, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.text_field :password, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.submit class: 'btn btn-default' %>
+        <div class="row">
+          <div class="col-md-4">
+            <%# TODO conditional handling of avatar %>
+            <%= image_tag 'avatar_dummy.jpg' %> 
+            <%= f.file_field :avatar %> 
+          </div>
+          <div class="col-md-8">
+            <div class="form-group">
+              <%= f.label :fullname %>
+              <%= f.text_field :fullname, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :username %>
+              <%= f.text_field :username, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password %>
+              <%= f.text_field :password, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.submit class: 'btn btn-default' %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
