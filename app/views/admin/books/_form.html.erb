@@ -34,8 +34,7 @@
 
   <%= f.fields_for :review do |review| %>
     <p> <%= review.label :content, "Content" %>  </p>
-    <%= review.text_area :content, class: "tinymce", rows: 10, cols: 20 %>
-    <%= tinymce %> 
+    <%= review.cktext_area :content, rows: 10, cols: 20 %>
   <% end %> 
   <div class='form-group'>
     <%= f.submit "Submit", class: 'btn btn-default' %>  

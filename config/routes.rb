@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post '/tinymce_assets' => 'admin/post_images#create'
+  mount Ckeditor::Engine => '/ckeditor'
 
   root to: 'posts#index'
 
