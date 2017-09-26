@@ -33,6 +33,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Pagination
 gem 'kaminari', '~> 0.17.0'
 
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # gem for friendly multiple select forms
 gem 'chosen-rails'
