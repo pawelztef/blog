@@ -42,13 +42,11 @@ gem 'chosen-rails'
 
 gem 'responders', '~> 2.0'
 
+gem 'puma'
+
 # Awesome Fonts Sas
 gem 'font-awesome-sass', '~> 4.7.0'
 
-# Use Unicorn as the app server # gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
