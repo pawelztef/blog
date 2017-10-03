@@ -14,19 +14,15 @@
 ActiveRecord::Schema.define(version: 20170926053760) do
 
   create_table "books", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.string   "author_fname",       limit: 255
-    t.string   "author_lname",       limit: 255
-    t.string   "publisher",          limit: 255
-    t.string   "publish_year",       limit: 255
-    t.string   "isbn",               limit: 255
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.boolean  "display",                        default: false
-    t.string   "cover_file_name",    limit: 255
-    t.string   "cover_content_type", limit: 255
-    t.integer  "cover_file_size",    limit: 4
-    t.datetime "cover_updated_at"
+    t.string   "title",        limit: 255
+    t.string   "author_fname", limit: 255
+    t.string   "author_lname", limit: 255
+    t.string   "publisher",    limit: 255
+    t.string   "publish_year", limit: 255
+    t.string   "isbn",         limit: 255
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.boolean  "display",                  default: false
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -81,18 +77,6 @@ ActiveRecord::Schema.define(version: 20170926053760) do
   end
 
   add_index "notifications", ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable_type_and_notifiable_id", using: :btree
-
-  create_table "post_images", force: :cascade do |t|
-    t.string   "alt",               limit: 255, default: ""
-    t.string   "hint",              limit: 255, default: ""
-    t.string   "file_file_name",    limit: 255
-    t.string   "file_content_type", limit: 255
-    t.integer  "file_file_size",    limit: 4
-    t.datetime "file_updated_at"
-    t.integer  "post_id",           limit: 4
-  end
-
-  add_index "post_images", ["post_id"], name: "index_post_images_on_post_id", using: :btree
 
   create_table "post_tags", force: :cascade do |t|
     t.integer  "post_id",    limit: 4
@@ -152,7 +136,6 @@ ActiveRecord::Schema.define(version: 20170926053760) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "visitors"
   add_foreign_key "messages", "visitors"
-  add_foreign_key "post_images", "posts"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "moderators"
