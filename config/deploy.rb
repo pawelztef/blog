@@ -5,7 +5,7 @@ server "pavelztef.pl", user: "pawel", roles: %w{app db web}
 
 set :application, "my_blog"
 set :repo_url, "pawelztef@bitbucket.org:pawelztef/myblog.git"
-set :deploy_to,"/home/#{fetch(:user)}/#{fetch(:application)}"
+set :deploy_to,"/home/pawel/#{fetch(:application)}"
 
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
@@ -29,8 +29,8 @@ namespace :puma do
     on roles(:app) do
       # execute "mkdir /home/pawel/APP_NAME/shared/tmp/sockets -p"
       # execute "mkdir /home/pawel/APP_NAME/shared/tmp/pids -p"
-      execute "mkdir /home/#{fetch(:user)}/#{fetch(:application)}/shared/tmp/sockets -p"
-      execute "mkdir /home/#{fetch(:user)}/#{fetch(:application)}/shared/tmp/pids -p"
+      execute "mkdir /home/pawel/#{fetch(:application)}/shared/tmp/sockets -p"
+      execute "mkdir /home/pawel/#{fetch(:application)}/shared/tmp/pids -p"
     end
   end
 
