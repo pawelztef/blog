@@ -44,6 +44,8 @@ gem 'responders', '~> 2.0'
 
 gem 'puma'
 
+gem 'faker'
+
 # Awesome Fonts Sas
 gem 'font-awesome-sass', '~> 4.7.0'
 
@@ -56,7 +58,6 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'faker'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
@@ -68,7 +69,7 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-secrets-yml', require: false
   gem 'capistrano-database-yml'
-  
+
 
 end
 
