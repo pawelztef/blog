@@ -1,7 +1,7 @@
 class Admin::BooksController < Admin::ApplicationController
 
   def index
-    @books = Book.all
+    @books = Book.all.decorate
     @displayed = Book.find_by_display true
     
   end
