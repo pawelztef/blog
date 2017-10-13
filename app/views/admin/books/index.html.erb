@@ -16,7 +16,8 @@
       <% @books.each do |book| %>
         <div class="row review-row">
           <div class="col-xs-4 col-sm-3">
-            <%# TODO image cover %>
+            <%= icon('book', class: 'cover-mock') %> 
+            <%# TODO image cover or blank image %>
           </div>
           <div class="col-xs-8 col-sm-9 book-details">
             <p class="book-title"> <%= book.title %> </p>
