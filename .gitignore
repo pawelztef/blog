@@ -13,6 +13,8 @@ pickle-email-*.html
 
 .env
 
+public/uploads/ckeditor/pictures/**
+
 /.bundle
 /vendor/bundle
 
