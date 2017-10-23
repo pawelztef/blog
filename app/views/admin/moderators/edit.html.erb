@@ -1,37 +1,68 @@
 <div id="admin-all-visitors-content">
   <header class='clearfix'>
     <h2 class="page-title pull-left">Edit Moderator</h2>
+    <ul class="nav nav-tabs pull-right" role="tablist">
+      <li role="presentation" class="active"><a href="#details" data-toggle="tab">Profile Details</a></li>
+      <li role="presentation"><a href="#bio" data-toggle="tab">Bio</a></li>
+    </ul>
   </header>
-  <div class="content-inner">
-    <div class="form-wrapper">
-      <%= render 'validation_errors', object: @moderator %> 
 
-      <%= form_for [:admin, @moderator] do |f| %>
-        <div class="row">
-          <div class="col-md-4">
-            <%# TODO conditional handling of avatar %>
-            <%= image_tag 'avatar_dummy.jpg' %> 
-            <%= f.file_field :avatar %> 
-          </div>
-          <div class="col-md-8">
-            <div class="form-group">
-              <%= f.label :fullname %>
-              <%= f.text_field :fullname, class: 'form-control' %>
+  <!-- Nav tabs -->
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="details">
+      <div class="content-inner">
+        <div class="form-wrapper">
+          <%= render 'validation_errors', object: @moderator %> 
+
+          <%= form_for [:admin, @moderator] do |f| %>
+            <div class="row">
+              <div class="col-md-4">
+                <%= @moderator.set_avatar %> 
+                <%= f.file_field :avatar %> 
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <%= f.label :fullname %>
+                  <%= f.text_field :fullname, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :username %>
+                  <%= f.text_field :username, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :password %>
+                  <%= f.text_field :password, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= f.submit class: 'btn btn-default' %>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <%= f.label :username %>
-              <%= f.text_field :username, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-              <%= f.label :password %>
-              <%= f.text_field :password, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-              <%= f.submit class: 'btn btn-default' %>
-            </div>
-          </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="bio">
+      <div class="content-inner">
+        <div class="form-wrapper">
+          <%= render 'validation_errors', object: @moderator %> 
+
+          <%= form_for [:admin, @moderator] do |f| %>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <%= f.cktext_area :bio, rows: 15, cols: 20 %>
+                </div>
+                <div class="form-group">
+                  <%= f.submit class: 'btn btn-default' %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
