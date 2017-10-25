@@ -2,11 +2,11 @@
 
 .adm-avatar {
   width: 100%;
-  padding: 10px;
 }
 input#moderator_avatar {
   margin-top: 20px;
-  margin-left: 10px;
+}
+label[for='moderator_avatar'] {
 }
 
 #admin-all-visitors-content {

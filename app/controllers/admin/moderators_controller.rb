@@ -4,6 +4,7 @@ class Admin::ModeratorsController < Admin::ApplicationController
   end
   def edit
     @moderator = Moderator.find(params[:id]).decorate
+    @bio = @moderator.bio.body
   end
   def update
     @moderator = Moderator.find(params[:id]).decorate
@@ -17,8 +18,6 @@ class Admin::ModeratorsController < Admin::ApplicationController
   end
   private
   def moderator_params
-    params.require(:moderator).permit(:id, :fullname, :username, :password, :avatar, :bio)
-    params.delete(:password) unless moderator_params[:password].present?
-    # FIXME error with password params, blocking puma
+    params.require(:moderator).permit(:id, :fullname, :username, :password, :avatar, :bio, :password_confirmation )
   end
 end

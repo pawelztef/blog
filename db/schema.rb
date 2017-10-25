@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023060140) do
+ActiveRecord::Schema.define(version: 20171024045602) do
+
+  create_table "bios", force: :cascade do |t|
+    t.string   "body",         limit: 255
+    t.integer  "moderator_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "bios", ["moderator_id"], name: "index_bios_on_moderator_id", using: :btree
 
   create_table "books", force: :cascade do |t|
     t.string   "title",        limit: 255
@@ -64,10 +73,9 @@ ActiveRecord::Schema.define(version: 20171023060140) do
     t.string   "fullname",        limit: 255
     t.string   "username",        limit: 255
     t.string   "password_digest", limit: 255
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "avatar",          limit: 255
-    t.text     "bio",             limit: 65535
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -134,6 +142,7 @@ ActiveRecord::Schema.define(version: 20171023060140) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "bios", "moderators"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "visitors"
   add_foreign_key "messages", "visitors"

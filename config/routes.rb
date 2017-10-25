@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
 
   root to: 'posts#index'
 
@@ -18,6 +17,11 @@ Rails.application.routes.draw do
     resources :tags, except: [:index]
     resources :sessions, only: [:new, :create, :destroy]
     resources :moderators, only: [:index, :edit, :update]
+    resources :bios do
+      collection do
+        post :bio_update
+      end
+    end
   end
 
   resources :posts, only: [:index, :show]
