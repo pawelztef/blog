@@ -56,5 +56,12 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-secrets-yml', require: false
   gem 'capistrano-database-yml'
+
+  gem 'byebug'
+  gem 'awesome_print', require: 'ap'
+  # gem 'rack-mini-profiler'
+  gem 'pry-rails'
+  gem 'pry-byebug' 
+gem 'quiet_assets'
 end
 
