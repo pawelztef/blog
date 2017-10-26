@@ -2,10 +2,11 @@ class BookDecorator < Draper::Decorator
   delegate_all
 
   def show_cover
-    if true 
-      h.icon('book', class: 'cover-mock')
+    if object.cover? 
+      # h.content_tag(:strong, 'image')
+      h.image_tag object.cover_url(:thumb), class: 'cover-img img-responsive'
     else 
-      h.content_tag(:strong, 'image')
+      h.icon('book', class: 'cover-mock')
     end
   end
 
