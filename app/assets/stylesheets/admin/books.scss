@@ -71,3 +71,17 @@
   font-size: 95px !important;
   margin: 50px !important;
 }
+
+.displayed {
+  color: white !important;
+  background: #CC0000;
+  &:hover {
+    background: #CC0000 !important;
+    border-color: white !important;
+    cursor: default !important;
+  }
+}
+
+.cover-img {
+  padding-top: 35px;
+}

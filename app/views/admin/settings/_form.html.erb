@@ -58,6 +58,15 @@
         <%= f.select :tag_visibility, [['active', true], ['disabled', false]], class: "form-control small-input" %>
       </div>
     </div>
+    <div class="settings-row-right">
+      <h3>
+        <%= f.label :book_reviews_visibility %><br />
+      </h3>
+      <p>Control book reviews visibility on site</p>
+      <div class="form-goup">
+        <%= f.select :display_reviews, [['active', true], ['disabled', false]], class: "form-control small-input" %>
+      </div>
+    </div>
   </div>
   <div class="col-md-12">
       <div class="settings-row">

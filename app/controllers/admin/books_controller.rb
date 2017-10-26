@@ -3,7 +3,7 @@ class Admin::BooksController < Admin::ApplicationController
   def index
     @books = Book.all.decorate
     @displayed = Book.find_by_display true
-    
+
   end
 
   def new
@@ -41,7 +41,14 @@ class Admin::BooksController < Admin::ApplicationController
     redirect_to :back, notice: "Review Deleted"
   end
 
-private
+  def display_update
+    Book.update_all(display: false)
+    book = Book.find(params[:id])
+    book.update(display: true)
+    redirect_to admin_books_url 
+  end
+
+  private
   def books_params
     params.require(:book).permit(:title, :author_fname, :author_lname, :display, :publisher, :publish_year, :isbn, :cover, review_attributes: [:content, :draft])
   end

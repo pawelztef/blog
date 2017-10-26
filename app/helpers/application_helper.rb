@@ -31,7 +31,8 @@ module ApplicationHelper
       if parameters[:action] == "show"
         link_to "Posts", posts_path 
       else
-        link_to "Books", reviews_path 
+        set_book_reviews_links
+        # link_to "Books", reviews_path 
       end
     else
       link_to "Posts", posts_path 
@@ -56,6 +57,10 @@ module ApplicationHelper
 
   def get_number_of_comments approved=false
     approved ? Comment.count : Comment.approved.count
+  end
+
+  def set_book_reviews_links
+    link_to "Books", reviews_path if Setting.display_reviews?
   end
 
 end

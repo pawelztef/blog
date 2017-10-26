@@ -1,6 +1,9 @@
 class Book < ActiveRecord::Base
   has_one :review, dependent: :destroy
+
   accepts_nested_attributes_for :review
+
+  mount_uploader :cover, BookCoverUploader
 
   def auth_name
     "#{self.author_fname} #{self.author_lname}".titleize
