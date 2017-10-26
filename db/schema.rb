@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024045602) do
+ActiveRecord::Schema.define(version: 20171025040341) do
 
   create_table "bios", force: :cascade do |t|
     t.string   "body",         limit: 255
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20171024045602) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "site_phrase",        limit: 255
+    t.boolean  "display_reviews"
   end
 
   create_table "tags", force: :cascade do |t|

@@ -18,4 +18,7 @@ class Setting < ActiveRecord::Base
       return false
     end
   end
+  def self.display_reviews?
+    Setting.first.try(:display_reviews)
+  end
 end

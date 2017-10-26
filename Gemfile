@@ -62,6 +62,6 @@ group :development do
   # gem 'rack-mini-profiler'
   gem 'pry-rails'
   gem 'pry-byebug' 
-gem 'quiet_assets'
+  gem 'quiet_assets'
 end
 
