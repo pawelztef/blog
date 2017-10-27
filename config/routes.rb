@@ -28,6 +28,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :front_pages do
+    collection do
+      get :profile
+    end
+  end
+  
   resources :posts, only: [:index, :show]
   resources :messages, only: [:new, :create]
   resources :comments, only: [:create]
