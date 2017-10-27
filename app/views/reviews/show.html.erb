@@ -1,19 +1,17 @@
 <div class="col-xs-10 col-center">
   <div class="containter">
     <div class="row">
-      <%# TODO image cover %> 
-      <%# <%= image_tag @book.cover.url(:medium), class: 'img-responsive'  %1> %> 
-      <h2>
-        <%= @book.title %> 
-      </h2>
-      <h3>
-        <%= @book.auth_name %> 
-      </h3>
-      <h4>
-        <%= @book.published %> 
-      </h4>
-      <br />
-      <p> <%= @book.review.content %> </p>
+      <div class="col-xs-4 col-sm-3">
+        <%= @book.show_cover %> 
+      </div>
+      <div class="col-xs-8 col-sm-9">
+        <h2> <%= @book.title %> </h2>
+        <h3> <%= @book.auth_name %> </h3>
+        <h4> <%= @book.published %> </h4>
+      </div>
+      <div class="col-md-12">
+        <p> <%= @book.review.content.html_safe %> </p>
+      </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
