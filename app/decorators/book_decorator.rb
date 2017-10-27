@@ -3,7 +3,6 @@ class BookDecorator < Draper::Decorator
 
   def show_cover
     if object.cover? 
-      # h.content_tag(:strong, 'image')
       h.image_tag object.cover_url(:thumb), class: 'cover-img img-responsive'
     else 
       h.icon('book', class: 'cover-mock')
