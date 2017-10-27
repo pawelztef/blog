@@ -17,7 +17,6 @@
         <div class="row review-row">
           <div class="col-xs-4 col-sm-3">
             <%= book.show_cover %> 
-            <%# TODO image cover or blank image %>
           </div>
           <div class="col-xs-8 col-sm-9 book-details">
             <p class="book-title"> <%= book.title %> </p>
@@ -29,7 +28,6 @@
               <div class="reviews-actions">
                 <p> 
                 <%= book.display_action_link  %> 
-                <%# <%= link_to "<span class='fa fa-folder-open-o'></span> Open".html_safe, admin_book_path(book), class: 'btn btn-xs btn-default' %1> %> 
                 <%= link_to "<span class='fa fa-pencil-square-o'></span> Edit".html_safe, edit_admin_book_path(book), class: 'btn btn-xs btn-default' %>
                 <%= link_to "<span class='fa fa-trash-o'></span> Delete".html_safe, admin_book_path(book), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %>
                 </p>
