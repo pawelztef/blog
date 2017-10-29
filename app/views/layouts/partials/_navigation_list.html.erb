@@ -1,7 +1,5 @@
 <ul class="list">
-  <%# <li class="item"> <a class="link" href="http://localhost:4000/blog">Blog</a> </li> %>
   <%= build_navigation_link 'Blog', front_posts_path %> 
-  <li class="item"> <a class="link" href="http://localhost:4000/projects">Projects</a> </li>
-  <li class="item"> <a class="link" href="http://localhost:4000/about">About</a> </li>
-  <li class="item"> <a class="link" href="https://google.com/?q=my+resume">Résumé</a> </li>
+  <%= build_navigation_link 'Projects', front_posts_path %> 
+  <%= build_navigation_link 'About', front_posts_path %> 
 </ul>
