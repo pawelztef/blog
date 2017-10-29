@@ -11,7 +11,17 @@
  * file per style scope.
  *
  *= require bootstrap.min
- *= require_tree .
+ *= require admin/books
+ *= require admin/comments
+ *= require admin/dashboard
+ *= require admin/messages
+ *= require admin/moderators
+ *= require admin/notifications
+ *= require admin/posts
+ *= require admin/settings
+ *= require admin/tags
+ *= require admin/visitors
+ *= require front
  *= require_self
  *= require prism
  */

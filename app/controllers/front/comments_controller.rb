@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Front::CommentsController < Front::ApplicationController
 
   def create
     if visitor.save

@@ -26,16 +26,15 @@ module ApplicationHelper
 
   def swap_nav_links parameters
     if parameters[:controller] == "reviews"
-      link_to "Posts", posts_path 
+      link_to "Posts", front_posts_path 
     elsif parameters[:controller] == "posts"
       if parameters[:action] == "show"
-        link_to "Posts", posts_path 
+        link_to "Posts", front_posts_path 
       else
         set_book_reviews_links
-        # link_to "Books", reviews_path 
       end
     else
-      link_to "Posts", posts_path 
+      link_to "Posts", front_posts_path 
     end
   end
 
@@ -60,7 +59,13 @@ module ApplicationHelper
   end
 
   def set_book_reviews_links
-    link_to "Books", reviews_path if Setting.display_reviews?
+    link_to "Books", front_reviews_path if Setting.display_reviews?
+  end
+
+  def build_navigation_link name, path
+    content_tag :li, class: 'item' do
+      link_to name, path, class: 'link'
+    end
   end
 
 end

@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class Front::MessagesController < Front::ApplicationController
   def new
     @visitor_message = Visitor.new(messages: [Message.new])
   end

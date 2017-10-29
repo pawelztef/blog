@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Front::PostsController < Front::ApplicationController
   after_filter :clear_sessions, only: [:show]
 
   layout :resolve_layout 

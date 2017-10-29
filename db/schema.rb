@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026051209) do
+ActiveRecord::Schema.define(version: 20171028034703) do
 
   create_table "bios", force: :cascade do |t|
     t.string   "body",         limit: 255
@@ -74,9 +74,11 @@ ActiveRecord::Schema.define(version: 20171026051209) do
     t.string   "fullname",        limit: 255
     t.string   "username",        limit: 255
     t.string   "password_digest", limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "avatar",          limit: 255
+    t.text     "catchphrase",     limit: 65535
+    t.boolean  "owner"
   end
 
   create_table "notifications", force: :cascade do |t|

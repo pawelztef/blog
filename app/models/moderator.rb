@@ -8,4 +8,6 @@ class Moderator < ActiveRecord::Base
   validates :username, presence: true, format: { with: /@/, message: 'is not valid'}
   validates :password, presence: true, confirmation: true
 
+
+
 end

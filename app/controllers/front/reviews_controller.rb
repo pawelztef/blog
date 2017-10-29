@@ -1,4 +1,4 @@
-class ReviewsController < ApplicationController
+class Front::ReviewsController < Front::ApplicationController
 
   layout "application_front_show"
 

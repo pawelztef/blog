@@ -15,14 +15,14 @@
             <%= swap_nav_links params %>
           </li>
           <li>
-            <%= link_to "Contact", new_message_path, remote: true %> 
+            <%= link_to "Contact", new_front_message_path, remote: true %> 
           </li>
         </ul>
         <ul class="nav navbar-right navbar-nav">
           <li>
             <div id="wrap">
 
-              <%= form_tag posts_path, method: :get do %> 
+              <%= form_tag front_posts_path, method: :get do %> 
                 <%= text_field_tag :search %> 
                 <%= submit_tag "Search", value: "Rechercher", id: "XX" %> 
               <% end %> 
