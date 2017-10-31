@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171028034703) do
+ActiveRecord::Schema.define(version: 20171030052200) do
 
   create_table "bios", force: :cascade do |t|
     t.string   "body",         limit: 255
@@ -133,6 +133,21 @@ ActiveRecord::Schema.define(version: 20171028034703) do
     t.boolean  "display_reviews"
   end
 
+  create_table "social_links", force: :cascade do |t|
+    t.string   "url",              limit: 255
+    t.string   "icon",             limit: 255
+    t.integer  "social_module_id", limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "social_links", ["social_module_id"], name: "index_social_links_on_social_module_id", using: :btree
+
+  create_table "social_modules", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
@@ -153,4 +168,5 @@ ActiveRecord::Schema.define(version: 20171028034703) do
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "moderators"
+  add_foreign_key "social_links", "social_modules"
 end

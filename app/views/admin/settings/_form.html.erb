@@ -28,9 +28,7 @@
         <%= f.number_field :post_per_page, class: "form-control input-sm small-input" %>
       </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="settings-row-right">
+    <div class="settings-row">
       <h3>
         <%= f.label :under_maintenance %><br />
       </h3>
@@ -40,6 +38,9 @@
         <p>Blog is under maintenance</p>
       </div>
     </div>
+  </div>
+  <div class="col-md-6">
+
     <div class="settings-row-right">
       <h3>
         <%= f.label :prevent_commenting, "Commenting" %><br />
@@ -67,12 +68,23 @@
         <%= f.select :display_reviews, [['active', true], ['disabled', false]], class: "form-control small-input" %>
       </div>
     </div>
-  </div>
-  <div class="col-md-12">
-      <div class="settings-row">
-        <div class="form-goup">
-          <%= f.submit 'Update Settings', class: "btn btn-block btn-default" %> 
-        </div>
+
+    <div class="settings-row-right">
+      <h3>
+        <%= f.label :social_media_icons %><br />
+      </h3>
+      <p>Set social medial links displayed on site</p>
+      <div class="form-goup">
+        <%= link_to "Manage Links", admin_social_modules_path, class: 'btn btn-default btn-xs' %> 
       </div>
     </div>
+
+  </div>
+  <div class="col-md-12">
+    <div class="settings-row">
+      <div class="form-goup">
+        <%= f.submit 'Update Settings', class: "btn btn-block btn-default" %> 
+      </div>
+    </div>
+  </div>
 <% end %> 

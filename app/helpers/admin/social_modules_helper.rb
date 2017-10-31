@@ -1,0 +1,2 @@
+module Admin::SocialModulesHelper
+end
