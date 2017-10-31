@@ -14,6 +14,7 @@ pickle-email-*.html
 .env
 
 public/uploads/ckeditor/pictures/**
+public/uploads/**
 
 /.bundle
 /vendor/bundle

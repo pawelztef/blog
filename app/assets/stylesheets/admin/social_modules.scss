@@ -4,15 +4,27 @@
   }
 }
 #social_links {
+  .well {
+    padding: 10px !important;
+  }
 }
-.nested-fields {
+.in-upl {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  align-items: center;
+  margin-top: 8px;
   .form-control  {
     margin: 0px 15px; 
   }
 }
 #admin-settings-content .btn-default {
   margin-left: 15px;
+  height: 100%;
+}
+.ico-upl {
+  margin-left: 60px;
+}
+.file-upl {
+  width: 205px !important;
+  padding: 5px;
 }

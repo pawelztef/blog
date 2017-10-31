@@ -2,6 +2,7 @@ class Admin::SocialModulesController < Admin::ApplicationController
   before_action :set_admin_social_module, only: [:index, :show, :edit, :update, :destroy]
 
   def index
+    #TODO clean all actions
   end
 
   def show
@@ -36,6 +37,5 @@ class Admin::SocialModulesController < Admin::ApplicationController
 
   def social_module_params
     params.require(:social_module).permit(social_links_attributes: SocialLink.attribute_names.map(&:to_sym).push(:_destroy))
-    # params.require(:social_module).permit(:something)
   end
 end
