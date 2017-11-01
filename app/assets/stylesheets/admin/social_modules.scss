@@ -1,0 +1,42 @@
+@import 'admin_partials';
+.edit_social_module {
+  .actions {
+    margin-top: 40px;
+  }
+}
+#social_links {
+  .well {
+    padding: 10px !important;
+  }
+}
+.in-upl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  .form-control  {
+    margin: 0px 15px; 
+  }
+}
+#admin-settings-content .btn-default {
+  margin-left: 15px;
+  height: 100%;
+}
+.ico-upl {
+  margin-left: 60px;
+}
+.file-upl {
+  width: 205px !important;
+  padding: 5px;
+}
+
+.remove_fields {
+  color: $prim2 !important;
+  border: 1px $prim2 solid !important;
+  &:hover {
+    background: $mainBg;
+  }
+}
+#manage-links{
+  margin-left: 0px !important;
+}

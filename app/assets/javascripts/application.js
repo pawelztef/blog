@@ -17,6 +17,7 @@
 //= require bootstrap.min
 //= require turbolinks
 //= require ckeditor/init
+//= require cocoon
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {

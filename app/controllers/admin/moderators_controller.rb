@@ -4,10 +4,11 @@ class Admin::ModeratorsController < Admin::ApplicationController
   end
   def edit
     @moderator = Moderator.find(params[:id]).decorate
-    @bio = @moderator.bio.body
+    @bio = @moderator.bio.try(:body)
   end
   def update
     @moderator = Moderator.find(params[:id]).decorate
+    Moderator.update_all(owner: false) if moderator_params[:owner]
     if @moderator.update(moderator_params)
       flash[:notice] = "Moderator was successfully updated"
       redirect_to(action: 'index') 
@@ -18,6 +19,6 @@ class Admin::ModeratorsController < Admin::ApplicationController
   end
   private
   def moderator_params
-    params.require(:moderator).permit(:id, :fullname, :username, :password, :avatar, :bio, :password_confirmation )
+    params.require(:moderator).permit(:id, :fullname, :username, :password, :avatar, :bio, :password_confirmation, :catchphrase, :owner)
   end
 end

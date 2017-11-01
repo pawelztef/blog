@@ -1,7 +1,8 @@
 @import 'admin_partials';
 
 .adm-avatar {
-  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
 }
 input#moderator_avatar {
   margin-top: 20px;
@@ -17,4 +18,11 @@ label[for='moderator_avatar'] {
       border-bottom: none;
     }
   }
+}
+#moderator_catchphrase {
+  resize: vertical;
+}
+input#moderator_owner {
+    margin-left: 5px;
+    margin-right: 10px;
 }

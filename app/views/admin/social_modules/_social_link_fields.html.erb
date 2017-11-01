@@ -1,0 +1,15 @@
+<div class="nested-fields form-inline">
+  <div class="well">
+    <div class="row">
+      <div class="col-md-1">
+        <%= image_tag f.object.icon_url(:md), class: 'ico-upl img-responsive' %> 
+      </div>
+      <div class="col-md-9 in-upl">
+        <%= f.file_field :icon, class: 'form-control file-upl' %> 
+        <%= f.hidden_field :icon_cache %>
+        <%= f.text_field :url, class: 'form-control', placeholder: 'URL' %> 
+        <%= link_to_remove_association icon('minus'), f, class: 'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+</div>

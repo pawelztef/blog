@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  root to: 'posts#index'
+  root to: 'front/profiles#index'
 
   get '/login' => 'admin/sessions#new'
   get '/logout' => 'admin/sessions#destroy'
 
   namespace :admin do 
+    resources :social_modules, path: "social_module", only: [:index, :edit, :udate, :destroy]
     resources :posts
     resources :books do
       collection do
@@ -28,16 +29,16 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :front_pages do
-    collection do
-      get :profile
-    end
+  namespace :front, path: '' do
+    resources :profiles, only: [:index]
+    resources :resumes, only: [:index]
+    resources :posts, only: [:index, :show], path: 'blog'
+    resources :messages, only: [:new, :create]
+    resources :comments, only: [:create]
+    resources :reviews, only: [:index, :show]
   end
-  
-  resources :posts, only: [:index, :show]
-  resources :messages, only: [:new, :create]
-  resources :comments, only: [:create]
-  resources :reviews, only: [:index, :show]
+
+
 
   match 'dismiss_all_notifications', to: 'admin/notifications#delete_all', via: :delete
 end

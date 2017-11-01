@@ -80,10 +80,11 @@ $large-desktops: "only screen and (min-width: 992px)";
     background: $mainBg;
   }
 }
-#validation_errors {
+#validation_errors, #error_explanation {
   text-align: center;
   color: $prim3;
   ul {
     list-style: none;
   }
 }
+

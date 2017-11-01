@@ -29,14 +29,8 @@
 
   <li> <%= link_to '<i class="fa fa-tags" aria-hidden="true"></i> <p class="hidden-sm hidden-xs">Tags</p>'.html_safe, new_admin_tag_path %> </li>
 
+  <li class='link'> <%= link_to '<i class="fa fa-book" aria-hidden="true"></i><p class="hidden-sm hidden-xs">Books Reviews</p>'.html_safe, admin_books_path %> </li>
+
   <li class='link'> <%= link_to '<i class="fa fa-cogs" aria-hidden="true"></i><p class="hidden-sm hidden-xs">Settings</p>'.html_safe, new_admin_setting_path %> </li>
 
-  <li class='link'> <%= link_to '<i class="fa fa-book" aria-hidden="true"></i><p class="hidden-sm hidden-xs">Books Reviews</p>'.html_safe, admin_books_path %> </li>
 </ul>
-
-<%# <p> %>
-<%# <%= link_to 'Moderators', admin_moderators_path %1> %>
-<%# <%= link_to 'Visitors', admin_visitors_path %1> %>
-<%# <%= link_to 'Messages', admin_messages_path %1> %>
-<%# <%= link_to 'Notifications', admin_notifications_path %1> %>
-<%# </p> %>
