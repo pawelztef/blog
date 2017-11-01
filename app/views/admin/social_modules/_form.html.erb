@@ -2,7 +2,7 @@
 
   <% if @social_module.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@social_module.errors.count, "error") %> prohibited this admin_social_module from being saved:</h2>
+      <h2><%= pluralize(@social_module.errors.count, "error") %> prohibited this form from being saved:</h2>
       <ul>
         <% @social_module.errors.full_messages.each do |message| %>
           <li><%= message %></li>
