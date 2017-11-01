@@ -1,14 +1,9 @@
 class Front::ProfilesController < Front::ApplicationController
 
   layout 'front_end'
-  before_action :set_moderator
   
   def index 
-  end
-
-  private
-  def set_moderator
-    @moderator = Moderator.where(owner: true).first.try(:decorate)
+    flash[:notice] = "what's up you great moderator!"
   end
   
 end
