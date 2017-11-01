@@ -68,4 +68,12 @@ module ApplicationHelper
     end
   end
 
+  def build_social_links
+    links_string = ''
+    SocialModule.instance.social_links.each do |link|
+      links_string += link_to image_tag(link.icon_url(:xs)), link.url, class: 'link', data: {title: link.url}
+    end
+    links_string.html_safe
+  end
+
 end
