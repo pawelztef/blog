@@ -1,32 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%# TODO implement title functionality %>
     <title>MyBlog</title>
     <%= stylesheet_link_tag    'front_end', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="container login">
-      <div class="row">
-        <div class="col-center col-md-3">
-            <% if flash[:notice] %>
-              <div class="alert"> <%= flash[:notice] %> </div>
-            <% end %>
-            <% if flash[:alert] %>
-              <div class="alert"> <%= flash[:alert] %> </div>
-            <% end %>
-        </div>
-      </div>
-    </div>
 
+    <%= render 'layouts/partials/front_main_nav' unless params[:controller] == 'front/profiles' %> 
     <%= yield %>
+    <%= render "layouts/partials/front_flash_messages" %>
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-          $('.alert').fadeIn().delay(1000).fadeOut();
-        })
-    </script>
   </body>
-
 </html>

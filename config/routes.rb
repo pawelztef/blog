@@ -30,8 +30,8 @@ Rails.application.routes.draw do
   end
 
   namespace :front, path: '' do
-    resources :profiles, only: [:index]
-    resources :resumes, only: [:index]
+    resources :profiles, only: [:index], path: 'profile'
+    resources :abouts, only: [:index], path: 'about'
     resources :posts, only: [:index, :show], path: 'blog'
     resources :messages, only: [:new, :create]
     resources :comments, only: [:create]
