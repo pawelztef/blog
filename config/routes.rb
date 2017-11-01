@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/logout' => 'admin/sessions#destroy'
 
   namespace :admin do 
-    resources :social_modules, path: "social_module"
+    resources :social_modules, path: "social_module", only: [:index, :edit, :udate, :destroy]
     resources :posts
     resources :books do
       collection do
