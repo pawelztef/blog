@@ -1,1 +1,6 @@
-
+<div class="page about">
+  <p>
+  <%= image_tag @moderator.avatar_url(:profile_frontend), alt: "#{@moderator.fullname} Profile Image" if @moderator %> 
+  </p>
+  <%= @bio.body.html_safe if @bio %> 
+</div>

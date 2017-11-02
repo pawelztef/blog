@@ -36,6 +36,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
   version :profile_backend do
     process resize_to_fit: [300, 300]
   end
+  version :profile_frontend do
+    process resize_to_fit: [250, 250]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
