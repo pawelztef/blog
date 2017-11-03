@@ -3,13 +3,13 @@
   <span class="date"> <time datetime=<%= @post.published_at.strftime("%d-%m-%Y") %> > <%= @post.published_at.strftime("%A. %B %d, %Y") %>  </time> 
   </span>
 
-  <% if check_tagging_availability %>
-    <div class="post-tags"> 
+  <div class="post-tags"> 
+    <% if check_tagging_availability %>
       <% @post.tags.each do |tag| %>
         <%= link_to tag.name, front_posts_path(tag: tag.name), class: 'item' %>
       <% end %> 
-    </div>
-  <% end %> 
+    <% end %> 
+  </div>
 
   <%= @post.content.html_safe %>
 
@@ -32,4 +32,3 @@
   </div>
 </div>
 
-<%# <%= link_to "All Posts", front_posts_path, class: 'pull-right' %1> %> 
