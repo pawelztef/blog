@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030052200) do
+ActiveRecord::Schema.define(version: 20171103043810) do
 
   create_table "bios", force: :cascade do |t|
-    t.string   "body",         limit: 255
+    t.text     "body",         limit: 65535
     t.integer  "moderator_id", limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "bios", ["moderator_id"], name: "index_bios_on_moderator_id", using: :btree
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20171030052200) do
     t.integer  "moderator_id", limit: 4
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.datetime "published_at"
   end
 
   add_index "posts", ["moderator_id"], name: "index_posts_on_moderator_id", using: :btree

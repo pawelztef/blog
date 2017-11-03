@@ -4,7 +4,6 @@ class Admin::BiosController < Admin::ApplicationController
 
   def bio_update
     @bio.body = params[:bio_body]
-    byebug
     if @bio.save
       redirect_to admin_moderators_url
     end

@@ -793,7 +793,7 @@ pre {
 .blog > .list:before,
 .projects > .list:before {
   display: block;
-  content: " ";
+  /* content: " "; */
   width: 7px;
   height: 7px;
   border: #ededed 1px solid;

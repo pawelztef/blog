@@ -41,6 +41,12 @@ module ApplicationHelper
   def check_commenting_availability
     return Setting.prevent_commenting?
   end
+  def check_tagging_availability
+    return Setting.tag_visible?
+  end
+  def check_reviews_availability
+    return Setting.display_reviews?
+  end
 
   def get_number_of_notifications
     Notification.count
@@ -56,10 +62,6 @@ module ApplicationHelper
 
   def get_number_of_comments approved=false
     approved ? Comment.count : Comment.approved.count
-  end
-
-  def set_book_reviews_links
-    link_to "Books", front_reviews_path if Setting.display_reviews?
   end
 
   def build_navigation_link name, path

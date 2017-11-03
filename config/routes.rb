@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   namespace :front, path: '' do
     resources :profiles, only: [:index], path: 'profile'
+    resources :portfolios, only: [:index], path: 'portfolio'
     resources :abouts, only: [:index], path: 'about'
     resources :posts, only: [:index, :show], path: 'blog'
     resources :messages, only: [:new, :create]

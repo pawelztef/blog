@@ -1,12 +1,8 @@
-class Front::AboutsController < ApplicationController
+class Front::AboutsController < Front::ApplicationController
   layout 'front_end'
-  before_action :set_moderator
 
   def index
+   @bio = @moderator.try(:bio)
   end
   
-  private
-  def set_moderator
-    @moderator = Moderator.where(owner: true).first.try(:decorate)
-  end
 end

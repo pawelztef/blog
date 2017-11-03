@@ -1,6 +1,6 @@
 <h3>Add Comment</h3>
 <div class="form-horizontal">
-  <%= form_for @visitor_comment, url: comments_url do |f| %>
+  <%= form_for @visitor_comment, url: front_comments_url do |f| %>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <% if session[:visitor_errors] %>
