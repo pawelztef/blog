@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103043810) do
+ActiveRecord::Schema.define(version: 20171103072307) do
 
   create_table "bios", force: :cascade do |t|
     t.text     "body",         limit: 65535
@@ -112,6 +112,24 @@ ActiveRecord::Schema.define(version: 20171103043810) do
 
   add_index "posts", ["moderator_id"], name: "index_posts_on_moderator_id", using: :btree
 
+  create_table "project_images", force: :cascade do |t|
+    t.string   "image",       limit: 255
+    t.string   "title",       limit: 255
+    t.string   "description", limit: 255
+    t.integer  "project_id",  limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "project_images", ["project_id"], name: "index_project_images_on_project_id", using: :btree
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "description", limit: 255
+    t.boolean  "display"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text     "content",    limit: 65535
     t.boolean  "draft"
@@ -169,5 +187,6 @@ ActiveRecord::Schema.define(version: 20171103043810) do
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "moderators"
+  add_foreign_key "project_images", "projects"
   add_foreign_key "social_links", "social_modules"
 end

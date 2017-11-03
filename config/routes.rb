@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :tags, except: [:index]
     resources :sessions, only: [:new, :create, :destroy]
     resources :moderators, only: [:index, :edit, :update]
+    resources :projects
     resources :bios do
       collection do
         post :bio_update
