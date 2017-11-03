@@ -41,6 +41,9 @@ module ApplicationHelper
   def check_commenting_availability
     return Setting.prevent_commenting?
   end
+  def check_tagging_availability
+    return Setting.tag_visible?
+  end
 
   def get_number_of_notifications
     Notification.count

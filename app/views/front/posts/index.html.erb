@@ -1,37 +1,21 @@
-
-<div id="front-index">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9 col-md-push-3"> 
-	<div class="panel">
-	  <div class="panel-body">
-            <br>
-	    <% @posts.each do |post| %>
-	      <div class="row">    
-		<div class="col-center col-md-10 col-sm-9">
-		  <h3> <%= truncate(post.title, length: 70, separator: '') %> </h3>
-		  <div class="row post-details">
-		    <div class="col-xs-9">
-		      <h4> <small style="font-family:courier,'new courier';" class="text-muted"><%= time_ago post.created_at %> • <%= link_to "Read More", front_post_path(post), class: "text-muted" %></small> </h4>
-		      <% if Setting.tag_visible? %>
-			<% post.tags.each do |tag| %>
-			  <h4><span class="tag-label"><%= link_to tag.name, front_posts_path(tag: tag.name) %></span></h4>
-			<% end %> 
-		      <% end %> 
-		    </div>
-		    <div class="col-xs-3"></div>
-		  </div>
-		</div>
-	      </div>
-	      <hr>
-	    <% end %> 
-            <div class="kaminari text-center">
-              <%= paginate @posts %> 
-            </div>
-	  </div>
-	</div>
+<div class="page blog">
+  <%= render 'layouts/partials/front_header' %> 
+  <section class="list">
+    <% @posts.each do |post| %>
+      <div class="item">
+        <%= link_to front_post_path(post), class: 'url' do  %> 
+          <aside class="date">
+            <time datetime=<%= post.created_at.strftime('%d-%m-%Y') %> >
+              <%= post.created_at.strftime('%b %d %Y') %><br>
+              <%# <small class="date"><%= time_ago post.created_at %1></small> %>
+            </time>
+          </aside>
+          <h3 class="title"> <%= post.title %> </h3>
+      <% end %> 
       </div>
-      <%= render "layouts/partials/book_review_panel" %>
+    <% end %> 
+    <div class="kaminari text-center">
+      <%= paginate @posts %> 
     </div>
-  </div>
+  </section>
 </div>

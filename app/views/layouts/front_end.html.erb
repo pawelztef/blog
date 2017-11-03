@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
+    <%# OPTIMIZE add dashboard nav links and logout %> 
     <div class="wrapper-normal">
       <%= render 'layouts/partials/front_main_nav' unless params[:controller] == 'front/profiles' %> 
       <%= yield %>

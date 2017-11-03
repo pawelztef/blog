@@ -1,15 +1,13 @@
 <div class="page home">
-  <header class="header-home animated">
-    <%= @moderator ? @moderator.set_profile_img : "Anonymous" %>
-    <h1 class="title"> <%= @moderator.fullname if @moderator %> </h1>
-    <h2 class="description"> <%= @moderator.catchphrase if @moderator %> </h2>
-    <div class="social-links">
-      <%= build_social_links %> 
-    </div>
-  </header>
+
+  <%= render "layouts/partials/front_header" %>
+  
   <nav class="nav-home">
-    <%= render "layouts/partials/navigation_list" %>
+    
+    <%= render "layouts/partials/nav_list" %>
+
   </nav>
+
 </div>
 
 

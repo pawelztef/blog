@@ -9,12 +9,13 @@ moderator = Moderator.create(fullname: "Pawel Stef", username: "p@p", password: 
 
 30.times do 
   post = Post.create(
-    title: Faker::Lorem.sentence(20),
+    title: Faker::Book.title,
     content: Faker::Lorem.paragraph,
+    published_at: DateTime.now,
     publish: true,
     moderator: moderator)
 
-  tag = Tag.create(name: Faker::Lorem.word)
+  tag = Tag.create(name: Faker::Book.genre)
   
   post_tag = PostTag.create(post: post, tag: tag)
   
