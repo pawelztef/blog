@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.9.1"
 
-server "pavelztef.pl", user: "pawel", roles: %w{app db web}
+server "pawelztef.me", user: "pawel", roles: %w{app db web}
 
 set :application, "my_blog"
 set :repo_url, "pawelztef@bitbucket.org:pawelztef/myblog.git"
