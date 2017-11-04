@@ -1,12 +1,17 @@
 @import 'admin_partials';
 
 
-#admin-post-content {
+#admin-post-content, #admin-project-content {
   @extend .admin-content-container;
   height: 100%;
 
   header {
     @extend .admin-content-header;
+    a {
+      top: -20px;
+      position: relative;
+      margin-right: 20px;
+    }
   }
 
   .chosen-container, .chosen-container-multi {
@@ -27,11 +32,14 @@
   }
 
 }
-#admin-all-posts-content {
+#admin-all-posts-content, #admin-all-projects-content {
   @extend .admin-content-container;
 
   header {
     @extend .admin-content-header;
+    a {
+      margin-right: 20px;
+    }
   }
   .search-field {
     @extend .search-field-styles;

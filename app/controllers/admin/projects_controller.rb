@@ -10,6 +10,7 @@ class Admin::ProjectsController < Admin::ApplicationController
 
   def new
     @admin_project = Project.new
+    @admin_project.project_images << ProjectImage.new
   end
 
   def edit
@@ -20,7 +21,7 @@ class Admin::ProjectsController < Admin::ApplicationController
 
     respond_to do |format|
       if @admin_project.save
-        format.html { redirect_to @admin_project, notice: 'Project was successfully created.' }
+        format.html { redirect_to admin_projects_url, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @admin_project }
       else
         format.html { render :new }
@@ -55,6 +56,13 @@ class Admin::ProjectsController < Admin::ApplicationController
     end
 
     def admin_project_params
-      params.fetch(:admin_project, {})
+      params.require(:project).permit(:title,
+                                      :description,
+                                      :display,
+                                      project_images_attributes: [:title,
+                                                                   :image,
+                                                                   :description,
+                                                                   :main_image,
+                                                                   :project_id])
     end
 end

@@ -1,25 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div id="admin-all-projects-content">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Projects</h2>
+    <%= link_to "New Project", new_admin_project_path, class: 'btn btn-xs btn-default pull-right' %> 
+  </header>
+  <div class="content-inner">
+    <div class="form-wraper">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
 
-<h1>Listing Admin Projects</h1>
+        <tbody>
+          <% @admin_projects.each do |admin_project| %>
+            <tr>
+              <td> <%= admin_project.title %> </td>
+              <td> 
+                <% admin_project.project_image_ids.each do |i| %>
+                  <%= i %> 
+                <% end %> 
+              </td>
+              <%# <td><%= link_to 'Show', admin_project %1></td> %>
+              <%# <td><%= link_to 'Edit', edit_admin_project_path(admin_project) %1></td> %>
+              <%# <td><%= link_to 'Destroy', admin_project, method: :delete, data: { confirm: 'Are you sure?' } %1></td> %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @admin_projects.each do |admin_project| %>
-      <tr>
-        <td><%= link_to 'Show', admin_project %></td>
-        <td><%= link_to 'Edit', edit_admin_project_path(admin_project) %></td>
-        <td><%= link_to 'Destroy', admin_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_admin_project_path %>
+    </div>
+  </div>
+</div>
