@@ -1,15 +1,6 @@
 <%= form_for([:admin, @social_module]) do |f| %>
 
-  <% if @social_module.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@social_module.errors.count, "error") %> prohibited this form from being saved:</h2>
-      <ul>
-        <% @social_module.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'admin/application/validation_errors', object: @social_module %> 
 
   <div id="social_links">
     <%= f.fields_for :social_links do |link| %> 

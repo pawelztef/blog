@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103072307) do
+ActiveRecord::Schema.define(version: 20171104090957) do
 
   create_table "bios", force: :cascade do |t|
     t.text     "body",         limit: 65535
@@ -116,14 +116,20 @@ ActiveRecord::Schema.define(version: 20171103072307) do
     t.string   "image",       limit: 255
     t.string   "title",       limit: 255
     t.string   "description", limit: 255
-    t.integer  "project_id",  limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
 
-  add_index "project_images", ["project_id"], name: "index_project_images_on_project_id", using: :btree
+  create_table "project_images_projects", id: false, force: :cascade do |t|
+    t.integer "project_id",       limit: 4, null: false
+    t.integer "project_image_id", limit: 4, null: false
+  end
+
+  add_index "project_images_projects", ["project_id", "project_image_id"], name: "index_project_images_projects_on_project_id_and_project_image_id", using: :btree
+  add_index "project_images_projects", ["project_image_id", "project_id"], name: "index_project_images_projects_on_project_image_id_and_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
+    t.string   "title",       limit: 255
     t.string   "description", limit: 255
     t.boolean  "display"
     t.datetime "created_at",              null: false
@@ -187,6 +193,5 @@ ActiveRecord::Schema.define(version: 20171103072307) do
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "moderators"
-  add_foreign_key "project_images", "projects"
   add_foreign_key "social_links", "social_modules"
 end

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :sessions, only: [:new, :create, :destroy]
     resources :moderators, only: [:index, :edit, :update]
     resources :projects
+    resources :project_images
     resources :bios do
       collection do
         post :bio_update
