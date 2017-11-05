@@ -32,7 +32,9 @@
   }
 
 }
-#admin-all-posts-content, #admin-all-projects-content {
+#admin-all-posts-content, 
+#admin-all-projects-content,
+#admin-all-projects-images, {
   @extend .admin-content-container;
 
   header {

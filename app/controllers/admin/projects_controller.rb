@@ -18,7 +18,6 @@ class Admin::ProjectsController < Admin::ApplicationController
 
   def create
     @admin_project = Project.new(admin_project_params)
-
     respond_to do |format|
       if @admin_project.save
         format.html { redirect_to admin_projects_url, notice: 'Project was successfully created.' }
@@ -59,10 +58,6 @@ class Admin::ProjectsController < Admin::ApplicationController
       params.require(:project).permit(:title,
                                       :description,
                                       :display,
-                                      project_images_attributes: [:title,
-                                                                   :image,
-                                                                   :description,
-                                                                   :main_image,
-                                                                   :project_id])
+                                      project_images_attributes: ProjectImage.attribute_names.map(&:to_sym).push(:_destroy).push(:icon_cache))
     end
 end

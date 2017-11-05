@@ -1,25 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div id="admin-all-projects-images">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Project Images Gallery</h2>
+    <div class="upload-button pull-right">
+      <%= form_for [:admin, ProjectImage.new] do |f| %> 
+        <%= f.label :image, 'Upload images', class: 'btn btn-default btn-xs' %> 
+        <%= f.file_field :image, multiple: true, name: 'project_image[image]' %> 
+        </br>
+      <% end %> 
+    </div>
+  </header>
+  <div class="content-inner">
+    <div id="progress">
+      <div class="bar" style="width: 0%;"></div>
+    </div>
+    <div class="form-wraper">
 
-<h1>Listing Admin Project Images</h1>
+      <div class="container">
+        <div id="paintings">
+          <% @admin_project_images.each do |img| %> 
+            <div class="col-sm-4 col-md-3">
+              <div class="thumbnail">
+                <%= link_to admin_project_image_path(img) do %> 
+                  <%= image_tag img.try(:image).url, class: 'img-responsive' %> 
+                <% end %> 
+              </div>
+            </div>
+          <% end %> 
+        </div>
+      </div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @admin_project_images.each do |admin_project_image| %>
-      <tr>
-        <td><%= link_to 'Show', admin_project_image %></td>
-        <td><%= link_to 'Edit', edit_admin_project_image_path(admin_project_image) %></td>
-        <td><%= link_to 'Destroy', admin_project_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Project image', new_admin_project_image_path %>
+    </div>
+  </div>
+</div>

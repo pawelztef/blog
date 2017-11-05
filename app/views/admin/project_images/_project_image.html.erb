@@ -1,0 +1,7 @@
+<div class="col-sm-4 col-md-3">
+  <div class="thumbnail">
+    <%= link_to admin_project_image_path(@admin_project_image) do %> 
+      <%= image_tag @admin_project_image.try(:image).url %> 
+    <% end %> 
+  </div>
+</div>

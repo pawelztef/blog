@@ -1,0 +1,7 @@
+<% if @admin_project_image.new_record? %>
+    alert("Failed to upload painting: <%= j @admin_project_image.errors.full_messages.join(', ').html_safe %>");
+<% else %>
+    $("#paintings").append("<%= j render @admin_project_image %>");
+
+
+<% end %>

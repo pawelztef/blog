@@ -16,17 +16,7 @@ class Admin::ProjectImagesController < Admin::ApplicationController
   end
 
   def create
-    @admin_project_image = ProjectImage.new(admin_project_image_params)
-
-    respond_to do |format|
-      if @admin_project_image.save
-        format.html { redirect_to @admin_project_image, notice: 'Project image was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_project_image }
-      else
-        format.html { render :new }
-        format.json { render json: @admin_project_image.errors, status: :unprocessable_entity }
-      end
-    end
+    @admin_project_image = ProjectImage.create(admin_project_image_params)
   end
 
   def update
@@ -50,11 +40,11 @@ class Admin::ProjectImagesController < Admin::ApplicationController
   end
 
   private
-    def set_admin_project_image
-      @admin_project_image = ProjectImage.find(params[:id])
-    end
+  def set_admin_project_image
+    @admin_project_image = ProjectImage.find(params[:id])
+  end
 
-    def admin_project_image_params
-      params.fetch(:admin_project_image, {})
-    end
+  def admin_project_image_params
+    params.require(:project_image).permit(:image)
+  end
 end

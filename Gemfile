@@ -29,6 +29,7 @@ gem 'kaminari', '~> 0.17.0'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'jquery-fileupload-rails'
 # gem for friendly multiple select forms
 gem 'chosen-rails'
 gem 'responders', '~> 2.0'
