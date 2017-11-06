@@ -115,9 +115,9 @@ ActiveRecord::Schema.define(version: 20171104090957) do
   create_table "project_images", force: :cascade do |t|
     t.string   "image",       limit: 255
     t.string   "title",       limit: 255
-    t.string   "description", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "project_images_projects", id: false, force: :cascade do |t|

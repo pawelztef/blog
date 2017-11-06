@@ -3,7 +3,7 @@ class CreateProjectImages < ActiveRecord::Migration
     create_table :project_images do |t|
       t.string :image
       t.string :title
-      t.string :description
+      t.text :description
 
       t.timestamps null: false
     end
