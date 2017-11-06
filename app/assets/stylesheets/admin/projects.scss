@@ -1,6 +1,7 @@
+@import 'admin_partials';
 .bar {
-    height: 18px;
-    background: green;
+  height: 18px;
+  background: green;
 }
 #project_image_image {
   display: none;
@@ -11,3 +12,26 @@
     margin-left: 10px;
   }
 }
+
+.edit_project_image {
+  .modal-body {
+    #error_explanation{
+      .alert.alert-error {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.modal-header-details {
+  p.page-title {
+    font-size: 18px;
+    color: $prim3;
+    font-family: 'Oswald',arial narrow,sans-serif;
+    margin-bottom: 5px;
+  }
+  display: flex;
+  justify-content: space-between;
+}
+

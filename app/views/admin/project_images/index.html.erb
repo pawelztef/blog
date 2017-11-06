@@ -24,7 +24,7 @@
               <div class="col-sm-4 col-md-3">
                 <%= check_box_tag "project_images_ids[]", img.id %> 
                 <div class="thumbnail">
-                  <%= link_to admin_project_image_path(img) do %> 
+                  <%= link_to admin_project_image_path(img), remote: true do %> 
                     <%= image_tag img.try(:image).url, class: 'img-responsive' %> 
                   <% end %> 
                 </div>

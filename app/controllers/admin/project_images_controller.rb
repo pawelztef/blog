@@ -6,6 +6,10 @@ class Admin::ProjectImagesController < Admin::ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
@@ -23,7 +27,7 @@ class Admin::ProjectImagesController < Admin::ApplicationController
     respond_to do |format|
       if @admin_project_image.update(admin_project_image_params)
         format.html { redirect_to @admin_project_image, notice: 'Project image was successfully updated.' }
-        format.json { render :show, status: :ok, location: @admin_project_image }
+        format.json { render :index, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @admin_project_image.errors, status: :unprocessable_entity }
@@ -40,8 +44,12 @@ class Admin::ProjectImagesController < Admin::ApplicationController
   end
 
   def destroy_multiple
-    ProjectImage.destroy(params[:project_images_ids])
-    redirect_to admin_project_images_url, notice: 'Images was successfully destroyed.'
+    if params[:project_images_ids]
+      ProjectImage.destroy(params[:project_images_ids])
+      redirect_to admin_project_images_url, notice: 'Images was successfully destroyed.'
+    else
+      redirect_to admin_project_images_url
+    end
   end
 
   private
@@ -50,6 +58,6 @@ class Admin::ProjectImagesController < Admin::ApplicationController
   end
 
   def admin_project_image_params
-    params.require(:project_image).permit(:image)
+    params.require(:project_image).permit(:image, :title, :description)
   end
 end

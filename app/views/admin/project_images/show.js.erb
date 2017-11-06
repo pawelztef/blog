@@ -1,0 +1,27 @@
+$('body').append('<%= j render("show") %>');
+$("#projectImageShow").modal('show');
+$(".closeModal").on("click", function() {
+  $("#projectImageShow").modal('hide');
+});
+$(".submit").closest('form').on("ajax:success", function() {
+  $("#projectImageShow").modal('hide');
+});
+$(".submit").closest('form').on("ajax:error", function(event, xhr, status, error) {
+
+
+    const errors = jQuery.parseJSON(xhr.responseText);
+    console.log(errors)
+    const errorcount = errors.length;
+    $('#error_explanation').empty();
+    if (errorcount > 1) {
+      $('#error_explanation').append(`<div class="alert alert-error">The form contains ${errorcount} errors.</div>`);
+    } else {
+      $('#error_explanation').append('<div class="alert alert-error">The form contains 1 error</div>');
+    }
+    $('#error_explanation').append('<div>');
+    for (var e in errors) {
+    $('#error_explanation').append('<p>' + e + ": " + errors[e] + '</p>');
+    }
+    $('#error_explanation').append('</div>');
+    return $('#error_explanation').show();
+});
