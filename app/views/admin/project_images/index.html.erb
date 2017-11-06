@@ -3,10 +3,12 @@
     <h2 class="page-title pull-left">Project Images Gallery</h2>
     <div class="upload-button pull-right">
       <%= form_for [:admin, ProjectImage.new] do |f| %> 
-        <%= f.label :image, 'Upload images', class: 'btn btn-default btn-xs' %> 
+        <%= f.label :image, 'Upload images', class: 'btn btn-default' %> 
         <%= f.file_field :image, multiple: true, name: 'project_image[image]' %> 
         </br>
       <% end %> 
+    </div>
+    <div class="select-all pull-right">
     </div>
   </header>
   <div class="content-inner">
@@ -15,22 +17,26 @@
     </div>
     <div class="form-wraper">
 
-      <div class="container">
-        <div id="paintings">
-          <% @admin_project_images.each do |img| %> 
-            <div class="col-sm-4 col-md-3">
-              <div class="thumbnail">
-                <%= link_to admin_project_image_path(img) do %> 
-                  <%= image_tag img.try(:image).url, class: 'img-responsive' %> 
-                <% end %> 
+      <%= form_tag destroy_multiple_admin_project_images_path, method: :delete do %> 
+        <div class="container">
+          <div id="paintings">
+            <% @admin_project_images.each do |img| %> 
+              <div class="col-sm-4 col-md-3">
+                <%= check_box_tag "project_images_ids[]", img.id %> 
+                <div class="thumbnail">
+                  <%= link_to admin_project_image_path(img) do %> 
+                    <%= image_tag img.try(:image).url, class: 'img-responsive' %> 
+                  <% end %> 
+                </div>
               </div>
-            </div>
-          <% end %> 
+            <% end %> 
+          </div>
         </div>
-      </div>
-
-
-
+        <div class="items-bottom-controls">
+          <%= submit_tag "Delete selected", class: 'btn btn-default' %> 
+          <%= button_tag 'Select all', id: 'select-all', class: 'btn btn-default' %> 
+        </div>
+      <% end %> 
     </div>
   </div>
 </div>

@@ -39,6 +39,11 @@ class Admin::ProjectImagesController < Admin::ApplicationController
     end
   end
 
+  def destroy_multiple
+    ProjectImage.destroy(params[:project_images_ids])
+    redirect_to admin_project_images_url, notice: 'Images was successfully destroyed.'
+  end
+
   private
   def set_admin_project_image
     @admin_project_image = ProjectImage.find(params[:id])

@@ -1,4 +1,5 @@
 <div class="col-sm-4 col-md-3">
+  <%= check_box_tag "project_images_ids[]", @admin_project_image.id %> 
   <div class="thumbnail">
     <%= link_to admin_project_image_path(@admin_project_image) do %> 
       <%= image_tag @admin_project_image.try(:image).url %> 
