@@ -25,3 +25,8 @@ $(".submit").closest('form').on("ajax:error", function(event, xhr, status, error
     $('#error_explanation').append('</div>');
     return $('#error_explanation').show();
 });
+$('body').on('hidden.bs.modal', '.modal', function (e) {
+  $(e.target).removeData('bs.modal');
+  $('.modal').remove();
+});
+
