@@ -39,6 +39,7 @@ gem 'faker'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'draper'
 gem 'cocoon'
+gem 'bootstrap-modal-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

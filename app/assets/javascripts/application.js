@@ -20,6 +20,7 @@
 //= require cocoon
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require bootstrap-modalmanager
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
