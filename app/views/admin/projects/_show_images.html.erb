@@ -1,0 +1,33 @@
+<div id="projectImageShow" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-header-details">
+          <p class="page-title">Chose images</p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i aria-hidden="true">&times;</i>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <% @images.each do |img| %> 
+              <div class="col-sm-4 col-md-3">
+                <%= check_box_tag "project_images_ids[]", img.id %> 
+                <div class="thumbnail">
+                    <%= image_tag img.try(:image).url, class: 'img-responsive' %> 
+                </div>
+              </div>
+            <% end %> 
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="form-group">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

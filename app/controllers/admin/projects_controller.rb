@@ -29,6 +29,11 @@ class Admin::ProjectsController < Admin::ApplicationController
     end
   end
 
+  def show_images
+    byebug
+    @images = ProjectImage.all
+  end
+
   def update
     respond_to do |format|
       if @admin_project.update(admin_project_params)
