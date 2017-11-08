@@ -1,8 +1,12 @@
-<% images.each do |img| %> 
-  <div class="col-sm-4 col-md-3">
-    <div class="thumbnail">
-      <%= check_box_tag "project_images_ids[]", img.id %> 
-      <%= image_tag img.try(:image).url, class: 'img-responsive' %> 
+<% if images.empty? %> 
+  <div class="text-center no-images-fb">No Images.</div>
+<% else %>
+  <% images.each do |img| %> 
+    <div class="col-sm-4 col-md-3">
+      <div class="thumbnail">
+        <%= hidden_field_tag "project_images_ids[]", img.id %> 
+        <%= image_tag img.try(:image).url, class: 'img-responsive' %> 
+      </div>
     </div>
-  </div>
+  <% end %> 
 <% end %> 

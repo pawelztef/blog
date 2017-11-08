@@ -1,7 +1,18 @@
 @import 'admin_partials';
 
-#admin-project-content {
+#admin-project-content, #admin-all-projects-content {
   @extend .admin-content-container;
+}
+div.projects-header-row {
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 15px; 
+}
+div.projects-data-row {
+}
+.content-inner hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .bar {
   height: 18px;
@@ -38,4 +49,8 @@
   display: flex;
   justify-content: space-between;
 }
-
+.text-center.no-images-fb {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}

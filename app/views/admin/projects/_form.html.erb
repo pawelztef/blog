@@ -8,9 +8,10 @@
     <%= f.label :description %> 
     <%= f.cktext_area :description, rows: 10, cols: 20 %>
   </div>
+  <hr>
   <div class="form-group">
     <%= f.label :Project_images %> 
-    <%= render "images_modal", images: @images %>
+    <%= render "images_modal", project: @admin_project, images: @images %>
   </div>
   <div class="form-group">
     <div class="row">
@@ -19,11 +20,14 @@
       </div>
     </div>
   </div>
+  <hr>
+  <%# <div class="form-group"> %>
+    <%# </div> %>
   <div class="form-group">
-    <%= f.label :display, "Publish project when I click on save" %> 
-    <%= f.check_box :display, class: 'checkbox' %> 
-  </div>
-  <div class="form-group">
+    <div class="pull-right">
+      <%= f.label :display, "Publish project when I click on save" %> 
+      <%= f.check_box :display, class: 'checkbox' %> 
+    </div>
     <%= f.submit "Create / publish", class: 'clearfix btn btn-default' %>
   </div>
 <% end %>
@@ -33,11 +37,10 @@ $(function() {
   $('#update-project').click(function(e) {
     e.preventDefault();
     $('.thumbs-container').empty();
+    $('.modal').modal('hide');
     updateProject();
   });
-
 });
-
 
 function updateProject() {
   var x;
@@ -46,8 +49,12 @@ function updateProject() {
       return { 'id': n.querySelector('input').value, 'src': n.querySelector('img').getAttribute('src') }
     }; 
   });
-  for ( var i of x ) {
-    $('.thumbs-container').append("<div class='col-md-3'><div class='thumbnail'><img class='img-responsive' src='" + i.src + "'></div></div>");
+  if (x.length == 0 ) {
+    $('.thumbs-container').append("<div class='text-center no-images-fb'>No images.</div>");
+  }else{
+    for ( var i of x ) {
+      $('.thumbs-container').append("<div class='col-md-3'><div class='thumbnail'><img class='img-responsive' src='" + i.src + "'></div></div>");
+    }
   }
 }
 

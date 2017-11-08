@@ -35,13 +35,6 @@ $(function(){
     }
   });
 
-  <%# $('#update-project').click(function(e) { %>
-  <%#   e.preventDefault(); %>
-  <%#   $('.thumbs-container').empty(); %>
-  <%#   alert('hello'); %>
-  <%#   updateProject(); %>
-  <%# }); %>
-
 });
 
 
@@ -55,14 +48,3 @@ function setBottomControls() {
   }
 }
 
-<%# function updateProject() { %>
-<%#   var x; %>
-<%#    x = $.map( $('.thumbnail'), function(n) { %>
-<%#       if ( n.querySelector('input:checked'))  { %> 
-<%#         return { 'id': n.querySelector('input').value, 'src': n.querySelector('img').getAttribute('src') } %>
-<%#       }; %> 
-<%#     }); %>
-<%#   for ( var i of x ) { %>
-<%#   $('.thumbs-container').append("<div class='col-md-3'><div class='thumbnail'><img class='img-responsive' src='" + i.src + "'></div></div>"); %>
-<%#   } %>
-<%# } %>
