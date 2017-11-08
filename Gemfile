@@ -29,6 +29,7 @@ gem 'kaminari', '~> 0.17.0'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'jquery-fileupload-rails'
 # gem for friendly multiple select forms
 gem 'chosen-rails'
 gem 'responders', '~> 2.0'
@@ -38,6 +39,7 @@ gem 'faker'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'draper'
 gem 'cocoon'
+gem 'bootstrap-modal-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

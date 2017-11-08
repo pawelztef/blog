@@ -1,0 +1,33 @@
+<div id="admin-all-projects-content">
+  <header class='clearfix'>
+    <h2 class="page-title pull-left">Projects</h2>
+    <%= link_to "New Project", new_admin_project_path, class: 'btn btn-xs btn-default pull-right' %> 
+  </header>
+  <div class="content-inner">
+    <div class="row projects-header-row">
+      <div class="col-sm-1 hidden-xs col-lg-1"> <p>#</p></div>
+      <div class="col-xs-8 col-sm-3 col-md-3 col-lg-5"> <p>Title</p></div>
+      <div class="col-sm-1 col-md-1 col-lg-1 hidden-xs"> <p>Images</p></div>
+      <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs"> <p>Date</p></div>
+      <div class="col-sm-1 col-md-1 col-lg-1 hidden-xs"> <p>Status</p></div>
+      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2 actions"> <p>Actions</p></div>
+    </div>
+    <% @admin_projects.each_with_index do |project, index| %>
+      <div class="row projects-data-row">
+        <div class="col-sm-1 hidden-xs col-lg-1"> <%= index + 1 %> </div>
+        <div class="col-xs-8 col-sm-3 col-md-3 col-lg-5"><%= truncate(project.title, length: 25, separator: '') %></div>
+        <div class="col-sm-1 col-md-1 col-lg-1  hidden-xs"><%= project.project_images.count %></div>
+        <div class="col-sm-2 col-md-2 col-lg-2 hidden-xs"><%= time_ago_in_words project.created_at %></div>
+        <div class="col-sm-1 col-md-1 col-lg-1 text-center hidden-xs">
+          <span class='label label-default <%= status_converter(project.display) %>'> <%= status_converter(project.display) %> </span>
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2 actions">
+          <%# <%= link_to "<span class='fa fa-folder-open-o'></span>".html_safe, admin_project_path(project), class: 'btn btn-xs btn-default' %1> %>
+          <%= link_to "<span class='fa fa-pencil-square-o'></span>".html_safe, edit_admin_project_path(project), class: 'btn btn-xs btn-default' %>
+          <%= link_to "<span class='fa fa-trash-o'></span>".html_safe, admin_project_path(project), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %>
+        </div>
+      </div>
+      <hr />
+    <% end %> 
+  </div>
+</div>

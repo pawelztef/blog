@@ -18,6 +18,9 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require cocoon
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
+//= require bootstrap-modalmanager
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
@@ -43,7 +46,7 @@ $(document).on('turbolinks:load', function() {
     } else {
       $('.lefT').height($('.left').height());
       $('.righT').height($('.right').height());
-      console.log($('.lefT'));
+      // console.log($('.lefT'));
     }
   });
 

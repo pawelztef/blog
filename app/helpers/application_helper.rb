@@ -78,4 +78,7 @@ module ApplicationHelper
     links_string.html_safe
   end
 
+  def set_delete_button
+  end
+
 end

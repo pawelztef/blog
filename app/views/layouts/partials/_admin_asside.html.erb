@@ -28,8 +28,23 @@
   <li class='link'> <%= link_to '<i class="fa fa-i-cursor" aria-hidden="true"></i><p class="hidden-sm hidden-xs">Moderators</p>'.html_safe, admin_moderators_path %> </li>
 
   <li> <%= link_to '<i class="fa fa-tags" aria-hidden="true"></i> <p class="hidden-sm hidden-xs">Tags</p>'.html_safe, new_admin_tag_path %> </li>
+  
+  <li class='link'>
+    <a href="#project" class="" data-toggle="collapse"><i class="fa fa-terminal"></i><p class="hidden-sm hidden-xs">Projects</p></a>
+    <ul id="project" class="collapse collapseable">
+      <li> <%= link_to 'View All'.html_safe, admin_projects_path %> </li>
+      <li> <%= link_to 'Create New'.html_safe, new_admin_project_path %> </li>
+      <li> <%= link_to 'Gallery'.html_safe, admin_project_images_path %> </li>
+    </ul>
+  </li>
 
-  <li class='link'> <%= link_to '<i class="fa fa-book" aria-hidden="true"></i><p class="hidden-sm hidden-xs">Books Reviews</p>'.html_safe, admin_books_path %> </li>
+  <li class='link'>
+    <a href="#book" class="" data-toggle="collapse"><i class="fa fa-book"></i><p class="hidden-sm hidden-xs">Books Reviews</p></a>
+    <ul id="book" class="collapse collapseable">
+      <li> <%= link_to 'View All'.html_safe, admin_books_path %> </li>
+      <li> <%= link_to 'Create New'.html_safe, new_admin_book_path %> </li>
+    </ul>
+  </li>
 
   <li class='link'> <%= link_to '<i class="fa fa-cogs" aria-hidden="true"></i><p class="hidden-sm hidden-xs">Settings</p>'.html_safe, new_admin_setting_path %> </li>
 

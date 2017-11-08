@@ -1,0 +1,56 @@
+@import 'admin_partials';
+
+#admin-project-content, #admin-all-projects-content {
+  @extend .admin-content-container;
+}
+div.projects-header-row {
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 15px; 
+}
+div.projects-data-row {
+}
+.content-inner hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.bar {
+  height: 18px;
+  background: green;
+}
+#project_image_image {
+  display: none;
+}
+.items-bottom-controls {
+  margin-top: 35px;
+  .btn-default {
+    margin-left: 10px;
+  }
+}
+
+.edit_project_image {
+  .modal-body {
+    #error_explanation{
+      .alert.alert-error {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.modal-header-details {
+  p.page-title {
+    font-size: 18px;
+    color: $prim3;
+    font-family: 'Oswald',arial narrow,sans-serif;
+    margin-bottom: 5px;
+  }
+  display: flex;
+  justify-content: space-between;
+}
+.text-center.no-images-fb {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
