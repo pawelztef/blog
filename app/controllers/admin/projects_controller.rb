@@ -10,14 +10,17 @@ class Admin::ProjectsController < Admin::ApplicationController
 
   def new
     @admin_project = Project.new
-    @admin_project.project_images << ProjectImage.new
+    @images = ProjectImage.all
   end
 
   def edit
+    @images = ProjectImage.all
   end
 
   def create
+    @images = ProjectImage.all
     @admin_project = Project.new(admin_project_params)
+    @admin_project.project_image_ids = params['project_images_ids']
     respond_to do |format|
       if @admin_project.save
         format.html { redirect_to admin_projects_url, notice: 'Project was successfully created.' }
@@ -30,14 +33,14 @@ class Admin::ProjectsController < Admin::ApplicationController
   end
 
   def show_images
-    byebug
     @images = ProjectImage.all
   end
 
   def update
+    @admin_project.project_image_ids = params['project_images_ids']
     respond_to do |format|
       if @admin_project.update(admin_project_params)
-        format.html { redirect_to @admin_project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to admin_projects_path, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin_project }
       else
         format.html { render :edit }
@@ -63,6 +66,7 @@ class Admin::ProjectsController < Admin::ApplicationController
       params.require(:project).permit(:title,
                                       :description,
                                       :display,
+                                      :project_images_ids,
                                       project_images_attributes: ProjectImage.attribute_names.map(&:to_sym).push(:_destroy).push(:icon_cache))
     end
 end

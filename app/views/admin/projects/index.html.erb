@@ -3,35 +3,29 @@
     <h2 class="page-title pull-left">Projects</h2>
     <%= link_to "New Project", new_admin_project_path, class: 'btn btn-xs btn-default pull-right' %> 
   </header>
-
-
   <div class="content-inner">
-    <div class="form-wraper">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @admin_projects.each do |admin_project| %>
-            <tr>
-              <td> <%= admin_project.title %> </td>
-              <td> 
-                <% admin_project.project_image_ids.each do |i| %>
-                  <%= i %> 
-                <% end %> 
-              </td>
-              <%# <td><%= link_to 'Show', admin_project %1></td> %>
-              <%# <td><%= link_to 'Edit', edit_admin_project_path(admin_project) %1></td> %>
-              <%# <td><%= link_to 'Destroy', admin_project, method: :delete, data: { confirm: 'Are you sure?' } %1></td> %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-
+    <div class="row articles-row">
+      <div class="col-sm-1 hidden-xs"> <p>#</p></div>
+      <div class="col-xs-8 col-sm-3 col-md-3 col-lg-4"> <p>Title</p></div>
+      <div class="col-sm-1 col-md-1 col-lg-1 replies hidden-xs"> <p>Images</p></div>
+      <div class="col-sm-1 col-md-1 col-lg-1 replies hidden-xs"> <p>Displayed</p></div>
+      <div class="col-sm-2 col-md-2 col-lg-3 hidden-xs"> <p>Date</p></div>
+      <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2 actions"> <p>Actions</p></div>
     </div>
+    <% @admin_projects.each_with_index do |project, index| %>
+      <div class="row articles-row">
+        <div class="col-sm-1 hidden-xs"> <%= index + 1 %> </div>
+        <div class="col-xs-8 col-sm-3 col-md-3 col-lg-4"><%= truncate(project.title, length: 25, separator: '') %></div>
+        <div class="col-sm-1 col-md-1 col-lg-1 replies hidden-xs"><%= project.project_images.count %></div>
+        <div class="col-sm-1 col-md-1 col-lg-1 replies hidden-xs"><%= icon('check') %></div>
+        <div class="col-sm-2 col-md-2 col-lg-3 hidden-xs"><%= time_ago_in_words project.created_at %></div>
+        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-2 actions">
+          <%# <%= link_to "<span class='fa fa-folder-open-o'></span>".html_safe, admin_project_path(project), class: 'btn btn-xs btn-default' %1> %>
+          <%= link_to "<span class='fa fa-pencil-square-o'></span>".html_safe, edit_admin_project_path(project), class: 'btn btn-xs btn-default' %>
+          <%= link_to "<span class='fa fa-trash-o'></span>".html_safe, admin_project_path(project), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-xs btn-default' %>
+        </div>
+      </div>
+      <hr />
+    <% end %> 
   </div>
 </div>

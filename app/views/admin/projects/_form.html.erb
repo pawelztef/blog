@@ -9,11 +9,46 @@
     <%= f.cktext_area :description, rows: 10, cols: 20 %>
   </div>
   <div class="form-group">
+    <%= f.label :Project_images %> 
+    <%= render "images_modal", images: @images %>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="thumbs-container">
+        <%= render "images_loop", images: @admin_project.project_images %> 
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
     <%= f.label :display, "Publish project when I click on save" %> 
     <%= f.check_box :display, class: 'checkbox' %> 
-    <%= link_to 'Add images', show_images_admin_projects_path, remote: true, class: 'btn btn-default btn-xs' %> 
   </div>
   <div class="form-group">
     <%= f.submit "Create / publish", class: 'clearfix btn btn-default' %>
   </div>
 <% end %>
+
+<script>
+$(function() {
+  $('#update-project').click(function(e) {
+    e.preventDefault();
+    $('.thumbs-container').empty();
+    updateProject();
+  });
+
+});
+
+
+function updateProject() {
+  var x;
+  x = $.map( $('.thumbnail'), function(n) {
+    if ( n.querySelector('input:checked'))  { 
+      return { 'id': n.querySelector('input').value, 'src': n.querySelector('img').getAttribute('src') }
+    }; 
+  });
+  for ( var i of x ) {
+    $('.thumbs-container').append("<div class='col-md-3'><div class='thumbnail'><img class='img-responsive' src='" + i.src + "'></div></div>");
+  }
+}
+
+</script>

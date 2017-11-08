@@ -1,4 +1,8 @@
 @import 'admin_partials';
+
+#admin-project-content {
+  @extend .admin-content-container;
+}
 .bar {
   height: 18px;
   background: green;

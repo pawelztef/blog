@@ -3,7 +3,7 @@
     <h2 class="page-title pull-left">Project Images Gallery</h2>
     <div class="upload-button pull-right">
       <%= form_for [:admin, ProjectImage.new] do |f| %> 
-        <%= f.label :image, 'Upload images', class: 'btn btn-default' %> 
+        <%= f.label :image, 'Upload images', class: 'btn btn-default btn-xs' %> 
         <%= f.file_field :image, multiple: true, name: 'project_image[image]' %> 
         </br>
       <% end %> 
