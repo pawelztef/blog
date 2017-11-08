@@ -1,1 +1,21 @@
 <h1>portfolio</h1>
+
+<div class="row">
+  <% @projects.each do |project| %>
+    <div class="col-md-8">
+      <div class="post">
+        <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
+          <h1> <%= project.title %> </h1>
+          <%= image_tag project.project_images.first.image_url unless project.project_images.empty? %> 
+          <%= project.description.html_safe %>
+        <% end %> 
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="post"> 
+        Sit officia ipsum nobis doloremque natus fuga voluptas natus maxime, amet necessitatibus assumenda? Amet libero obcaecati odio saepe modi harum?
+      </div>
+    </div>
+  <% end %> 
+</div>
+

@@ -58,3 +58,12 @@ end
     review: review)
 
 end
+
+10.times do
+  project = Project.create(
+    title: Faker::Company.name,
+    description: Faker::Lorem.paragraph,
+    display: true
+  )
+end
+
