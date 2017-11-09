@@ -24,7 +24,6 @@
 //= require fancybox
 //= require_tree .
 
-// $(document).on('turbolinks:load', function() {
 $(function() {
   $('#burger').on('click', function() {
     $('#side-menu').toggleClass('hidden-xs');
@@ -37,7 +36,6 @@ $(function() {
 
   $(window).on('resize load', function() {
     if($(window).width()>992) {
-      // console.log($(window).width());
       if ($('.left').height() >= $('.right').height()) {
         $('.righT').height($('.left').height());
         $('.lefT').height($('.left').height());
@@ -48,11 +46,8 @@ $(function() {
     } else {
       $('.lefT').height($('.left').height());
       $('.righT').height($('.right').height());
-      // console.log($('.lefT'));
     }
   });
 
-  // flash messages out
   $('.alert').fadeIn().delay(1000).fadeOut();
-
 });
