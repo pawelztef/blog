@@ -7,7 +7,12 @@
           <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
             <h1> <%= project.title %> </h1>
           <% end %> 
-            <%= image_tag project.project_images.first.image_url unless project.project_images.empty? %> 
+
+          <% unless project.project_images.empty?  %>
+            <% project.project_images.each do |img| %> 
+              <%= image_tag img.image_url(:thumb) %>
+            <% end %> 
+          <% end %> 
           <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
             <%= project.description.html_safe %>
           <% end %> 
