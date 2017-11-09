@@ -11,11 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
+// require jquery.turbolinks
 //= require jquery_ujs
 //= require chosen-jquery
 //= require bootstrap.min
-//= require turbolinks
+// require turbolinks
 //= require ckeditor/init
 //= require cocoon
 //= require jquery-fileupload/basic
@@ -23,7 +23,8 @@
 //= require bootstrap-modalmanager
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
+$(function() {
   $('#burger').on('click', function() {
     $('#side-menu').toggleClass('hidden-xs');
   });
@@ -54,4 +55,3 @@ $(document).on('turbolinks:load', function() {
   $('.alert').fadeIn().delay(1000).fadeOut();
 
 });
-
