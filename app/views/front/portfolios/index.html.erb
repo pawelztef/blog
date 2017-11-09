@@ -7,16 +7,16 @@
           <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
             <h1> <%= project.title %> </h1>
           <% end %> 
-
           <% unless project.project_images.empty?  %>
-            <% project.project_images.each do |img| %> 
-              <%# <%= image_tag img.image_url(:thumb) %1> %>
-              <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>"><img src="<%= img.image_url(:thumb) %>" alt=""/></a>
-            <% end %> 
-          <% end %> 
-          <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
-            <%= project.description.html_safe %>
-          <% end %> 
+            <div class='project-gallery'>
+              <% project.project_images.each do |img| %> 
+                <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>" title=" <%= img.description %> "><img src="<%= img.image_url %>" alt=""/></a>
+              <% end %> 
+            </div>
+        <% end %> 
+        <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
+          <%= project.caption %>
+        <% end %> 
         </div>
       </div>
       <div class="col-md-4">
@@ -32,5 +32,5 @@
   <% end %> 
 </div>
 <script>
-  $("a.grouped_elements").fancybox();
+$("a.grouped_elements").fancybox();
 </script>

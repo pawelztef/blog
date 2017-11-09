@@ -7,3 +7,10 @@
     margin: 5px;
   }
 }
+
+.project-gallery>a {
+  display: none;
+}
+.project-gallery>a:first-child {
+  display: inherit;
+}

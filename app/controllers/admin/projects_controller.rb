@@ -66,6 +66,7 @@ class Admin::ProjectsController < Admin::ApplicationController
     params.require(:project).permit(:title,
                                     :description,
                                     :display,
+                                    :caption,
                                     :project_images_ids,
                                     tag_ids: [],
                                     project_images_attributes: ProjectImage.attribute_names.map(&:to_sym).push(:_destroy).push(:icon_cache))
