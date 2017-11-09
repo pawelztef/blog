@@ -10,7 +10,8 @@
 
           <% unless project.project_images.empty?  %>
             <% project.project_images.each do |img| %> 
-              <%= image_tag img.image_url(:thumb) %>
+              <%# <%= image_tag img.image_url(:thumb) %1> %>
+              <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>"><img src="<%= img.image_url(:thumb) %>" alt=""/></a>
             <% end %> 
           <% end %> 
           <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
@@ -30,4 +31,6 @@
     <% end %> 
   <% end %> 
 </div>
-
+<script>
+  $("a.grouped_elements").fancybox();
+</script>
