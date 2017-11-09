@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171104090957) do
+ActiveRecord::Schema.define(version: 20171109083820) do
 
   create_table "bios", force: :cascade do |t|
     t.text     "body",         limit: 65535
@@ -130,11 +130,20 @@ ActiveRecord::Schema.define(version: 20171104090957) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title",       limit: 255
-    t.string   "description", limit: 255
+    t.text     "description", limit: 65535
     t.boolean  "display"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.text     "caption",     limit: 65535
   end
+
+  create_table "projects_tags", id: false, force: :cascade do |t|
+    t.integer "project_id", limit: 4, null: false
+    t.integer "tag_id",     limit: 4, null: false
+  end
+
+  add_index "projects_tags", ["project_id", "tag_id"], name: "index_projects_tags_on_project_id_and_tag_id", using: :btree
+  add_index "projects_tags", ["tag_id", "project_id"], name: "index_projects_tags_on_tag_id_and_project_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.text     "content",    limit: 65535

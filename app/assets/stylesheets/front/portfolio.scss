@@ -1,3 +1,16 @@
 .front-project-link, .front-project-link:hover {
   text-decoration: none;
 }
+.project-tags {
+  margin-top: 200px;
+  .item {
+    margin: 5px;
+  }
+}
+
+.project-gallery>a {
+  display: none;
+}
+.project-gallery>a:first-child {
+  display: inherit;
+}

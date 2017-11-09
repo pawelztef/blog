@@ -58,15 +58,17 @@ class Admin::ProjectsController < Admin::ApplicationController
   end
 
   private
-    def set_admin_project
-      @admin_project = Project.find(params[:id])
-    end
+  def set_admin_project
+    @admin_project = Project.find(params[:id])
+  end
 
-    def admin_project_params
-      params.require(:project).permit(:title,
-                                      :description,
-                                      :display,
-                                      :project_images_ids,
-                                      project_images_attributes: ProjectImage.attribute_names.map(&:to_sym).push(:_destroy).push(:icon_cache))
-    end
+  def admin_project_params
+    params.require(:project).permit(:title,
+                                    :description,
+                                    :display,
+                                    :caption,
+                                    :project_images_ids,
+                                    tag_ids: [],
+                                    project_images_attributes: ProjectImage.attribute_names.map(&:to_sym).push(:_destroy).push(:icon_cache))
+  end
 end

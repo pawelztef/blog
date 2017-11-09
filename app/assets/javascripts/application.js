@@ -11,19 +11,20 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
+// require jquery.turbolinks
 //= require jquery_ujs
 //= require chosen-jquery
 //= require bootstrap.min
-//= require turbolinks
+// require turbolinks
 //= require ckeditor/init
 //= require cocoon
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require bootstrap-modalmanager
+//= require fancybox
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+$(function() {
   $('#burger').on('click', function() {
     $('#side-menu').toggleClass('hidden-xs');
   });
@@ -35,7 +36,6 @@ $(document).on('turbolinks:load', function() {
 
   $(window).on('resize load', function() {
     if($(window).width()>992) {
-      // console.log($(window).width());
       if ($('.left').height() >= $('.right').height()) {
         $('.righT').height($('.left').height());
         $('.lefT').height($('.left').height());
@@ -46,12 +46,8 @@ $(document).on('turbolinks:load', function() {
     } else {
       $('.lefT').height($('.left').height());
       $('.righT').height($('.right').height());
-      // console.log($('.lefT'));
     }
   });
 
-  // flash messages out
   $('.alert').fadeIn().delay(1000).fadeOut();
-
 });
-
