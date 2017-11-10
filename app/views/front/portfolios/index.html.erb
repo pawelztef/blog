@@ -1,35 +1,39 @@
-<h1>portfolio</h1>
-<div class="row">
-  <% @projects.each do |project| %>
-    <% if project.display  %>
-      <div class="col-md-8">
-        <div class="post">
-          <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
-            <h1> <%= project.title %> </h1>
-          <% end %> 
-          <% unless project.project_images.empty?  %>
-            <div class='project-gallery'>
-              <% project.project_images.each do |img| %> 
-                <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>" title=" <%= img.description %> "><img src="<%= img.image_url %>" alt=""/></a>
-              <% end %> 
+<div class="page portfolio">
+  <%# <%= render 'layouts/partials/front_header' %1> %> 
+  <div class="row">
+    <% @projects.each do |project| %>
+      <% if project.display  %>
+        <div class="project">
+          <div class="row">
+            <div class="col-md-8">
+              <%= set_project_title(project) %> 
             </div>
-        <% end %> 
-        <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
-          <%= project.caption %>
-        <% end %> 
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project-tags"> 
-          <% project.tags.each do |tag| %>
-            <div class="item">
-              <%= tag.name %> 
+          </div>
+          <div class="row">
+            <% unless project.project_images.empty?  %>
+              <div class='project-gallery'>
+                <div class="col-md-8">
+                  <% project.project_images.each do |img| %> 
+                    <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>" title=" <%= img.description %> "><img src="<%= img.image_url %>" alt=""/></a>
+                  <% end %> 
+                </div>
+                <div class="col-md-2">
+                  <div class="project-tags"> 
+                    <%= set_project_tags(project) %> 
+                  </div>
+                </div>
+              </div>
+            <% end %> 
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <%= set_project_caption(project) %> 
             </div>
-          <% end %> 
+          </div>
         </div>
-      </div>
+      <% end %> 
     <% end %> 
-  <% end %> 
+  </div>
 </div>
 <script>
 $("a.grouped_elements").fancybox();
