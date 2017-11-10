@@ -4,30 +4,30 @@
     <% @projects.each do |project| %>
       <% if project.display  %>
         <div class="project">
-          <div class="col-md-8">
-            <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
-              <h1> <%= project.title %> </h1>
-            <% end %> 
+          <div class="row">
+            <div class="col-md-8">
+              <%= set_project_title(project) %> 
+            </div>
+          </div>
+          <div class="row">
             <% unless project.project_images.empty?  %>
               <div class='project-gallery'>
-                <% project.project_images.each do |img| %> 
-                  <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>" title=" <%= img.description %> "><img src="<%= img.image_url %>" alt=""/></a>
-                <% end %> 
-              </div>
-            <% end %> 
-            <%= link_to front_portfolio_path(project), class: 'front-project-link' do %> 
-              <div class="project-caption">
-                <%= project.caption %>
+                <div class="col-md-8">
+                  <% project.project_images.each do |img| %> 
+                    <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>" title=" <%= img.description %> "><img src="<%= img.image_url %>" alt=""/></a>
+                  <% end %> 
+                </div>
+                <div class="col-md-2">
+                  <div class="project-tags"> 
+                    <%= set_project_tags(project) %> 
+                  </div>
+                </div>
               </div>
             <% end %> 
           </div>
-          <div class="col-md-4">
-            <div class="project-tags"> 
-              <% project.tags.each do |tag| %>
-                <div class="item">
-                  <%= tag.name %> 
-                </div>
-              <% end %> 
+          <div class="row">
+            <div class="col-md-8">
+              <%= set_project_caption(project) %> 
             </div>
           </div>
         </div>

@@ -2,23 +2,27 @@
   text-decoration: none;
 }
 
-.project-gallery>a {
-  display: none;
-}
-.project-gallery>a:first-child {
-  display: inherit;
-}
-
 .project {
   margin-top: 100px;
   margin-bottom: 100px;
   overflow: hidden;
+  .project-gallery {
+    a {
+      display: none;
+    }
+    a:first-child {
+      display: inherit;
+    }
+  }
   .project-caption {
     margin-top: 20px;
     text-align: justify;
   }
   .project-tags {
-    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    justify-content: center;
     .item {
       margin: 5px;
     }

@@ -63,6 +63,7 @@ end
   project = Project.create(
     title: Faker::Company.name,
     description: Faker::Lorem.paragraph,
+    caption: Faker::Lorem.paragraph, 
     display: true
   )
 end
