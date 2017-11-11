@@ -9,12 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <%# OPTIMIZE add dashboard nav links and logout %> 
-    <div class="wrapper-normal">
-      <%= render 'layouts/partials/front_main_nav' unless params[:controller] == 'front/profiles' %> 
-      <%= yield %>
-      <%= render "layouts/partials/front_footer" %>
+    <div class="body-particles" id="particles-js">
     </div>
-    <%= render "layouts/partials/front_flash_messages" %>
+    <div class="overlay">
+      <%# OPTIMIZE add dashboard nav links and logout %> 
+      <div class="wrapper-normal">
+        <%= render 'layouts/partials/front_main_nav' unless params[:controller] == 'front/profiles' %> 
+        <%= yield %>
+        <%= render "layouts/partials/front_footer" %>
+      </div>
+      <%= render "layouts/partials/front_flash_messages" %>
+    </div>
   </body>
+  <script type="text/javascript">
+particlesJS.load('particles-js', 'assets/particlesjs-config.json', function() {
+  console.log('callback - particles.js config loaded');
+});
+  </script>
 </html>
