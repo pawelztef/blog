@@ -1,6 +1,6 @@
 $(function() {
   var tag = $('#tags-2');
-  var range = 320;
+  var range = 330;
   $(window).on('load scroll', function () {
     $('.project').each(function() {
       dimElement($(this), range);
