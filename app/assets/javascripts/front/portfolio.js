@@ -1,6 +1,6 @@
 $(function() {
   var tag = $('#tags-2');
-  var range = 330;
+  var range = 350;
   $(window).on('load scroll', function () {
     $('.project').each(function() {
       dimElement($(this), range);
@@ -10,7 +10,7 @@ $(function() {
 
 
 function dimElement(elem, range) {
-  var elemPos = Math.abs(((elem.offset().top+(elem.outerHeight()/2)) - ($(window).scrollTop() + $(window).outerHeight()/2))),
+  var elemPos = Math.abs(((elem.offset().top+(elem.outerHeight()/2)) - ($(window).scrollTop() - 50 + $(window).outerHeight()/2))),
     calc2 = -(elemPos - range) / range;
 
   elem.css({ 'opacity': calc2 });
