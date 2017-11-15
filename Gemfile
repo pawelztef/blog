@@ -42,6 +42,7 @@ gem 'cocoon'
 gem 'bootstrap-modal-rails'
 gem 'fancybox-rails'
 gem 'material_design_lite-rails', '~> 1.3'
+gem 'material_icons'
 
 
 group :development, :test do
