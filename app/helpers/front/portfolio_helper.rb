@@ -8,9 +8,9 @@ module Front::PortfolioHelper
   def set_project_tags project
     html_res = ''
     project.tags.each do |n| 
-      html_res += content_tag :div, n.name, class: 'item'
+      html_res += "#{n.name}, "
     end
-    return html_res.html_safe
+    return html_res[0..-3]
   end
 
   def set_project_caption project
