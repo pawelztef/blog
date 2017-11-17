@@ -1,34 +1,25 @@
-<div class="page portfolio">
-  <%# <%= render 'layouts/partials/front_header' %1> %> 
-  <div class="row">
+<div class="mdl-project">
+  <div class="mdl-grid portfolio-max-width">
     <% @projects.each do |project| %>
       <% if project.display  %>
-        <div class="project">
-          <div class="row">
-            <div class="col-md-8">
-              <%= set_project_title(project) %> 
-            </div>
-          </div>
-          <div class="row">
+        <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+          <div class="mdl-card__media">
             <% unless project.project_images.empty?  %>
-              <div class='project-gallery'>
-                <div class="col-md-8">
-                  <% project.project_images.each do |img| %> 
-                    <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>" title=" <%= img.description %> "><img src="<%= img.image_url %>" alt=""/></a>
-                  <% end %> 
-                </div>
-                <div class="col-md-2">
-                  <div class="project-tags"> 
-                    <%= set_project_tags(project) %> 
-                  </div>
-                </div>
+              <div class="grouped_elements_wrp">
+                <% project.project_images.each do |img| %> 
+                  <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>" title=" <%= img.description %> "><img src="<%= img.image_url(:mdl_card) %>", class="article-image" alt=""/></a>
+                <% end %>
               </div>
             <% end %> 
           </div>
-          <div class="row">
-            <div class="col-md-8">
-              <%= set_project_caption(project) %> 
-            </div>
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text"> <%= project.title %> </h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            <%= project.caption %> 
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <%= link_to 'Read more', front_portfolio_path(project), class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" %> 
           </div>
         </div>
       <% end %> 

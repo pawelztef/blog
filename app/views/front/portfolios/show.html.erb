@@ -2,9 +2,10 @@
 <h1>portfolio - show</h1>
 
 <div class="row">
-      <div class="post">
-          <h1> <%= @project.title %> </h1>
-          <%= @project.description.html_safe %>
-      </div>
+  <div class="post">
+    <h1> <%= @project.title %> </h1>
+    <%= set_project_tags(@project) %> 
+    <%= @project.description.html_safe %>
+  </div>
 </div>
 

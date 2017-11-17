@@ -1,31 +1,11 @@
-.front-project-link, .front-project-link:hover {
-  text-decoration: none;
-}
-
-.project {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  overflow: hidden;
-  .project-gallery {
-    a {
+.mdl-project {
+  .grouped_elements_wrp {
+    a.grouped_elements {
       display: none;
     }
-    a:first-child {
-      display: inherit;
+    a.grouped_elements:first-of-type {
+      display: inline;
     }
   }
-  .project-caption {
-    margin-top: 20px;
-    text-align: justify;
-  }
-  .project-tags {
-    display: flex;
-    flex-direction: column;
-    height: 280px;
-    justify-content: center;
-    .item {
-      margin: 5px;
-    }
-  }
-
 }
+
