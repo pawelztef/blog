@@ -1,3 +1,20 @@
-<nav class="nav">
+<header  class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+  <%# TODO particles div %>
+  <%# <div class="body-particles" id="particles-js"></div> %>
+  <div class="mdl-layout__header-row portfolio-logo-row">
+    <span class="mdl-layout__title">
+      
+      <%# OPTIMIZE logo helper method %>
+      <div class="portfolio-logo" style="background-image: url(<%= @moderator.avatar_url(:profile_frontend) if @moderator  %>);"> </div>
+      <span class="mdl-layout__title"> <%= Setting.site_name %> </span>
+      <span class="mdl-layout__title"> <%= Setting.site_phrase %> </span>
+    </span>
+  </div>
+  <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
   <%= render 'layouts/partials/nav_list' %> 
-</nav>
+  </div>
+</header>
+<div class="mdl-layout__drawer mdl-layout--small-screen-only">
+  <%= render 'layouts/partials/nav_list' %> 
+</div>
+

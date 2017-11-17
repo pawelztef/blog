@@ -1,0 +1,15 @@
+.posts {
+  .mdl-card__title-text {
+    font-size: 32px;
+    padding: 0 35px;
+    padding-top: 5px;
+  }
+  .mdl-card__supporting-text {
+    padding: 5px 35px;
+    // padding-left: 30px;
+    width: 100%;
+    a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent {
+      float: right;
+    }
+  }
+}
