@@ -1,47 +1,81 @@
-<h3>Add Comment</h3>
-<div class="form-horizontal">
+<%# <%= form_for @visitor_comment, url: front_comments_url do |f| %1> %>
+<%#   <1%# <div class="form-group"> %1> %>
+  <%#     <1%#   <div class="col-sm-offset-2 col-sm-10"> %1> %>
+    <%#       <% if session[:visitor_errors] %1> %>
+      <%#         <div id="error-explanation"> %>
+        <%#           <h4> <%= pluralize(session[:visitor_errors].count, 'error') %1> prohibited this comment from being saved :</h4> %>
+        <%#           <ul> %>
+          <%#             <% session[:visitor_errors].each do |message| %1> %>
+          <%#               <li> <%= message %1> </li> %>
+          <%#             <% end %1> %> 
+        <%#           </ul> %>
+      <%#         </div> %>
+    <%#     </div> %>
+  <%#   <% end %1> %> 
+<%#   <1%# </div> %1> %>
+
+<%# <div class="form-group"> %>
+  <%#   <%= f.label :fullname, class: "col-sm-2 control-label" %1> %>
+  <%#   <div class="col-sm-10"> %>
+    <%#     <%= f.text_field :fullname, class: "form-control" %1> %>
+    <%#   </div> %>
+  <%# </div> %>
+<%# <div class="form-group"> %>
+  <%#   <%= f.label :email, class: "col-sm-2 control-label" %1> %>
+  <%#   <div class="col-sm-10"> %>
+    <%#     <%= f.text_field :email, class: "form-control" %1> %>
+    <%#   </div> %>
+  <%# </div> %>
+<%# <div class="form-group"> %>
+  <%#   <%= f.fields_for :comments do |c| %1> %>
+  <%#     <%= c.label :message, class: "col-sm-2 control-label" %1> %> 
+  <%#     <div class="col-sm-10"> %>
+    <%#       <%= c.text_area :message, class: "form-control", rows: "5" %1> %> 
+    <%#     </div> %>
+  <%#     <%= c.hidden_field :post_id, value: @post.id %1> %> 
+  <%#   <% end %1> %> 
+<%# </div> %>
+<%# <div class="form-group"> %>
+  <%#   <div class="col-sm-offset-2 col-sm-10"> %>
+    <%#     <%= f.submit 'Add Comment', class: "btn btn-default" %1> %>
+    <%#   </div> %>
+  <%# </div> %>
+<%# <% end %1> %> 
+
+<div class="mdl-card__supporting-text">
   <%= form_for @visitor_comment, url: front_comments_url do |f| %>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <% if session[:visitor_errors] %>
-          <div id="error-explanation">
-            <h4> <%= pluralize(session[:visitor_errors].count, 'error') %> prohibited this comment from being saved :</h4>
-            <ul>
-              <% session[:visitor_errors].each do |message| %>
-                <li> <%= message %> </li>
-              <% end %> 
-            </ul>
-          </div>
+
+    <% if session[:visitor_errors] %>
+      <div id="error-explanation">
+        <h4> <%= pluralize(session[:visitor_errors].count, 'error') %> prohibited this comment from being saved :</h4>
+        <ul>
+          <% session[:visitor_errors].each do |message| %>
+            <li> <%= message %> </li>
+          <% end %> 
+        </ul>
       </div>
     <% end %> 
-    </div>
 
-    <div class="form-group">
-      <%= f.label :fullname, class: "col-sm-2 control-label" %>
-      <div class="col-sm-10">
-        <%= f.text_field :fullname, class: "form-control" %>
-      </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.text_field :fullname, class: "mdl-textfield__input" %>
+      <%= f.label :fullname, class: "mdl-textfield__label" %>
+      <%# <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name"> %>
+      <%# <label class="mdl-textfield__label" for="Name">Name...</label> %>
+      <%# <span class="mdl-textfield__error">Letters and spaces only</span> %>
     </div>
-    <div class="form-group">
-      <%= f.label :email, class: "col-sm-2 control-label" %>
-      <div class="col-sm-10">
-        <%= f.text_field :email, class: "form-control" %>
-      </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.text_field :email, class: "mdl-textfield__input" %>
+      <%= f.label :email, class: "mdl-textfield__label" %>
     </div>
-    <div class="form-group">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <%= f.fields_for :comments do |c| %>
-        <%= c.label :message, class: "col-sm-2 control-label" %> 
-        <div class="col-sm-10">
-          <%= c.text_area :message, class: "form-control", rows: "5" %> 
-        </div>
+        <%= c.label :message, class: "mdl-textfield__label" %> 
+        <%= c.text_area :message, class: "mdl-textfield__input", rows: "5" %> 
         <%= c.hidden_field :post_id, value: @post.id %> 
       <% end %> 
     </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <%= f.submit 'Add Comment', class: "btn btn-default" %>
-      </div>
-    </div>
+    <p>
+    <%= f.submit 'Add Comment', class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+    </p>
   <% end %> 
 </div>
-<hr />

@@ -12,7 +12,7 @@
           <h2 class="mdl-card__title-text"> <%= post.title %> </h2>
           <div class="mdl-card__supporting-text padding-top">
             <%# TODO share button on posts index %>
-            <span> <%= time_ago post.created_at %> </span>
+            <span> <em><%= time_ago post.created_at %></em> </span>
             <%# <div id="tt1" class=" icon material-icons portfolio-share-btn">share</div> %>
             <%# <div class="mdl-tooltip" for="tt1"> %>
               <%#   Share via social media %>

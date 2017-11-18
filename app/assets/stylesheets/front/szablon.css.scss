@@ -164,7 +164,24 @@ img.article-image {
 }
 
 footer {
-  background-image: image_url(header);
+  // background-image: image_url(header);
   background-size: cover;
+  background: none;
+}
+header.mdl-layout__header.mdl-layout__header--waterfall.portfolio-header {
+  background: none;
+}
+.mdl-mini-footer {
+  background-color: white !important;
 }
 
+a.mdl-navigation__link {
+  color: black !important;
+}
+
+.mdl-layout__header-row.portfolio-navigation-row.mdl-layout--large-screen-only {
+  height: 42px;
+}
+.mdl-layout__header {
+  min-height: 42px !important
+}
