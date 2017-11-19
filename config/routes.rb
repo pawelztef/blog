@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:new, :create]
     resources :comments, only: [:create]
     resources :reviews, only: [:index, :show]
+    resources :visitors, only: [:new, :create]
   end
 
 
