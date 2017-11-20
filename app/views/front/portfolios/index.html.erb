@@ -9,22 +9,10 @@
         <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
           <div class="mdl-card__media">
             <% unless project.project_images.empty?  %>
-<<<<<<< HEAD
-              <div class='project-gallery'>
-                <div class="col-md-8">
-                  <% project.project_images.each do |img| %> 
-                    <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>" title=" <%= img.description %> "><img src="<%= img.image_url %>" alt=""/></a>
-                  <% end %> 
-                </div>
-                <div class="col-md-2">
-                  <%= set_project_tags(project) %> 
-                </div>
-=======
               <div class="grouped_elements_wrp">
                 <% project.project_images.each do |img| %> 
                   <a class="grouped_elements" rel="group<%= project.id %>" href="<%= img.image_url %>" title=" <%= img.description %> "><img src="<%= img.image_url(:mdl_card) %>", class="article-image" alt=""/></a>
                 <% end %>
->>>>>>> material
               </div>
             <% end %> 
           </div>
