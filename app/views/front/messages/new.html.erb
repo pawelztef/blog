@@ -1,16 +1,11 @@
-<div id="front-index">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-center">
-        <h1>Send Message</h1>
         <div class="form-horizontal">
-          <%= form_for @visitor_message , url: messages_url do |f| %>
+          <%= form_for [:front, @message] do |f| %>
 
-            <% if @visitor_message.errors.any? %> 
+            <% if @message.errors.any? %> 
               <div id="error_explanation">
-                <h2> <%= pluralize(@visitor_message.errors.count, 'error') %> prohibited this message from sending:</h2>
+                <h2> <%= pluralize(@message.errors.count, 'error') %> prohibited this message from sending:</h2>
                 <ul>
-                  <% @visitor_message.errors.full_messages.each do |message| %>
+                  <% @message.errors.full_messages.each do |message| %>
                     <li> <%= message %> </li>
                   <% end %> 
                 </ul>
@@ -45,7 +40,32 @@
 
           <% end %> 
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+      <%# <div class="mdl-grid portfolio-max-width portfolio-contact"> %>
+      <%#           <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp"> %>
+      <%#               <div class="mdl-card__title"> %>
+      <%#                   <h2 class="mdl-card__title-text">Contact</h2> %>
+      <%#               </div> %>
+      <%#               <div class="mdl-card__supporting-text"> %>
+      <%#                   <form action="#" class=""> %>
+      <%#                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"> %>
+      <%#                           <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name"> %>
+      <%#                           <label class="mdl-textfield__label" for="Name">Name...</label> %>
+      <%#                           <span class="mdl-textfield__error">Letters and spaces only</span> %>
+      <%#                       </div> %>
+      <%#                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"> %>
+      <%#                           <input class="mdl-textfield__input" type="text" id="Email"> %>
+      <%#                           <label class="mdl-textfield__label" for="Email">Email...</label> %>
+      <%#                       </div> %>
+      <%#                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"> %>
+      <%#                           <textarea class="mdl-textfield__input" type="text" rows="5" id="note"></textarea> %>
+      <%#                           <label class="mdl-textfield__label" for="note">Enter note</label> %>
+      <%#                       </div> %>
+      <%#                       <p> %>
+      <%#                           <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit"> %>
+      <%#                               Submit %>
+      <%#                           </button> %>
+      <%#                       </p> %>
+      <%#                   </form> %>
+      <%#               </div> %>
+      <%#           </div> %>
+      <%#       </div> %>

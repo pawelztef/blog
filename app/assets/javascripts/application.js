@@ -22,6 +22,7 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require bootstrap-modalmanager
 //= require fancybox
+//= require material
 //= require_tree .
 
 $(function() {

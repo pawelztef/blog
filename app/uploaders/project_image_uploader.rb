@@ -37,6 +37,9 @@ class ProjectImageUploader < CarrierWave::Uploader::Base
   version :front_component do
     process resize_to_fit: [340, 255]
   end
+  version :mdl_card do
+    process resize_to_fit: [250, 190]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

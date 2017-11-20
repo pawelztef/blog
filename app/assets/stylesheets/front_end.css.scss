@@ -2,9 +2,13 @@
  *= require bootstrap.min
  *= require front/szablon
  *= require front/portfolio
+ *= require front/contact
+ *= require front/posts
  *= require_self
  *= require prism
  *= require fancybox
+ *= require material
+ *= require material_icons
  */
 @import "font-awesome-sprockets";
 @import "font-awesome";

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  root to: 'front/profiles#index'
+  root to: 'front/abouts#index'
 
   get '/login' => 'admin/sessions#new'
   get '/logout' => 'admin/sessions#destroy'
@@ -41,13 +41,13 @@ Rails.application.routes.draw do
   end
 
   namespace :front, path: '' do
-    resources :profiles, only: [:index], path: 'profile'
     resources :portfolios, only: [:index, :show], path: 'portfolio'
     resources :abouts, only: [:index], path: 'about'
     resources :posts, only: [:index, :show], path: 'blog'
     resources :messages, only: [:new, :create]
     resources :comments, only: [:create]
     resources :reviews, only: [:index, :show]
+    resources :visitors, only: [:new, :create], path: 'message'
   end
 
 
