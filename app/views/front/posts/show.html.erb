@@ -1,34 +1,52 @@
-<div class="post">
-  <h1 class="title"> <%= @post.title %> </h1>
-  <span class="date"> <time datetime=<%= @post.published_at.strftime("%d-%m-%Y") %> > <%= @post.published_at.strftime("%A. %B %d, %Y") %>  </time> 
-  </span>
+<div class="mdl-post-show">
+  <div class="mdl-grid portfolio-max-width">
+    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+      <div class="mdl-post-header mdl-grid portfolio-copy">
+        <div class="mdl-post-show mdl-card__title">
+          <h2 class="mdl-card__title-text"> <%= @post.title %> </h2>
+        </div>
+        <% if @post.try(:header_image) %>
+          <div class="mdl-card__media">
+            <img class="article-image" src=" images/portfolio-example-01.jpg" border="0" alt="">
+          </div>
+        <% end %> 
+        <div class="mdl-post-show mdl-card__supporting-text">
+          <strong>Category: </strong>
+          <span>
+            <% if check_tagging_availability %>
+              <% @post.tags.each do |tag| %>
+                <%= link_to tag.name, front_posts_path(tag: tag.name), class: 'item' %>
+              <% end %> 
+            <% end %> 
+          </span> 
+        </div>
+      </div>
 
-  <div class="post-tags"> 
-    <% if check_tagging_availability %>
-      <% @post.tags.each do |tag| %>
-        <%= link_to tag.name, front_posts_path(tag: tag.name), class: 'item' %>
-      <% end %> 
-    <% end %> 
-  </div>
+      <div class="mdl-grid portfolio-copy">
+        <%= @post.content.html_safe %>
+      </div>
 
-  <%= @post.content.html_safe %>
-
-</div>
-
-<div class="disqus">
-  <h3>Comments</h3>
-  <% @post.comments.approved.each.with_index(1) do |comment, index| %>
-    <div class="bs-callout">
-      <h4> <b><%= comment.visitor.fullname %></b> </h4>
-      <p> <%= comment.message %>  </p>
-      <p class="text-right"> <em>commented: <%= time_ago comment.created_at %></em> </p>
+      <div class="comments">
+        <div class="mdl-grid portfolio-copy">
+          <div class="mdl-post-show mdl-card__title">
+            <div class="mdl-post-show mdl-card__supporting-text">
+              <h4 class="mdl-card__title-text"> Comments </h4>
+            </div>
+          </div>
+          <% @post_comments.each.with_index(1) do |comment, index| %>
+            <div class="bs-callout">
+              <span> <%= comment.visitor.fullname %> </span>
+              <p> <%= comment.message %>  </p>
+              <p class="text-right"> <em>commented: <%= time_ago comment.created_at %></em> </p>
+            </div>
+          <% end %> 
+        </div>
+        <div class="mdl-comments mdl-grid portfolio-max-width portfolio-contact">
+          <% if check_commenting_availability %>
+            <%= render 'comments_form' %> 
+          <% end %> 
+        </div>
+      </div>
     </div>
-  <% end %> 
-  <hr />
-  <div class="comments-form">
-    <% if check_commenting_availability %>
-      <%= render 'comments_form' %> 
-    <% end %> 
   </div>
 </div>
-

@@ -1,15 +1,9 @@
-.front-project-link, .front-project-link:hover {
-  text-decoration: none;
-}
-
-.project {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  overflow: hidden;
-  .project-gallery {
-    a {
+.mdl-projects {
+  .grouped_elements_wrp {
+    a.grouped_elements {
       display: none;
     }
+<<<<<<< HEAD
     a:first-child {
       display: inherit;
     }
@@ -26,7 +20,13 @@
     justify-content: center;
     .item {
       margin: 5px;
+=======
+    a.grouped_elements:first-of-type {
+      display: inline;
+>>>>>>> material
     }
   }
+}
+.mdl-project-show {
 
 }

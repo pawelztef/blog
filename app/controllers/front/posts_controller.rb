@@ -15,7 +15,8 @@ class Front::PostsController < Front::ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @visitor_comment = visitor_comment 
+    @visitor_comment = visitor_comment
+    @post_comments = @post.comments.approved.order(created_at: :desc)
   end
 
   private

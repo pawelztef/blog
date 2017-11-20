@@ -65,9 +65,7 @@ module ApplicationHelper
   end
 
   def build_navigation_link name, path
-    content_tag :li, class: 'item' do
-      link_to name, path, class: 'link'
-    end
+      link_to name, path, class: 'mdl-navigation__link'
   end
 
   def build_social_links

@@ -1,3 +1,11 @@
-<nav class="nav">
+<header  class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+  <div class="mdl-layout__header-row portfolio-logo-row">
+    <%#   <1%# OPTIMIZE logo helper method %1> %>
+    <span id="site-name" class="mdl-layout__title"> <%= Setting.site_name %> </span>
+    <span id="site-phrase" class="mdl-layout__title"> <%= Setting.site_phrase %> </span>
+  </div>
+</header>
+<div class="mdl-layout__drawer">
   <%= render 'layouts/partials/nav_list' %> 
-</nav>
+</div>
+
