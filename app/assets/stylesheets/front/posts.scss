@@ -18,6 +18,7 @@
   h2 {
     font-size: 34px;
     letter-spacing: 1px;
+    padding: 0;
   }
 }
 .mdl-post-show.mdl-card__supporting-text {
@@ -70,4 +71,7 @@
       display: inline-block;
     }
   }
+}
+.pagination {
+  margin: 20px auto;
 }

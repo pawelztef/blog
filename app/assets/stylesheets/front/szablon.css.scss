@@ -6,8 +6,8 @@
 .portfolio-header .mdl-layout__header-row {
   padding: 0;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .mdl-layout__title {
@@ -56,13 +56,13 @@
 
 .portfolio-navigation-row .mdl-navigation__link {
   -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   line-height: 42px;
 }
 
 .portfolio-header .mdl-layout__drawer-button {
-    background-color: rgba(197, 197, 197, 0.44);
+  background-color: rgba(197, 197, 197, 0.44);
 }
 
 .portfolio-navigation-row .is-active {
@@ -80,6 +80,9 @@
   left: 0;
   background-color: rgb(255,64,129);
   left: 15%;
+}
+.mdl-card {
+  // border-left: 3px #8f3e3d solid;
 }
 
 .portfolio-card .mdl-card__title {
@@ -145,13 +148,13 @@ img.article-image {
 }
 
 .demo-card-event > .mdl-card__actions {
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    box-sizing: border-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .portfolio-contact .mdl-textfield {
@@ -176,7 +179,10 @@ header.mdl-layout__header.mdl-layout__header--waterfall.portfolio-header {
 }
 
 a.mdl-navigation__link {
-  color: black !important;
+  color: #b02b2c !important
+}
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+  background-color: rgba(176, 43, 44, 0.11) !important;
 }
 
 .mdl-layout__header-row.portfolio-navigation-row.mdl-layout--large-screen-only {
@@ -190,4 +196,54 @@ i.material-icons {
 }
 span.mdl-layout__title {
   color: gray;
+}
+.mdl-card__media {
+
+
+
+
+  background-color: white !important;
+  img.article-image {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+49,ffffff+100&0+0,0.75+54,0.8+71,1+99 */
+
+    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.68) 49%, rgba(255,255,255,0.75) 54%, rgba(255,255,255,0.8) 71%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.68) 49%,rgba(255,255,255,0.75) 54%,rgba(255,255,255,0.8) 71%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+
+    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.68) 49%,rgba(255,255,255,0.75) 54%,rgba(255,255,255,0.8) 71%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
+
+  }
+}
+div#error_explanation {
+  color: red;
+  text-align: center;
+  ul {
+    list-style: none;
+  }
+}
+.mdl-button--accent.mdl-button--accent {
+  color: #B02B2C !important;
+}
+h2.mdl-card__title-text {
+  font-size: 32px;
+  letter-spacing: 3px;
+  color: #B02B2C;
+  padding: 10px 0px 0px 20px;
+}
+input.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--accent {
+  letter-spacing: 2px;
+}
+.mdl-button:hover {
+  background-color: rgba(176, 43, 44, 0.11) !important;
+}
+i.material-icons {
+  color: #b02b2c;
+}
+#site-name {
+  font-size: 42px;
+  font-weight: 300;
+  color: #b02b2c;
 }
